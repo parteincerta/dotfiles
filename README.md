@@ -15,8 +15,8 @@ development environment across all the computers I use.
   - Set Brave's `Tab Scrolling` flag to
     `Enabled - tabs shrink to pinned tab width`.
 - Disable auto-updates: `bash shared_macos/scripts/disable-updates.sh`.
-- Clone the [containers](https://github.com/parteincerta/containers) repo and
-  setup the Docker containers.
+- Clone the [docker-containers](https://github.com/parteincerta/docker-containers)
+  repo and setup the Docker containers.
 - Revisit Notifications, Login Items, Spotlight and re-access accordingly.
 - Configure VPNs and show them in the Menu Bar.
 - Reboot.
