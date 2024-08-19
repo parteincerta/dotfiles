@@ -1,0 +1,43 @@
+// doc: https://zed.dev/docs/configuring-zed
+// To see all default settings run the `open default settings` command
+{
+  "auto_update": false,
+  "buffer_font_family": "JetBrainsMonoNL Nerd Font Mono",
+  "buffer_font_size": 0,
+  "ensure_final_newline_on_save": true,
+  "hard_tabs": false,
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  "relative_line_numbers": true,
+  "terminal": {
+    "font_family": "JetBrainsMonoNL Nerd Font Mono",
+    "font_size": 0,
+    "env": {
+      "SHELL": "fish"
+    },
+    "shell": {
+      "with_arguments": {
+        "program": "fish",
+        "args": ["--interactive", "--login"]
+      }
+    },
+    "working_directory": "current_project_directory"
+  },
+  "tab_size": 2,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "ui_font_size": 14,
+  "vim_mode": true
+}

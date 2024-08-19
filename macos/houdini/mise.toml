@@ -1,0 +1,12 @@
+[settings]
+always_keep_download = true
+experimental = true
+plugin_autoupdate_last_check_duration = "0"
+
+[tools]
+bun = "1"
+go = "1"
+java = "temurin-21"
+node = ["18", "14"]
+usage = "0"
+zig = "0"

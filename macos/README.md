@@ -1,0 +1,86 @@
+## System Settings
+- Appearance: Only show scrollbars when scrolling.
+- General
+  - Set the host name.
+  - Disable all Software Updates.
+- Sound: Disable macOS startup sound and reduce alert volume to half.
+- Networking: Add the following DNS Servers to all the network interfaces.
+  - `1.1.1.1`
+  - `1.0.0.1`
+  - `2606:4700:4700::1111`
+  - `2606:4700:4700::1001`
+- Accessibility
+  - Enable keyboard shortcut to zoom.
+  - Enable trackpad's three-finger drag.
+- Control Center
+  - Show Bluetooth, Airdrop, Sound and Battery.
+  - Flash time separators and show time with seconds.
+  - Hide Spotlight.
+- Spotlight: Only enable search results for Applications, Calculator,
+  Conversion, Definition and System Settings.
+- Spotlight: Add the following locations to Spotlight Privacy list:
+  - `/opt` and `/usr/local`.
+  - `/System/Library/Frameworks`.
+  - `~/{Desktop,Developer,Documents,Downloads,Library}`
+  - `~/{.cache,.config,.local,.m2,.ssh}`
+- Desktop & Dock
+  - Minimize using the `Scale Effect`.
+  - Disable: Minimize windows into application icon.
+  - Enable: Automatically hide and show the dock.
+  - Disable: Animate opening application.
+  - Enable: Show indicators for open application.
+  - Disable: Show suggested and recent apps in Dock.
+  - Click wallpaper to reveal desktop: Only in Stage Manager.
+  - Disable: Stage Manager.
+  - Enable: Automatically rearrange Spaces based on most recent use.
+  - Enable: Group windows by application.
+  - Hot Corners: Set Cmd + top right to show the Desktop.
+- Displays: Disable iPad interoperability.
+- Lock Screen
+  - Start Screen Saver when active: `Never`.
+  - Require password: `For 5 seconds`.
+- Game Center: Disable.
+- Wallet & Apple Pay: Disable the Add Orders to Wallet option.
+- Keyboard
+  - Set Key repeat rate and Delay until repeat to their max values.
+  - Set globe key to `Do Nothing`.
+  - Keyboard Shortcuts
+    - Mission Control: Disable F11 to Show Desktop.
+    - Function Keys: Use F-keys as standard function keys.
+    - Modifier Keys: Map Caps Lock to Escape.
+  - Disable all automatic actions in Input Sources.
+  - Remove all Text Replacements.
+- Mouse: Set appropriate tracking speed.
+
+## Other
+- Finder
+  - Finder Settings
+    - General: Show all items in Desktop.
+    - General: New finder window opens in the home folder.
+    - Sidebar: Show home folder and hide tags.
+    - Advanced: Search performs a search in the current folder.
+  - View: Show Path Bar, Hide Preview.
+  - Home and Applications folders: Icons 48x48, reduce grid and sort by `name`.
+  - Other folders: Columns layout.
+  - Desktop: Icons 40x40, Sort by `kind`, enable `Show item info`, set Label
+    position to `right` and reduce grid size.
+- Safari
+  - View: Show status bar.
+  - General
+    - Safari opens with: `All windows from the last session`.
+    - New windows open with: `Empty page`.
+    - New tabs open with: `Empty page`.
+    - Homepage: `https://github.com/parteincerta`.
+    - Disable: Open "safe" files after downloading.
+  - Search
+    - Search engine: `DuckDuckGo`.
+    - Disable: Also use in Private Browsing.
+    - Private search engine: `Google`.
+    - Disable: Include search engine suggestions.
+    - Disable: Preload Top Hit in the background.
+  - Security: Disable: Warn when visiting a fraudulent website.
+  - Privacy: Disable: Require Touch ID to view locked tabs.
+  - Advanced
+    - Disable: Allow websites to check for Apple Pay and Apple Card.
+    - Enable: Save articles for offline reading automatically.
+    - Enable: Show features for web developers.

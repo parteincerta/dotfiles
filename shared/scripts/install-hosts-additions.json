@@ -1,0 +1,15 @@
+{
+	"shared": {
+		"127.0.0.1": [
+			"$hostname",
+			"$hostname.localdomain",
+			"host.docker.internal",
+			"kubernetes.docker.internal"
+		]
+	},
+	"specific": {
+		"deel": {
+			"127.0.0.1": ["minio"]
+		}
+	}
+}
