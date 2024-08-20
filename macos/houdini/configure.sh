@@ -22,7 +22,7 @@ fi
 source "$shared_dir_macos/.bash_profile" || true
 
 mkdir -p \
-"$HOME"/{.gnupg,.m2,.local/{bin,share/lf},.ssh/sockets} \
+"$HOME"/{.gnupg,.local/{bin,share/lf},.ssh/sockets} \
 "$HOME"/.local/{bin,share/lf} \
 "$HOME"/Library/{KeyBindings,LaunchAgents} \
 "$HOME/Library/Application Support/Code/User/" \
@@ -41,7 +41,6 @@ vscode_settings_dir="$app_support_folder/Code/User"
 
 rm -rf "$XDG_CONFIG_HOME/nvim/"{init.lua,lua/}
 
-cp maven.toolchains.xml "$HOME/.m2/toolchains.xml"
 cp mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
 cp -R obs/* "$app_support_folder/obs-studio/basic"
 

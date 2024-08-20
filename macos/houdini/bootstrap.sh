@@ -71,17 +71,7 @@ homebrew_cli=(
 	mkcert moreutils neovim oha pbzip2 pigz rclone ripgrep tokei xz zstd
 )
 brew install ${homebrew_cli[*]}
-
-# `jdtls` has many dependencies, among them: `openjdk` and `python@3.12`.
-# JDK will be handled by `mise``. `python@3.12` will be installed next.
-# Hence the usage of --ignore-dependencies.
-brew install --ignore-dependencies jdtls maven
-
-# Java's LSP needs Homebrew's Python (see `brew info jdtls`) but we don't so
-# lets unlink it after installation. Also unlink openssl@3 in favor of Apple's
-# OpenSSL.
-brew install python@3.12
-brew unlink python@3.12 openssl@3
+brew unlink openssl@3 # unlink openssl@3 in favor of Apple's OpenSSL.
 
 
 log_info "\t >>> Installing Homebrew casks"
@@ -114,9 +104,6 @@ pip3 install --user pynvim
 
 log_info "\t >>> Installing mise packages"
 MISE_YES=1 mise install
-sudo mkdir /Library/Java/JavaVirtualMachines/temurin-21.jdk
-sudo ln -s "$HOME/.local/share/mise/installs/java/temurin-21" \
-	/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents
 
 
 log_info "\t >>> Installing MongoDB Shell and Tools"
