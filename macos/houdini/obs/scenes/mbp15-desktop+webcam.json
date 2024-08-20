@@ -278,7 +278,7 @@
 					"id": "mask_filter",
 					"versioned_id": "mask_filter_v2",
 					"settings": {
-						"image_path": "/Users/fm/Documents/Misc/obs-webcam-mask.png"
+						"image_path": "/Users/fm/Documents/Misc/obs-mask.png"
 					},
 					"mixers": 0,
 					"sync": 0,
