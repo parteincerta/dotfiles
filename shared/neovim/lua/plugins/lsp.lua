@@ -26,12 +26,12 @@ return {
 		-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 		local lsp_servers_list= {
 			"bashls",
-			"clangd",
+			-- "clangd",
 			"jsonls",
 			"lua_ls",
 			"pyright",
 			"tsserver",
-			"zls",
+			-- "zls",
 		}
 		if os.getenv("JAVA_HOME") ~= nil then
 			table.insert(lsp_servers_list, "jdtls")
