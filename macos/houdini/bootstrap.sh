@@ -132,12 +132,12 @@ standby=0       # Disable chipset sleep.
 sudo pmset -b \
 	displaysleep 3 \
 	sleep 5 \
-	lidwake $disabled \
+	lidwake $enabled \
 	powernap $disabled \
 	proximitywake $disabled \
 	ring $disabled \
 	womp $disabled \
-	acwake $enabled \
+	acwake $false \
 	lessbright $enabled \
 	autopoweroff $autopoweroff \
 	hibernatemode $hibernatemode \
@@ -147,13 +147,13 @@ sudo pmset -b \
 sudo pmset -c \
 	displaysleep 5 \
 	sleep 10 \
-	proximitywake $disabled \
-	ring $disabled \
-	womp $disabled \
-	acwake $enabled \
 	lidwake $enabled \
-	lessbright $enabled \
 	powernap $enabled \
+	proximitywake $enabled \
+	ring $disabled \
+	womp $enabled \
+	acwake $false \
+	lessbright $false \
 	autopoweroff $autopoweroff \
 	hibernatemode $hibernatemode \
 	standby $standby
