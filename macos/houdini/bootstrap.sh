@@ -1,16 +1,14 @@
-#!/bin/bash
-
-this_script="$(basename ${BASH_SOURCE[0]})"
-this_script_rel_path="$(dirname ${BASH_SOURCE[0]})"
-this_script_abs_path="$(cd $this_script_rel_path >/dev/null && pwd)"
-shared_dir="$(cd $this_script_abs_path/../../shared >/dev/null && pwd)"
-shared_dir_macos="$(cd $this_script_abs_path/../../shared_macos >/dev/null && pwd)"
+#!/usr/bin/env bash
+# shellcheck source-path=SCRIPTDIR
 
 set -e
-source "$shared_dir/scripts/helper.sh"
-trap trap_error ERR
-pushd "$this_script_abs_path" >/dev/null
+scriptdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
+rootdir="$(cd "$scriptdir/../../" && pwd)"
+pushd "$scriptdir" >/dev/null
 trap "popd >/dev/null" EXIT
+
+source "$rootdir/shared/scripts/helper.sh"
+trap trap_error ERR
 
 
 xcode_cli_tools_path="$(xcode-select --print-path 2>/dev/null || true)"
@@ -26,13 +24,14 @@ fi
 bootstrap_mark_file="$HOME/.bootstrapped"
 if [ -s "$bootstrap_mark_file" ]; then
 	log_warning ">>> This system was previously bootstrapped."
-	exit 1
 	log_warning ">>> To restart the process: \$ rm $bootstrap_mark_file"
+	exit 1
 fi
 
-if [ "houdini" != "$system_hostname" ]; then
+nice_hostname="${HOSTNAME/%.local/}"
+if [ "houdini" != "$nice_hostname" ]; then
 	log_warning ">>> This bootstrap script belongs to another host: houdini".
-	log_warning ">>> The current host is: $system_hostname"
+	log_warning ">>> The current host is: $nice_hostname"
 	exit 1
 fi
 
@@ -58,7 +57,7 @@ if [ -z "$(command -v brew)" ]; then
 	log_info "\t >>> Installing Homebrew"
 	homebrew_url="https://raw.githubusercontent.com/Homebrew/install/master/install.sh"
 	/bin/bash -c "$(curl --fail --location --silent --show-error $homebrew_url)"
-	source "$shared_dir_macos/.bash_profile" || true
+	source "$rootdir/shared_macos/.bash_profile" || true
 fi
 
 
@@ -67,10 +66,11 @@ log_info "\t >>> Installing Homebrew apps"
 fonts=(font-jetbrains-mono-nerd-font)
 homebrew_cli=(
 	7zip aria2 bat bash bash-completion@2 bzip2 coreutils eza fd findutils fish
-	${fonts[*]} fzf gettext git-delta gnupg gsed jq lf libpq miniserve mise
-	mkcert moreutils neovim oha pbzip2 pigz rclone ripgrep tokei xz zstd
+	"${fonts[@]}" fzf gettext git-delta gnupg gsed jq lf libpq miniserve mise
+	mkcert moreutils neovim oha pbzip2 pigz rclone ripgrep shellcheck tokei xz
+	zstd
 )
-brew install ${homebrew_cli[*]}
+brew install "${homebrew_cli[@]}"
 brew unlink openssl@3 # unlink openssl@3 in favor of Apple's OpenSSL.
 
 
@@ -80,21 +80,21 @@ dbeaver="dbeaver-community"
 microsoft_apps=(microsoft-{excel,powerpoint,remote-desktop,word})
 vscode="visual-studio-code"
 homebrew_casks=(
-	alt-tab basictex betterdisplay brave-browser bruno $compass $dbeaver docker
-	fork iina kitty mac-mouse-fix ${microsoft_apps[*]} numi obs transmission
-	$vscode zed zoom
+	alt-tab basictex betterdisplay brave-browser bruno "$compass" "$dbeaver"
+	docker fork iina kitty mac-mouse-fix "${microsoft_apps[@]}" numi obs
+	transmission "$vscode" zed zoom
 )
-brew install --cask ${homebrew_casks[*]}
+brew install --cask "${homebrew_casks[@]}"
 
 
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
-source "$shared_dir_macos/.bash_profile" || true
+source "$rootdir/shared_macos/.bash_profile" || true
 source configure.sh
 bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file"
-source "$shared_dir/scripts/install-hosts.sh" houdini
+source "$rootdir/shared/scripts/install-hosts.sh" houdini
 
 
 log_info "\t >>> Installing pip packages"
@@ -107,8 +107,8 @@ MISE_YES=1 mise install
 
 
 log_info "\t >>> Installing MongoDB Shell and Tools"
-source "$shared_dir/scripts/install-mongo-utils.sh" shell
-source "$shared_dir/scripts/install-mongo-utils.sh" tools
+source "$rootdir/shared/scripts/install-mongo-utils.sh" shell
+source "$rootdir/shared/scripts/install-mongo-utils.sh" tools
 
 
 log_info "\t >>> Installing Neovim plugins"
@@ -116,7 +116,7 @@ nvim --headless -c "Lazy! install" -c qall
 
 
 log_info "\t >>> Installing VSCode plugins"
-source "$shared_dir/scripts/install-vscode-plugins.sh"
+source "$rootdir/shared/scripts/install-vscode-plugins.sh"
 
 
 log_info "\t >>> Updating power settings"
@@ -137,7 +137,7 @@ sudo pmset -b \
 	proximitywake $disabled \
 	ring $disabled \
 	womp $disabled \
-	acwake $false \
+	acwake $disabled \
 	lessbright $enabled \
 	autopoweroff $autopoweroff \
 	hibernatemode $hibernatemode \
@@ -152,8 +152,8 @@ sudo pmset -c \
 	proximitywake $enabled \
 	ring $disabled \
 	womp $enabled \
-	acwake $false \
-	lessbright $false \
+	acwake $disabled \
+	lessbright $disabled \
 	autopoweroff $autopoweroff \
 	hibernatemode $hibernatemode \
 	standby $standby
@@ -164,7 +164,7 @@ echo "UUID=DC798778-543D-396B-A11F-2EC42F3500F9 none msdos ro,noauto" |
 	sudo tee -a /etc/fstab >/dev/null
 
 
-if [ -z "$(grep "$HOMEBREW_PREFIX/bin/bash" /etc/shells)" ]; then
+if ! "$(grep "$HOMEBREW_PREFIX/bin/bash" /etc/shells)"; then
 	log_info "\t >>> Setting Homebrew's bash as the default shell"
 	echo "$HOMEBREW_PREFIX/bin/bash" | sudo tee -a /etc/shells
 	chsh -s "$HOMEBREW_PREFIX/bin/bash" "$(whoami)"

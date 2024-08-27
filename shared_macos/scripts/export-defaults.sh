@@ -1,42 +1,44 @@
-#!/bin/bash
-
-this_script="$(basename ${BASH_SOURCE[0]})"
-this_script_rel_path="$(dirname ${BASH_SOURCE[0]})"
-this_script_abs_path="$(cd $this_script_rel_path >/dev/null && pwd)"
-shared_dir="$(cd $this_script_abs_path/../../shared >/dev/null && pwd)"
-shared_dir_macos="$(cd $this_script_abs_path/.. >/dev/null && pwd)"
+#!/usr/bin/env bash
+# shellcheck source-path=SCRIPTDIR
 
 set -e
-source "$shared_dir"/scripts/helper.sh
-host_dir="$(cd $shared_dir/../macos/$system_hostname >/dev/null && pwd)"
+scriptdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
+rootdir="$(cd "$scriptdir/../../" && pwd)"
+
+source "$rootdir/shared/scripts/helper.sh"
 trap trap_error ERR
+
+nice_hostname="${HOSTNAME/%.local/}"
+hostdir="$rootdir/macos/$nice_hostname"
 
 # Activity Monitor
 actmon_key="com.apple.ActivityMonitor"
-actmon_file="$host_dir/plist/${actmon_key}.plist"
+actmon_file="$hostdir/plist/${actmon_key}.plist"
 
 # AltTab
 alttab_key="com.lwouis.alt-tab-macos"
-alttab_file="$shared_dir_macos/plist/${alttab_key}.plist"
+alttab_file="$rootdir/shared_macos/plist/${alttab_key}.plist"
 
 # BetterDisplay
 betterdisplay_key="pro.betterdisplay.BetterDisplay"
-betterdisplay_file="$host_dir/plist/${betterdisplay_key}.plist"
+betterdisplay_file="$hostdir/plist/${betterdisplay_key}.plist"
 
 # Mac Mouse Fix
 macmousefix_key="com.nuebling.mac-mouse-fix"
-macmousefix_file="$shared_dir_macos/plist/${macmousefix_key}.plist"
+macmousefix_file="$rootdir/shared_macos/plist/${macmousefix_key}.plist"
 
 # OBS
-obs_dir="$HOME/Library/Application Support/obs-studio/basic"
+obsdir="$HOME/Library/Application Support/obs-studio/basic"
 
 # Rectangle
 # rectangle_key="com.knollsoft.Rectangle"
-# rectangle_file="$shared_dir_macos/plist/${rectangle_key}.plist"
+# rectangle_file="$rootdir/shared_macos/plist/${rectangle_key}.plist"
 # rectangle_chords_key="com.knollsoft.Hookshot"
-# rectangle_chords_file="$shared_dir_macos/plist/${rectangle_chords_key}.plist"
+# rectangle_chords_file="$rootdir/shared_macos/plist/${rectangle_chords_key}.plist"
 
-[ "$1" = "--source-keys-only" ] && return 0 || true
+if [ "$1" = "--source-keys-only" ]; then
+	return 0
+fi
 
 log_info ">>> Exporting Activity Monitor settings..."
 defaults export "$actmon_key" "$actmon_file"
@@ -50,11 +52,11 @@ defaults export "$betterdisplay_key" "$betterdisplay_file"
 log_info ">>> Exporting Mac Mouse Fix settings..."
 cp "$HOME/Library/Application Support/${macmousefix_key}/config.plist" "$macmousefix_file"
 
-if [ -d  "$obs_dir" ]; then
+if [ -d  "$obsdir" ]; then
 	log_info ">>> Exporting OBS settings..."
-	rm -rf "$host_dir/obs"
-	cp -R "$obs_dir" "$host_dir/obs"
-	find "$host_dir/obs" -name "*.bak" -type f -delete
+	rm -rf "$hostdir/obs"
+	cp -R "$obsdir" "$hostdir/obs"
+	find "$hostdir/obs" -name "*.bak" -type f -delete
 fi
 
 # log_info ">>> Exporting Rectangle settings..."

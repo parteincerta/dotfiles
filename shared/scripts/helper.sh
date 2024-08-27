@@ -1,3 +1,5 @@
+# shellcheck disable=SC2034,SC2155
+
 color_reset='\x1b[0m'
 color_fg_dark_black='\x1b[38;5;0m'
 color_fg_dark_red='\x1b[38;5;1m'
@@ -35,25 +37,18 @@ color_bg_light_purple='\x1b[48;5;14m'
 color_bg_light_cyan='\x1b[48;5;14m'
 color_bg_light_white='\x1b[48;5;15m'
 
-# NOTE: To understand Bash's parameter expansion:
-# https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
-system_hostname="${HOSTNAME/%.local/}"
-if [ "$system_hostname" = "Fernando-Moreira-MacBook-Pro-16-inch-Nov-2023-" ]; then
-    system_hostname="dremio"
-fi
-
 enter_password () {
     local pwd1="pwd1"
     local pwd2="pwd2"
     while [ "$pwd1" != "$pwd2" ]; do
-        read -s -p Password: pwd1
+        read -r -s -p Password: pwd1
         >&2 echo
-        read -s -p Confirm: pwd2
+        read -r -s -p Confirm: pwd2
         >&2 echo
         [ "$pwd1" != "$pwd2" ] &&
             log_warning "  -> Passwords don't match. Enter them again."
     done
-    printf "$pwd1"
+    printf '%s' "$pwd1"
 }
 
 join_strings () {
@@ -83,7 +78,6 @@ log_warning () {
 trap_error () {
     local exit_code=$?
     local failed_cmd="$BASH_COMMAND"
-    local failed_line_nr="$BASH_LINENO"
-    log_error ">>> Failed the execution of $this_script on line $failed_line_nr."
+    local failed_line_nr="${BASH_LINENO[0]}"
     log_error ">>> Command '$failed_cmd' failed with exit code $exit_code."
 }

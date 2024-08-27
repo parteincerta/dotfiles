@@ -1,11 +1,11 @@
-# vim:ft=bash
-
-this_script="$(basename ${BASH_SOURCE[0]})"
-this_script_rel_path="$(dirname ${BASH_SOURCE[0]})"
-this_script_abs_path="$(cd $this_script_rel_path >/dev/null && pwd)"
+#!/usr/bin/env bash
+# shellcheck source-path=SCRIPTDIR
 
 set -e
-source "$this_script_rel_path/helper.sh"
+scriptdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
+rootdir="$(cd "$scriptdir/../../" && pwd)"
+
+source "$rootdir/shared/scripts/helper.sh"
 trap trap_error ERR
 
 vsc_data_dir="$XDG_CACHE_HOME/code/data/"
@@ -13,14 +13,14 @@ vsc_extensions_dir="$XDG_CACHE_HOME/code/extensions/"
 if [ "$1" = "--plugins-list" ] && [ -s "$2" ]; then
 	vsc_extensions_list=$(cat "$2")
 else
-	vsc_extensions_list=$(cat "$this_script_abs_path/install-vscode-plugins-list.txt")
+	vsc_extensions_list=$(cat "$rootdir/shared/scripts/install-vscode-plugins-list.txt")
 fi
 
 for extension in $vsc_extensions_list
 do
 	extension_author=${extension##*.}
 	extension_name=${extension##*.}
-	echo -e "\t-> Installing $extension_name"
+	echo -e "\t-> Installing $extension_name of $extension_author"
 	code \
 		--user-data-dir "$vsc_data_dir" \
 		--extensions-dir "$vsc_extensions_dir" \

@@ -1,3 +1,5 @@
+# shellcheck disable=SC2034,SC2059,SC2155,SC2164
+
 # ================= #
 # ENVIRONMENT SETUP #
 # ================= #
@@ -37,22 +39,25 @@ fi
 
 [ -n "$HOMEBREW_PREFIX" ] &&
 [[ ! ":$INFOPATH:" == *":$HOMEBREW_PREFIX/share/info:"* ]] && {
-	[ -z "$INFOPATH" ] &&
-		export INFOPATH="$HOMEBREW_PREFIX/share/info" ||
-		export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH}"
+	if [ -z "$INFOPATH" ]
+	then export INFOPATH="$HOMEBREW_PREFIX/share/info"
+	else export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH}"
+	fi
 }
 
 [[ ! ":$MANPATH:" == *":/usr/share/man:"* ]] && {
-	[ -z "$MANPATH" ] &&
-		export MANPATH="/usr/share/man" ||
-		export MANPATH="/usr/share/man:${MANPATH}"
+	if [ -z "$MANPATH" ]
+	then export MANPATH="/usr/share/man"
+	else export MANPATH="/usr/share/man:${MANPATH}"
+	fi
 }
 
 [ -n "$HOMEBREW_PREFIX" ] &&
 [[ ! ":$MANPATH:" == *":$HOMEBREW_PREFIX/share/man:"* ]] && {
-	[ -z "$MANPATH" ] &&
-		export MANPATH="$HOMEBREW_PREFIX/share/man" ||
-		export MANPATH="$HOMEBREW_PREFIX/share/man:${MANPATH}"
+	if [ -z "$MANPATH" ]
+	then export MANPATH="$HOMEBREW_PREFIX/share/man"
+	else export MANPATH="$HOMEBREW_PREFIX/share/man:${MANPATH}"
+	fi
 }
 
 [ -n "$HOMEBREW_PREFIX" ] &&
@@ -180,6 +185,7 @@ secrm () {
 			local children=$(/bin/ls -1A "$item")
 			if [ -n "$children" ]; then
 				pushd "$item" >/dev/null
+				# shellcheck disable=SC2086
 				secrm $children
 				local res=$?
 				popd >/dev/null
@@ -262,7 +268,7 @@ prompt_git() {
 	if git rev-parse --is-inside-work-tree &>/dev/null; then
 		local git_status="$(git status --porcelain --short)"
 		if [ $! ]; then
-			local git_status_dirty=$([ $(echo $git_status | grep . | wc -l) -gt 0 ] && echo "*")
+			local git_status_dirty="$([ "$(echo "$git_status" | grep . | wc -l)" -gt 0 ] && echo "*")"
 			local git_branch_name="$(git branch --show-current)"
 			printf "${color_fg_dark_red}$git_branch_name$git_status_dirty${color_reset} "
 		fi
@@ -281,12 +287,14 @@ prompt_sh_level() {
 export PS1='\D{%a} \t $(prompt_sh_level)$(printf $color_fg_dark_green)\w$(printf $color_reset) $(prompt_git)\n· '
 
 bash_completion="$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+# shellcheck disable=SC1090
 [ -r "$bash_completion" ] &&
 	source "$bash_completion"
 unset bash_completion
 
 cli_tools="/Library/Developer/CommandLineTools"
 git_completion="$cli_tools/usr/share/git-core/git-completion.bash"
+# shellcheck disable=SC1090
 [ -r "$git_completion" ] &&
 	source "$git_completion"
 unset cli_tools
@@ -320,6 +328,7 @@ e () {
 }
 
 # Pager-like implementation using neovim
+# shellcheck disable=SC2120
 pager () {
 	local target="-"
 	[ -n "$1" ] && target="$1"
@@ -428,6 +437,7 @@ alias gitwr="git worktree remove"
 alias l="eza -1"
 alias la="eza -1a"
 alias lar="eza -1aR"
+# shellcheck disable=SC2139
 alias less="$NVIM_PAGER"
 alias lh="eza -1ad .??*"
 alias ll="eza -lhS --icons"
@@ -479,6 +489,7 @@ shopt -s cmdhist
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind -m vi -x '"v": " vi_mode_edit_wo_executing"'
+# shellcheck disable=SC2016
 bind -m vi-insert '"\C-e": " `__fzf_cd__`\n"'
 bind -m vi-insert '"\C-k": "\C-w clear_screen_and_scrollback_buffer\n"'
 bind -m vi-insert '"\C-l": "\C-w clear\n"'

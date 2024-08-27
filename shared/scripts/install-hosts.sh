@@ -1,12 +1,13 @@
-# vim:ft=bash
-
-this_script="$(basename ${BASH_SOURCE[0]})"
-this_script_rel_path="$(dirname ${BASH_SOURCE[0]})"
+#!/usr/bin/env bash
+# shellcheck source-path=SCRIPTDIR
 
 set -e
-source "$this_script_rel_path/helper.sh"
+scriptdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
+rootdir="$(cd "$scriptdir/../../" && pwd)"
+trap 'rm -rf $TMPDIR/{hosts,hosts-additions}' EXIT
+
+source "$rootdir/shared/scripts/helper.sh"
 trap trap_error ERR
-trap "rm -rf $TMPDIR/{hosts,hosts-additions}" EXIT
 
 version="3.14.100"
 url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/hosts"
@@ -22,16 +23,16 @@ if [ "$system" = "Darwin" ]; then
 	echo "-> Applying additions ..."
 	# ------------------------------
 
-	hosts_additions_orig="$this_script_rel_path/install-hosts-additions.json"
+	hosts_additions_orig="$rootdir/shared/scripts/install-hosts-additions.json"
 	hosts_additions_subst="$TMPDIR/hosts-additions"
 	export hostname="${1:-${HOSTNAME%.*}}"
 	envsubst <"$hosts_additions_orig" >"$hosts_additions_subst"
 
 	echo -e "\n# START --- General additions" >>"$TMPDIR/hosts"
 	shared_address_list=$(jq -r ".shared | keys[]" "$hosts_additions_subst")
-	for addr in ${shared_address_list[*]}; do
+	for addr in "${shared_address_list[@]}"; do
 		shared_names_list=$(jq -r ".shared[\"$addr\"][]" "$hosts_additions_subst")
-		for name in ${shared_names_list[*]}; do
+		for name in "${shared_names_list[@]}"; do
 			echo -e "$addr $name" >>"$TMPDIR/hosts"
 		done
 	done
@@ -40,9 +41,9 @@ if [ "$system" = "Darwin" ]; then
 	if [ -n "$1" ]; then
 		echo -e "\n# START --- Specific additions for $1" >>"$TMPDIR/hosts"
 		specific_address_list=$(jq -r ".specific.$1 // {} | keys[]" "$hosts_additions_subst")
-		for addr in ${specific_address_list[*]}; do
-			specific_names_list=$(jq -r ".specific.$1[\"$addr\"][]" "$hosts_additions_subs")
-			for name in ${specific_names_list[*]}; do
+		for addr in "${specific_address_list[@]}"; do
+			specific_names_list=$(jq -r ".specific.$1[\"$addr\"][]" "$hosts_additions_subst")
+			for name in "${specific_names_list[@]}"; do
 				echo -e "$addr $name" >>"$TMPDIR/hosts"
 			done
 		done
@@ -52,14 +53,14 @@ if [ "$system" = "Darwin" ]; then
 	echo "-> Applying exclusions ..."
 	# -------------------------------
 
-	shared_address_list=$(jq -r '.shared | join(" ")' "$this_script_rel_path/install-hosts-exclusions.json")
-	for name in ${shared_address_list[*]}; do
+	shared_address_list=$(jq -r '.shared | join(" ")' "$rootdir/shared/scripts/install-hosts-exclusions.json")
+	for name in "${shared_address_list[@]}"; do
 		sed -i -r "/^$name/s//#&/g" "$TMPDIR/hosts"
 	done
 
 	if [ -n "$1" ]; then
-		specific_address_list=$(jq -r ".specific.$1 // [] | join(\" \")" "$this_script_rel_path/install-hosts-exclusions.json")
-		for name in ${specific_address_list[*]}; do
+		specific_address_list=$(jq -r ".specific.$1 // [] | join(\" \")" "$rootdir/shared/scripts/install-hosts-exclusions.json")
+		for name in "${specific_address_list[@]}"; do
 			sed -i -r "/^$name/s//#&/g" "$TMPDIR/hosts"
 		done
 	fi
