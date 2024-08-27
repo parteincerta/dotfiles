@@ -8,7 +8,7 @@ pushd "$scriptdir" >/dev/null
 trap "popd >/dev/null" EXIT
 
 source "$rootdir/shared/scripts/helper.sh"
-trap trap_error ERR
+trap "popd >/dev/null; trap_error" ERR
 
 
 xcode_cli_tools_path="$(xcode-select --print-path 2>/dev/null || true)"
@@ -164,7 +164,7 @@ echo "UUID=DC798778-543D-396B-A11F-2EC42F3500F9 none msdos ro,noauto" |
 	sudo tee -a /etc/fstab >/dev/null
 
 
-if ! "$(grep "$HOMEBREW_PREFIX/bin/bash" /etc/shells)"; then
+if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
 	log_info "\t >>> Setting Homebrew's bash as the default shell"
 	echo "$HOMEBREW_PREFIX/bin/bash" | sudo tee -a /etc/shells
 	chsh -s "$HOMEBREW_PREFIX/bin/bash" "$(whoami)"

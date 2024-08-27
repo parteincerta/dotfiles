@@ -8,7 +8,7 @@ pushd "$scriptdir" >/dev/null
 trap "popd >/dev/null" EXIT
 
 source "$rootdir/shared/scripts/helper.sh"
-trap trap_error ERR
+trap "popd >/dev/null; trap_error" ERR
 
 
 nice_hostname="${HOSTNAME/%.local/}"

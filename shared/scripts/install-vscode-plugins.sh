@@ -18,7 +18,7 @@ fi
 
 for extension in $vsc_extensions_list
 do
-	extension_author=${extension##*.}
+	extension_author=${extension%%*.}
 	extension_name=${extension##*.}
 	echo -e "\t-> Installing $extension_name of $extension_author"
 	code \
