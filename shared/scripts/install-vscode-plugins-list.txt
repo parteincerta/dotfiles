@@ -17,6 +17,7 @@ esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 humao.rest-client
+mads-hartmann.bash-ide-vscode
 meganrogge.template-string-converter
 metaseed.MetaJump
 mgmcdermott.vscode-language-babel
