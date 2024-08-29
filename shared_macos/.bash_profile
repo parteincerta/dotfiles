@@ -270,6 +270,9 @@ prompt_git() {
 		if [ $! ]; then
 			local git_status_dirty="$([ "$(echo "$git_status" | grep . | wc -l)" -gt 0 ] && echo "*")"
 			local git_branch_name="$(git branch --show-current)"
+			if [ -z "$git_branch_name" ]; then
+				git_branch_name="#$(git describe --tags HEAD)"
+			fi
 			printf "${color_fg_dark_red}$git_branch_name$git_status_dirty${color_reset} "
 		fi
 	fi
