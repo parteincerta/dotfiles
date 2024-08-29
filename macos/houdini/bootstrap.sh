@@ -54,14 +54,14 @@ killall Dock
 
 
 if [ -z "$(command -v brew)" ]; then
-	log_info "\t >>> Installing Homebrew"
+	log_info "\t >>> Installing Homebrew ..."
 	homebrew_url="https://raw.githubusercontent.com/Homebrew/install/master/install.sh"
 	/bin/bash -c "$(curl --fail --location --silent --show-error $homebrew_url)"
 	source "$rootdir/shared_macos/.bash_profile" || true
 fi
 
 
-log_info "\t >>> Installing Homebrew apps"
+log_info "\t >>> Installing Homebrew apps ..."
 # NOTE: `gettext` is installed to have `envsubst`
 fonts=(font-jetbrains-mono-nerd-font)
 homebrew_cli=(
@@ -74,7 +74,7 @@ brew install "${homebrew_cli[@]}"
 brew unlink openssl@3 # unlink openssl@3 in favor of Apple's OpenSSL.
 
 
-log_info "\t >>> Installing Homebrew casks"
+log_info "\t >>> Installing Homebrew casks ..."
 compass="mongodb-compass-isolated-edition"
 dbeaver="dbeaver-community"
 microsoft_apps=(microsoft-{excel,powerpoint,remote-desktop,word})
@@ -93,29 +93,33 @@ source configure.sh
 bat cache --build
 
 
-log_info "\t >>> Setting up the hosts file"
+log_info "\t >>> Setting up the hosts file ..."
 source "$rootdir/shared/scripts/install-hosts.sh" houdini
 
 
-log_info "\t >>> Installing pip packages"
+log_info "\t >>> Installing pip packages ..."
 pip3 install --user wheel
 pip3 install --user pynvim
 
 
-log_info "\t >>> Installing mise packages"
+log_info "\t >>> Installing mise packages ..."
 MISE_YES=1 mise install
 
 
-log_info "\t >>> Installing MongoDB Shell and Tools"
+log_info "\t >>> Installing vcpkg ..."
+source "$rootdir/shared/scripts/install-vcpkg.sh"
+
+
+log_info "\t >>> Installing MongoDB Shell and Tools .."
 source "$rootdir/shared/scripts/install-mongo-utils.sh" shell
 source "$rootdir/shared/scripts/install-mongo-utils.sh" tools
 
 
-log_info "\t >>> Installing Neovim plugins"
+log_info "\t >>> Installing Neovim plugins ..."
 nvim --headless -c "Lazy! install" -c qall
 
 
-log_info "\t >>> Installing VSCode plugins"
+log_info "\t >>> Installing VSCode plugins ..."
 source "$rootdir/shared/scripts/install-vscode-plugins.sh"
 
 

@@ -15,11 +15,10 @@ set --export DOWNLOADS "$HOME/Downloads"
 set --export ICLOUD "$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 set --export LF_BOOKMARKS_PATH "$XDG_CONFIG_HOME/lf/bookmarks"
 set --export NPM_CONFIG_CACHE "$XDG_CACHE_HOME/npm"
+set --export VCPKG_ROOT "$HOME/Developer/github/vcpkg"
+set --export VCPKG_DISABLE_METRICS true
 set --export VOLUMES "/Volumes"
 set --export YARN_CACHE_FOLDER "$XDG_CACHE_HOME/yarn"
-
-[ -d "$HOME/Developer/github/vcpkg" ] &&
-	set --export VCPKG_ROOT "$HOME/Developer/github/vcpkg"
 
 set --local _arch (uname -m)
 

@@ -18,11 +18,10 @@ export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 export LF_BOOKMARKS_PATH="$XDG_CONFIG_HOME/lf/bookmarks"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export SHELL_SESSIONS_DISABLE=1
+export VCPKG_ROOT="$HOME/Developer/github/vcpkg"
+export VCPKG_DISABLE_METRICS=true
 export VOLUMES="/Volumes"
 export YARN_CACHE_FOLDER="$XDG_CACHE_HOME/yarn"
-
-[ -d "$HOME/Developer/github/vcpkg" ] &&
-	export VCPKG_ROOT="$HOME/Developer/github/vcpkg"
 
 _arch="$(uname -m)"
 
