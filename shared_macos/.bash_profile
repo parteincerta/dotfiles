@@ -21,6 +21,9 @@ export SHELL_SESSIONS_DISABLE=1
 export VOLUMES="/Volumes"
 export YARN_CACHE_FOLDER="$XDG_CACHE_HOME/yarn"
 
+[ -d "$HOME/Developer/github/vcpkg" ] &&
+	export VCPKG_ROOT="$HOME/Developer/github/vcpkg"
+
 _arch="$(uname -m)"
 
 if [ -z "$HOMEBREW_PREFIX" ]; then

@@ -18,6 +18,9 @@ set --export NPM_CONFIG_CACHE "$XDG_CACHE_HOME/npm"
 set --export VOLUMES "/Volumes"
 set --export YARN_CACHE_FOLDER "$XDG_CACHE_HOME/yarn"
 
+[ -d "$HOME/Developer/github/vcpkg" ] &&
+	set --export VCPKG_ROOT "$HOME/Developer/github/vcpkg"
+
 set --local _arch (uname -m)
 
 if [ -z "$HOMEBREW_PREFIX" ]
