@@ -12,9 +12,9 @@ tag="2024.08.23"
 url="https://github.com/microsoft/vcpkg.git"
 
 echo "-> Cloning vcpkg ..."
-git clone -q --depth 1 --branch "$tag" "$url" "$TMPDIR/vcpkg"
+git clone -q --branch "$tag" "$url" "$TMPDIR/vcpkg"
 
-echo "-> Bootstraping vcpkg ..."
+echo "-> Bootstrapping vcpkg ..."
 cd "$TMPDIR/vcpkg" && ./bootstrap-vcpkg.sh
 
 echo "-> Installing vcpkg ..."
