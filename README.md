@@ -55,11 +55,11 @@ development environment across all the computers I use.
   * Update all outdated tools: `mise upgrade`.
   * Update a given tool, if an update is available: `mise upgrade <plugin>@<version>`.
 - mise for AMD64 maintenance commands:
-  * Check for [updates][macos-maintenance-05] for the AMD64 version.
+  * Check for [mise][macos-maintenance-05] updates for the AMD64 version.
   * Update the version reference in
     [install-mise-amd64.sh](shared/scripts/install-mise-amd64.sh).
   * Update the AMD64 version: `bash shared/scripts/install-mise-amd64.sh`.
-  * Use the same instructions used for regular mise to managed the AMD64 tools.
+  * Use the same instructions used for regular mise to manage the AMD64 tools.
 - MongoDB utilities maintenance steps:
   * Check for [MongoDB Shell][macos-maintenance-02] and
     [MongoDB Tools][macos-maintenance-03] updates.
@@ -75,6 +75,10 @@ development environment across all the computers I use.
 - Python maintenance commands:
   * `pip3 list --user --outdated`.
   * `pip3 install --user --upgrade <package>`.
+- vcpkg maintenance commands:
+  * Check for [vcpkg][macos-maintenance-06] updates.
+  * Update the version tag in [install-vcpkg.sh](shared/scripts/install-vcpkg.sh).
+  * Update vcpkg: `bash shared/scripts/install-vcpkg.sh`.
 - Other maintenance commands:
   * Install the dotfiles: `bash macos/<hostname>/configure.sh`.
   * Export configurations: `bash shared_macos/scripts/export-defaults.sh`.
