@@ -9,7 +9,7 @@ trap 'rm -rf $TMPDIR/hosts' EXIT
 source "$rootdir/shared/scripts/helper.sh"
 trap trap_error ERR
 
-version="3.14.100"
+version="3.14.102"
 url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/hosts"
 system="$(uname -s)"
 
