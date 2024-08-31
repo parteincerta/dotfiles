@@ -81,7 +81,7 @@ microsoft_apps=(microsoft-{excel,powerpoint,remote-desktop,word})
 vscode="visual-studio-code"
 homebrew_casks=(
 	alt-tab basictex betterdisplay brave-browser bruno "$compass" "$dbeaver"
-	docker fork iina kitty mac-mouse-fix "${microsoft_apps[@]}" numi obs
+	docker fork iina kitty mac-mouse-fix "${microsoft_apps[@]}" mist numi obs
 	transmission "$vscode" zed zoom
 )
 brew install --cask "${homebrew_casks[@]}"
