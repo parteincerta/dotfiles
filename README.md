@@ -94,3 +94,4 @@ development environment across all the computers I use.
 [macos-maintenance-04]: https://github.com/dortania/OpenCore-Legacy-Patcher/releases
 [macos-maintenance-04]: https://github.com/dortania/OpenCore-Legacy-Patcher/releases
 [macos-maintenance-05]: https://github.com/jdx/mise/releases
+[macos-maintenance-06]: https://github.com/microsoft/vcpkg/releases
