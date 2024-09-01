@@ -40,7 +40,7 @@ source configure.sh
 
 
 log_info "\t >>> Configuring services ..."
-source debloat.sh || true
+source disable-services.sh || true
 
 
 log_info "\t >>> Configuring the Desktop and keyboard"
@@ -48,6 +48,7 @@ defaults write com.apple.dock autohide-delay -int 0
 defaults write com.apple.dock autohide-time-modifier -float 0.30
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write com.apple.Safari DebugDisableTabHoverPreview 1
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 defaults write -g ApplePressAndHoldEnabled -bool false
