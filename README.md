@@ -92,6 +92,5 @@ development environment across all the computers I use.
 [macos-maintenance-02]: https://github.com/mongodb-js/mongosh/releases
 [macos-maintenance-03]: https://github.com/mongodb/mongo-tools/tags
 [macos-maintenance-04]: https://github.com/dortania/OpenCore-Legacy-Patcher/releases
-[macos-maintenance-04]: https://github.com/dortania/OpenCore-Legacy-Patcher/releases
 [macos-maintenance-05]: https://github.com/jdx/mise/releases
 [macos-maintenance-06]: https://github.com/microsoft/vcpkg/releases
