@@ -39,6 +39,10 @@ log_info "\t >>> Installing dotfiles"
 source configure.sh
 
 
+log_info "\t >>> Configuring services ..."
+source debloat.sh || true
+
+
 log_info "\t >>> Configuring the Desktop and keyboard"
 defaults write com.apple.dock autohide-delay -int 0
 defaults write com.apple.dock autohide-time-modifier -float 0.30
