@@ -31,7 +31,7 @@ mkdir -p \
 "$XDG_CACHE_HOME/bun"/{bin,cache/{install,transpiler},lib} \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,fish,git,kitty,lf,mise,nvim,pip,zed} \
 "$CODE"/{github,icnew/{git-icone,misc},parteincerta} \
-"$DOCUMENTS"/{Misc,Recordings,Remote,Screenshots} \
+"$DOCUMENTS"/{Misc,Recordings,Remote,Screenshots,VMs} \
 "$DOWNLOADS"/{Brave,Safari,Torrents}
 
 app_support_folder="$HOME/Library/Application Support"
