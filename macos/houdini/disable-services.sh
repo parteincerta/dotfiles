@@ -25,6 +25,11 @@ for item in "${system_services[@]}"; do
 done
 
 # User Services
+
+# NOTE: Don't disable the following ones:
+# com.apple.bird      -> Annoying message about iCloud pops up randomly.
+# com.apple.contactsd -> Spotlight search and share stop working.
+
 user_services=(
 	com.apple.BTServer.cloudpairing
 	com.apple.GameController.gamecontrolleragentd
@@ -42,12 +47,10 @@ user_services=(
 	com.apple.appstorecomponentsd
 	com.apple.assistantd
 	com.apple.betaenrollmentd
-	com.apple.bird
 	com.apple.calaccessd
 	com.apple.cloudd
 	com.apple.cmio.ContinuityCaptureAgent
 	com.apple.commerce
-	com.apple.contactsd
 	com.apple.corespeechd
 	com.apple.financed
 	com.apple.gamed
