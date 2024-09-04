@@ -91,9 +91,9 @@ dbeaver="dbeaver-community"
 microsoft_apps=(microsoft-{excel,powerpoint,remote-desktop,word})
 vscode="visual-studio-code"
 homebrew_casks=(
-	alt-tab basictex betterdisplay brave-browser bruno chatgpt "$compass"
-	"$dbeaver" docker fork iina kitty mac-mouse-fix "${microsoft_apps[@]}" mist
-	numi obs parallels signal transmission "$vscode" whatsapp zed zoom
+	alt-tab basictex betterdisplay brave-browser bruno "$compass" "$dbeaver"
+	docker fork iina kitty mac-mouse-fix "${microsoft_apps[@]}" mist numi obs
+	parallels signal transmission "$vscode" whatsapp zed zoom
 )
 brew install --cask "${homebrew_casks[@]}"
 
