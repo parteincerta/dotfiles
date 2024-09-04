@@ -29,8 +29,8 @@ if [ -s "$bootstrap_mark_file" ]; then
 fi
 
 nice_hostname="${HOSTNAME/%.local/}"
-if [ "deimos" != "$nice_hostname" ]; then
-	log_warning ">>> This bootstrap script belongs to another host: deimos".
+if [ "egas" != "$nice_hostname" ]; then
+	log_warning ">>> This bootstrap script belongs to another host: egas".
 	log_warning ">>> The current host is: $nice_hostname"
 	exit 1
 fi
@@ -105,7 +105,7 @@ bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh" deimos
+source "$rootdir/shared/scripts/install-hosts.sh" egas
 
 
 log_info "\t >>> Installing pip packages ..."

@@ -12,8 +12,8 @@ trap "popd >/dev/null; trap_error" ERR
 
 
 nice_hostname="${HOSTNAME/%.local/}"
-if [ "deimos" != "$nice_hostname" ]; then
-	log_warning ">>> This configuration script belongs to another host: deimos".
+if [ "egas" != "$nice_hostname" ]; then
+	log_warning ">>> This configuration script belongs to another host: egas".
 	log_warning ">>> The current host is: $nice_hostname"
 	exit 1
 fi
