@@ -12,6 +12,7 @@ set --export BUN_RUNTIME_TRANSPILER_CACHE_PATH "$XDG_CACHE_HOME/bun/cache/transp
 set --export CODE "$HOME/Developer"
 set --export DOCUMENTS "$HOME/Documents"
 set --export DOWNLOADS "$HOME/Downloads"
+set --export GRADLE_USER_HOME "$XDG_CACHE_HOME/gradle"
 set --export ICLOUD "$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 set --export LF_BOOKMARKS_PATH "$XDG_CONFIG_HOME/lf/bookmarks"
 set --export NPM_CONFIG_CACHE "$XDG_CACHE_HOME/npm"

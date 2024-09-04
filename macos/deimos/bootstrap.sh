@@ -29,8 +29,8 @@ if [ -s "$bootstrap_mark_file" ]; then
 fi
 
 nice_hostname="${HOSTNAME/%.local/}"
-if [ "houdini" != "$nice_hostname" ]; then
-	log_warning ">>> This bootstrap script belongs to another host: houdini".
+if [ "deimos" != "$nice_hostname" ]; then
+	log_warning ">>> This bootstrap script belongs to another host: deimos".
 	log_warning ">>> The current host is: $nice_hostname"
 	exit 1
 fi
@@ -39,17 +39,12 @@ log_info "\t >>> Installing dotfiles"
 source configure.sh
 
 
-log_info "\t >>> Configuring services ..."
-source disable-services.sh || true
-
-
 log_info "\t >>> Configuring the Desktop and keyboard"
 defaults write com.apple.dock autohide-delay -int 0
 defaults write com.apple.dock autohide-time-modifier -float 0.30
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
-defaults write com.apple.Safari DebugDisableTabHoverPreview 1
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat -int 10
@@ -76,7 +71,18 @@ homebrew_cli=(
 	zstd
 )
 brew install "${homebrew_cli[@]}"
-brew unlink openssl@3 # unlink openssl@3 in favor of Apple's OpenSSL.
+
+# `jdtls` has many dependencies, among them: `openjdk` and `python@3.12`.
+# JDK will be handled by `mise`. `python@3.12` will be installed next.
+# Hence the usage of --ignore-dependencies.
+brew install --ignore-dependencies gradle jdtls maven
+
+# Java's LSP needs Homebrew's Python (see `brew info jdtls`) but we don't so
+# lets unlink it after installation. Also unlink openssl@3 in favor of Apple's
+# OpenSSL.
+brew install python@3.12
+brew unlink python@3.12
+brew unlink openssl@3
 
 
 log_info "\t >>> Installing Homebrew casks ..."
@@ -85,9 +91,9 @@ dbeaver="dbeaver-community"
 microsoft_apps=(microsoft-{excel,powerpoint,remote-desktop,word})
 vscode="visual-studio-code"
 homebrew_casks=(
-	alt-tab basictex betterdisplay brave-browser bruno "$compass" "$dbeaver"
-	docker fork iina kitty mac-mouse-fix "${microsoft_apps[@]}" mist numi obs
-	odbc-manager parallels transmission "$vscode" zed zoom
+	alt-tab basictex betterdisplay brave-browser bruno chatgpt "$compass"
+	"$dbeaver" docker fork iina kitty mac-mouse-fix "${microsoft_apps[@]}" mist
+	numi obs parallels signal transmission "$vscode" whatsapp zed zoom
 )
 brew install --cask "${homebrew_casks[@]}"
 
@@ -99,7 +105,7 @@ bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh" houdini
+source "$rootdir/shared/scripts/install-hosts.sh" deimos
 
 
 log_info "\t >>> Installing pip packages ..."
@@ -126,6 +132,8 @@ nvim --headless -c "Lazy! install" -c qall
 
 log_info "\t >>> Installing VSCode plugins ..."
 source "$rootdir/shared/scripts/install-vscode-plugins.sh"
+source "$rootdir/shared/scripts/install-vscode-plugins.sh" --plugins-list \
+	"$rootdir/shared/scripts/install-vscode-plugins-list-extra.txt"
 
 
 log_info "\t >>> Updating power settings"
@@ -149,6 +157,7 @@ sudo pmset -b \
 	womp $disabled \
 	acwake $disabled \
 	lessbright $enabled \
+	lowpowermode $enabled \
 	autopoweroff $autopoweroff \
 	hibernatemode $hibernatemode \
 	standby $standby
@@ -165,6 +174,7 @@ sudo pmset -c \
 	womp $enabled \
 	acwake $disabled \
 	lessbright $disabled \
+	lowpowermode $disabled \
 	autopoweroff $autopoweroff \
 	hibernatemode $hibernatemode \
 	standby $standby

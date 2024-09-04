@@ -1,1 +1,2 @@
+vscjava.vscode-gradle
 vscjava.vscode-java-pack
