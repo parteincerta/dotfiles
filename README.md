@@ -31,7 +31,7 @@ development environment across all the computers I use.
   * List outdated formulae: `brew outdated --greedy`.
   * Upgrade all installed formulae and casks: `brew upgrade --greedy`.
   * Formulae w/ special upgrade instructions:
-    * `brew install --ignore-dependencies jdtls maven`.
+    * `brew install --ignore-dependencies gradle jdtls maven`.
     * `brew unlink python@3.12 openssl@3`.
   * Purge cache: `brew cleanup [--dry-run]`.
   * List dependencies of a formula: `brew deps --tree <formula>`.
