@@ -12,6 +12,11 @@ system_services=(
 
 	# Predicts OS conditions
 	com.apple.ospredictiond
+
+	# Diagnostics and usage reporting
+	com.apple.rtcreportingd
+
+	# Siri-related daemons
 	com.apple.siriinferenced
 
 	# Primarily involved in gathering data from experiments
@@ -30,6 +35,10 @@ done
 # com.apple.contactsd -> Spotlight search and share stop working.
 
 user_services=(
+	# Diagnostics and usage reporting
+	com.apple.DiagnosticsReporter
+	com.apple.ReportCrash
+
 	# Application malware scane
 	com.apple.XProtect.daemon.scan
 	com.apple.XProtect.daemon.scan.startup
@@ -41,11 +50,23 @@ user_services=(
 	# GameKit services
 	com.apple.gamed
 
+	# Classroom's student control agent
 	com.apple.studentd
 
 	# Primarily involved in gathering data from experiments
 	# assigned through CloudKit.
 	com.apple.triald
+
+	com.apple.wallpaper.agent
+
+	# Siri-related daemons
+	com.apple.siriactionsd
+	com.apple.siriknowledged
+	com.apple.sirittsd
+	com.apple.SiriTTSTrainingAgent
+	com.apple.triald
+
+	com.apple.tipsd
 )
 uid=$(id -u)
 for item in "${user_services[@]}"; do
