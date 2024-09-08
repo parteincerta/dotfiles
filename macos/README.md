@@ -16,8 +16,8 @@
   - Show Bluetooth, Airdrop, Sound and Battery.
   - Flash time separators and show time with seconds.
   - Hide Spotlight.
-- Spotlight: Only enable search results for Applications, Calculator,
-  Conversion, Definition and System Settings.
+- Spotlight: Only enable search results for Applications, Calculator, Conversion
+    and Definition.
 - Spotlight: Add the following locations to Spotlight Privacy list:
   - `/opt` and `/usr/local`.
   - `/System/Library/Frameworks`.
