@@ -30,7 +30,7 @@ return {
 			"jsonls",
 			"lua_ls",
 			"pyright",
-			"tsserver",
+			"ts_ls",
 			-- "zls",
 		}
 		if os.getenv("JAVA_HOME") ~= nil then
@@ -88,8 +88,8 @@ return {
 		-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
 		local lspconfig_python = { capabilities = cmp_caps }
 
-		-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-		local lspconfig_tsserver = {
+		-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ts_ls
+		local lspconfig_tsls = {
 			capabilities = cmp_caps,
 			init_options = { hostInfo = "neovim" },
 			root_dir = function()
@@ -120,8 +120,8 @@ return {
 		if lspconfig.pyright then
 			lspconfig.pyright.setup(lspconfig_python)
 		end
-		if lspconfig.tsserver then
-			lspconfig.tsserver.setup(lspconfig_tsserver)
+		if lspconfig.ts_ls then
+			lspconfig.ts_ls .setup(lspconfig_tsls)
 		end
 		if lspconfig.zls then
 			lspconfig.zls.setup(lspconfig_zls)
@@ -131,7 +131,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp"
 		},{
 			"neovim/nvim-lspconfig",
-			tag = "v0.1.8",
+			tag = "v1.0.0",
 			config = function ()
 				vim.diagnostic.config({
 					virtual_text = false,
