@@ -2,7 +2,7 @@
 	"AuxAudioDevice1": {
 		"prev_ver": 503447555,
 		"name": "Mic/Aux",
-		"uuid": "9d1e955a-21ec-4e27-bcd9-eae932f1d7e4",
+		"uuid": "ece27a72-3d2c-4e4f-ae09-439a876d44b4",
 		"id": "coreaudio_input_capture",
 		"versioned_id": "coreaudio_input_capture",
 		"settings": {
@@ -37,12 +37,12 @@
 			"name": "Scene"
 		}
 	],
-	"name": "MBP16 - Desktop + WebCam",
+	"name": "27inch - Desktop + WebCam",
 	"sources": [
 		{
 			"prev_ver": 503447555,
 			"name": "Scene",
-			"uuid": "22d67f2e-321c-4789-b026-8f27b7c728d5",
+			"uuid": "b32fac81-a48d-474c-b2c4-d89e7aef02af",
 			"id": "scene",
 			"versioned_id": "scene",
 			"settings": {
@@ -51,7 +51,7 @@
 				"items": [
 					{
 						"name": "Desktop",
-						"source_uuid": "1f1dbbf1-f04d-4dff-aba8-5c01130d8f28",
+						"source_uuid": "78223777-393a-4a68-9922-64344e60b6ba",
 						"visible": true,
 						"locked": false,
 						"rot": 0.0,
@@ -90,17 +90,17 @@
 					},
 					{
 						"name": "WebCam",
-						"source_uuid": "04e66425-4ab9-470e-8c23-841807e4e2b5",
+						"source_uuid": "baf09805-2247-406d-93fd-eb0bddb4989d",
 						"visible": true,
 						"locked": false,
 						"rot": 0.0,
 						"pos": {
-							"x": 3584.0,
-							"y": 1930.0
+							"x": 5120.0,
+							"y": 2400.0
 						},
 						"scale": {
-							"x": -0.64531248807907104,
-							"y": 0.64583331346511841
+							"x": -1.0,
+							"y": 1.0
 						},
 						"align": 5,
 						"bounds_type": 0,
@@ -155,7 +155,7 @@
 		{
 			"prev_ver": 503447555,
 			"name": "Desktop",
-			"uuid": "1f1dbbf1-f04d-4dff-aba8-5c01130d8f28",
+			"uuid": "78223777-393a-4a68-9922-64344e60b6ba",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
 			"settings": {},
@@ -184,12 +184,12 @@
 		{
 			"prev_ver": 503447555,
 			"name": "WebCam",
-			"uuid": "04e66425-4ab9-470e-8c23-841807e4e2b5",
+			"uuid": "baf09805-2247-406d-93fd-eb0bddb4989d",
 			"id": "macos-avcapture",
 			"versioned_id": "macos-avcapture",
 			"settings": {
-				"device_name": "FaceTime HD Camera (Built-in)",
-				"device": "0x8020000005ac8514",
+				"device_name": "HD Pro Webcam C920",
+				"device": "0x14443000046d082d",
 				"preset": "AVCaptureSessionPreset640x480"
 			},
 			"mixers": 255,
@@ -217,7 +217,7 @@
 				{
 					"prev_ver": 503447555,
 					"name": "Image Mask/Blend",
-					"uuid": "723ef0f4-bc76-4193-bbdc-a4644ed3c165",
+					"uuid": "25a883dc-482d-49f1-b3ed-a6086a2d8433",
 					"id": "mask_filter",
 					"versioned_id": "mask_filter_v2",
 					"settings": {
