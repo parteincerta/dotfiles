@@ -25,7 +25,8 @@ development environment across all the computers I use.
 ### Maintenance
 - Check for macOS updates:
   * To list available updates: `softwareupdate --list`.
-  * To install an update: `sudo softwareupdate --install <label>`.
+  * To install an update: `softwareupdate --install <label>`.
+  * To install an update and restart: `sudo softwareupdate --install --restart <label>`.
 - Homebrew maintenance commands:
   * Update Homebrew and the list of formulae: `brew update`.
   * List outdated formulae: `brew outdated --greedy`.
