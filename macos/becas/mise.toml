@@ -6,4 +6,3 @@ plugin_autoupdate_last_check_duration = "0"
 [tools]
 bun = "1"
 node = "18"
-usage = "0"

@@ -7,4 +7,3 @@ plugin_autoupdate_last_check_duration = "0"
 bun = "1"
 java = ["temurin-21", "temurin-17", "temurin-11", "temurin-8"]
 node = "18"
-usage = "0"
