@@ -156,8 +156,8 @@ set --export GPG_TTY (tty)
 set --export HOMEBREW_NO_AUTO_UPDATE 1
 set --export HOMEBREW_NO_INSTALL_CLEANUP 1
 set --export LESSCHARSET UTF-8
-set --export MANPAGER "env IS_PAGER=yes nvim -n -i NONE +Man!"
-set --export NVIM_PAGER "env IS_PAGER=yes nvim -n -i NONE -R"
+set --export MANPAGER "env IS_PAGER=yes nvim -n +Man!"
+set --export NVIM_PAGER "env IS_PAGER=yes nvim -n -R"
 
 set fish_greeting
 set __fish_git_prompt_show_informative_status 1

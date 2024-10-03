@@ -224,8 +224,8 @@ export HISTTIMEFORMAT="%F %T "
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export LESSCHARSET="UTF-8"
-export MANPAGER="env IS_PAGER=yes nvim -n -i NONE +Man!"
-export NVIM_PAGER="env IS_PAGER=yes nvim -n -i NONE -R"
+export MANPAGER="env IS_PAGER=yes nvim -n +Man!"
+export NVIM_PAGER="env IS_PAGER=yes nvim -n -R"
 export PROMPT_DIRTRIM=2
 
 # 256-color table reference
