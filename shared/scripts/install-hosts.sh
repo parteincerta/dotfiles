@@ -4,13 +4,13 @@
 set -e
 scriptdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
 rootdir="$(cd "$scriptdir/../../" && pwd)"
-trap 'rm -rf $TMPDIR/hosts' EXIT
+trap 'rm -rf $TMPDIR/hosts*' EXIT
 
 source "$rootdir/shared/scripts/helper.sh"
-trap trap_error ERR
+trap 'trap_error;rm -rf $TMPDIR/hosts*' ERR
 
 version="3.14.114"
-url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/hosts"
+url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/gambling-porn-social/hosts"
 system="$(uname -s)"
 
 if [ "$system" = "Darwin" ]; then
@@ -55,21 +55,21 @@ if [ "$system" = "Darwin" ]; then
 	# -------------------------------
 
 	shared_address_list=$(jq -r '.shared | join(" ")' "$rootdir/shared/scripts/install-hosts-exclusions.json")
-	for name in "${shared_address_list[@]}"; do
+	for name in $shared_address_list; do
 		if [ -z "$name" ]; then continue; fi
-		sed -i -r "/^$name/s//#&/g" "$TMPDIR/hosts"
+		sed -i '' -r "/$name/s//# &/" "$TMPDIR/hosts"
 	done
 
 	if [ -n "$1" ]; then
 		specific_address_list=$(jq -r ".specific.$1 // [] | join(\" \")" "$rootdir/shared/scripts/install-hosts-exclusions.json")
-		for name in "${specific_address_list[@]}"; do
+		for name in $specific_address_list; do
 			if [ -z "$name" ]; then continue; fi
-			sed -i -r "/^$name/s//#&/g" "$TMPDIR/hosts"
+			sed -i '' -r "/^$name/s//#&/" "$TMPDIR/hosts"
 		done
 	fi
 
 	echo "-> Setting new /private/etc/hosts ..."
-	sudo mv "$TMPDIR"/hosts /private/etc/hosts
+	sudo mv "$TMPDIR/hosts" /private/etc/hosts
 
 elif [ "$system" = "Linux" ]; then
 	#TODO

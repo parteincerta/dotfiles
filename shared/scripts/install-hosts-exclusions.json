@@ -1,5 +1,9 @@
 {
-	"shared": [],
+	"shared": [
+		".*linkedin.com$",
+		".*twitter.com$",
+		".*x.com$"
+	],
 	"specific": {
 		"houdini": []
 	}
