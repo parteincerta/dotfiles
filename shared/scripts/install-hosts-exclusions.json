@@ -1,5 +1,6 @@
 {
 	"shared": [
+		".*licdn.com$",
 		".*linkedin.com$",
 		".*twitter.com$",
 		".*x.com$"
