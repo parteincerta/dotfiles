@@ -57,6 +57,7 @@ if [ "$system" = "Darwin" ]; then
 	shared_address_list=$(jq -r '.shared | join(" ")' "$rootdir/shared/scripts/install-hosts-exclusions.json")
 	for name in $shared_address_list; do
 		if [ -z "$name" ]; then continue; fi
+		echo -e "\t-> Excluding $name ..."
 		sed -i '' -r "/$name/s//# &/" "$TMPDIR/hosts"
 	done
 

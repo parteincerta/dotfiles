@@ -2,6 +2,7 @@
 	"shared": [
 		".*licdn.com$",
 		".*linkedin.com$",
+		".*twimg.com$",
 		".*twitter.com$",
 		".*x.com$"
 	],
