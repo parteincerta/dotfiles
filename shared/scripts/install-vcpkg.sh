@@ -9,7 +9,7 @@ source "$rootdir/shared/scripts/helper.sh"
 trap 'rm -rf "$TMPDIR/vcpkg"; [[ ${#DIRSTACK[@]} -gt 1 ]] && popd >/dev/null; trap_error' ERR
 trap 'rm -rf "$TMPDIR/vcpkg"' EXIT
 
-tag="2024.09.23"
+tag="2024.09.30"
 url="https://github.com/microsoft/vcpkg.git"
 
 clean_install () {
