@@ -87,7 +87,7 @@ development environment across all the computers I use.
   * Export configurations: `bash shared_macos/scripts/export-defaults.sh`.
   * Disable auto-updates: `bash shared_macos/scripts/disable-updates.sh`.
   * Update Brave's Content Filters lists.
-  * Update Docker's extensions.
+  * Update Docker's extensions, containers and run `docker system prune`.
 - Check for VSCode plugins updates.
 - Check for App Store updates.
 - Check for [OpenCore Legacy Patcher][macos-maintenance-04] updates.
