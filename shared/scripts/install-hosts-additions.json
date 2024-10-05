@@ -8,8 +8,8 @@
 		]
 	},
 	"specific": {
-		"deel": {
-			"127.0.0.1": ["minio"]
-		}
+		"egas": {},
+		"becas": {},
+		"houdini": {}
 	}
 }

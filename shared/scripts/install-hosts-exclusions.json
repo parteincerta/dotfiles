@@ -2,11 +2,19 @@
 	"shared": [
 		".*licdn.com$",
 		".*linkedin.com$",
+
+		".* reddit.com$",
+		".*redditmedia.com$",
+		".*redditstatic.com$",
+		".*www.reddit.com$",
+
 		".*twimg.com$",
 		".*twitter.com$",
 		".*x.com$"
 	],
 	"specific": {
+		"becas": [],
+		"egas": [],
 		"houdini": []
 	}
 }
