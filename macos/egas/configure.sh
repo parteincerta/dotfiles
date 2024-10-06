@@ -34,6 +34,10 @@ mkdir -p \
 "$DOCUMENTS"/{Misc,Recordings,Remote,Screenshots,VMs} \
 "$DOWNLOADS"/{Brave,Safari,Torrents}
 
+if [ -d "/Volumes/${CLEAN_HOSTNAME^^}" ]; then
+	mkdir -p "/Volumes/${CLEAN_HOSTNAME^^}/VMs"
+fi
+
 app_support_folder="$HOME/Library/Application Support"
 vscode_cache_dir="$XDG_CACHE_HOME/code/data/User"
 vscode_settings_dir="$app_support_folder/Code/User"
