@@ -5,6 +5,8 @@
 # ================= #
 
 export HOSTNAME="$HOSTNAME"
+export CLEAN_HOSTNAME="${HOSTNAME/%.local/}"
+
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -13,6 +15,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export BUN_RUNTIME_TRANSPILER_CACHE_PATH="$XDG_CACHE_HOME/bun/cache/transpiler"
 export CODE="$HOME/Developer"
 export DOCUMENTS="$HOME/Documents"
+export EXT_VOLUME="/Volumes/$CLEAN_HOSTNAME"
 export DOWNLOADS="$HOME/Downloads"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
