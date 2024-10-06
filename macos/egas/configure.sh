@@ -35,6 +35,7 @@ mkdir -p \
 "$DOWNLOADS"/{Brave,Safari,Torrents}
 
 if [ -d "/Volumes/${CLEAN_HOSTNAME^^}" ]; then
+	mkdir -p "/Volumes/${CLEAN_HOSTNAME^^}/Misc"
 	mkdir -p "/Volumes/${CLEAN_HOSTNAME^^}/VMs"
 fi
 
