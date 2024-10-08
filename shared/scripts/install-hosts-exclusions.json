@@ -3,6 +3,7 @@
 		".*licdn.com$",
 		".*linkedin.com$",
 
+		".*redd.it$",
 		".* reddit.com$",
 		".*redditmedia.com$",
 		".*redditstatic.com$",
