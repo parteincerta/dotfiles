@@ -69,14 +69,14 @@ log_info "\t >>> Installing Homebrew apps ..."
 # NOTE: `gettext` is installed to have `envsubst`
 fonts=(font-jetbrains-mono-nerd-font)
 homebrew_cli=(
-	7zip aria2 bat bash bash-completion@2 bzip2 coreutils eza fd findutils fish
-	"${fonts[@]}" fzf gettext git-delta gnupg gsed jq lf libpq miniserve mise
+	7zip aria2 bat bash bash-completion@2 bzip2 cmake coreutils eza fd findutils
+	fish "${fonts[@]}" fzf gettext git-delta gnupg gsed jq lf libpq miniserve mise
 	mkcert moreutils neovim oha pbzip2 pigz rclone ripgrep shellcheck tokei xz
 	zstd
 )
 brew install "${homebrew_cli[@]}"
 
-# `jdtls` has many dependencies, among them: `openjdk` and `python@3.12`.
+# `jdtls` depends on `openjdk` and `python@3.12`.
 # JDK will be handled by `mise`. `python@3.12` will be installed next.
 # Hence the usage of --ignore-dependencies.
 brew install --ignore-dependencies gradle jdtls maven
