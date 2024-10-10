@@ -9,6 +9,7 @@
 	},
 	"specific": {
 		"egas": {},
+		"deimos": {},
 		"becas": {},
 		"houdini": {}
 	}
