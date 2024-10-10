@@ -3,7 +3,7 @@
 # ================= #
 
 set --export HOSTNAME "$hostname"
-set --export CLEAN_HOSTNAME (string match --groups-only --regex "(.*)\.local" "$hostname")
+set --export SHORT_HOSTNAME (string match --groups-only --regex "(.*)\.local" "$hostname")
 
 set --export XDG_CACHE_HOME "$HOME/.cache"
 set --export XDG_CONFIG_HOME "$HOME/.config"
@@ -14,6 +14,7 @@ set --export BUN_RUNTIME_TRANSPILER_CACHE_PATH "$XDG_CACHE_HOME/bun/cache/transp
 set --export CODE "$HOME/Developer"
 set --export DOCUMENTS "$HOME/Documents"
 set --export DOWNLOADS "$HOME/Downloads"
+set --export EXTERNAL_VOLUME (string upper "/Volumes/$SHORT_HOSTNAME")
 set --export GRADLE_USER_HOME "$XDG_CACHE_HOME/gradle"
 set --export ICLOUD "$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 set --export LF_BOOKMARKS_PATH "$XDG_CONFIG_HOME/lf/bookmarks"

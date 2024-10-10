@@ -34,9 +34,8 @@ mkdir -p \
 "$DOCUMENTS"/{Misc,Recordings,Remote,Screenshots,VMs} \
 "$DOWNLOADS"/{Brave,Safari,Torrents}
 
-ALLCAPS_CLEAN_HOSTNAME="${CLEAN_HOSTNAME^^}"
-if [ -d "/Volumes/$ALLCAPS_CLEAN_HOSTNAME" ]; then
-	mkdir -p "/Volumes/$ALLCAPS_CLEAN_HOSTNAME/"{Misc,VMs}
+if [ -d "$EXTERNAL_VOLUME" ]; then
+	mkdir -p "$EXTERNAL_VOLUME/"{Misc,VMs}
 fi
 
 app_support_folder="$HOME/Library/Application Support"
