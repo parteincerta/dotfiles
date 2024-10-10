@@ -9,11 +9,10 @@ development environment across all the computers I use.
 - Clone this repo and run: `bash macos/<hostname>/bootstrap.sh`.
 - Start neovim and let the LSP servers install.
 - Open applications and configure them as needed.
-  - If the machine has an external drive, reinstall the dotfiles before
-    accepting Docker's ToS just so it's disk is created in the external storage
-    instead of in the internal one: `bash macos/<hostname>/configure.sh`.
-  - Set Brave's `Tab Scrolling` flag to
-    `Enabled - tabs shrink to pinned tab width`.
+  - If the host stores its Docker's cache folder in an external drive, reinstall
+    the dotfiles before accepting Docker's ToS just so it disk is created in the
+    external storage instead of in the internal one: `bash macos/<hostname>/configure.sh`.
+  - Set Brave's `Tab Scrolling` flag to `Enabled - tabs shrink to pinned tab width`.
 - Disable auto-updates: `bash shared_macos/scripts/disable-updates.sh`.
 - Press `Cmd+Shift+5`, select `Options` and then set screenshots' folder.
 - Clone the [docker-containers](https://github.com/parteincerta/docker-containers)
