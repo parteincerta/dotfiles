@@ -1,17 +1,21 @@
 {
 	"shared": [
-		".*licdn.com$",
-		".*linkedin.com$",
+		".*[[:blank:]|\\.]fbcdn\\.net$",
 
-		".*redd.it$",
-		".* reddit.com$",
-		".*redditmedia.com$",
-		".*redditstatic.com$",
-		".*www.reddit.com$",
+		".*[[:blank:]|\\.]licdn\\.com$",
+		".*[[:blank:]|\\.]linkedin\\.com$",
 
-		".*twimg.com$",
-		".*twitter.com$",
-		".*x.com$"
+		".*[[:blank:]|\\.]redd\\.it$",
+		".*[[:blank:]|\\.]reddit\\.com$",
+		".*[[:blank:]|\\.]redditmedia\\.com$",
+		".*[[:blank:]|\\.]redditstatic\\.com$",
+		".*www\\.reddit\\.com$",
+
+		".*[[:blank:]|\\.]twimg\\.com$",
+		".*[[:blank:]|\\.]twitter\\.com$",
+		".*[[:blank:]|\\.]x\\.com$",
+
+		".*[[:blank:]|\\.]whatsapp\\.com$"
 	],
 	"specific": {
 		"becas": [],
