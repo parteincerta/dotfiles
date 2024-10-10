@@ -7,5 +7,6 @@ plugin_autoupdate_last_check_duration = "0"
 [tools]
 bazel = ["7"]
 bun = ["1"]
+deno = ["2"]
 java = ["temurin-21", "temurin-17", "temurin-11", "temurin-8"]
 node = ["18", "14"]
