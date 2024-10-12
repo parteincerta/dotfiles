@@ -17,7 +17,7 @@ trap trap_exit EXIT
 
 arch="$(uname -m)"
 system="$(uname -s)"
-mongo_sh_version="2.3.1"
+mongo_sh_version="2.3.2"
 mongo_tools_version="100.10.0"
 
 if [ "$1" == "shell" ]; then
