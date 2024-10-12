@@ -15,7 +15,8 @@
 		".*[[:blank:]|\\.]twitter\\.com$",
 		".*[[:blank:]|\\.]x\\.com$",
 
-		".*[[:blank:]|\\.]whatsapp\\.com$"
+		".*[[:blank:]|\\.]whatsapp\\.com$",
+		".*[[:blank:]|\\.]whatsapp\\.net$"
 	],
 	"specific": {
 		"becas": [],
