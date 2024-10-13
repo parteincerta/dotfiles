@@ -188,8 +188,11 @@ cmd edit ${{
 
 cmd fzf_cd ${{
 	set -f
-	sel=$(fd --exclude '.git/' --exclude '.DS_Store' --exclude 'node_modules/' --hidden --strip-cwd-prefix --threads 2 --type d --type f |
-		  fzf --layout=reverse --scrollbar '▌▐')
+	no_ignore=$([ "$lf_user_search_no_ignore" = "true" ] && echo "--no-ignore" || echo "")
+	sel=$(fd --exclude '.git/' --exclude '.DS_Store' --exclude 'node_modules/' \
+		--hidden "$no_ignore" --strip-cwd-prefix --threads 2 --type d --type f |
+			fzf --layout=reverse --preview 'lfpreview {}' --scrollbar '▌▐')
+
 	if [ -d "$sel" ]; then
 		name=$(basename "$sel")
 		[[ $name = .* ]] && lf -remote "send $id set hidden"
@@ -202,8 +205,9 @@ cmd fzf_cd ${{
 }}
 
 cmd fzf_search ${{
+	no_ignore=$([ "$lf_user_search_no_ignore" = "true" ] && echo "--no-ignore" || echo "")
 	RG_PREFIX="rg --color=always --column --glob '!{.git,node_modules}/' "\
-"--glob '!{*.eot,*.svg,*.ttf,*.woff*.woff2}' --hidden --line-number "\
+"--glob '!{*.eot,*.svg,*.ttf,*.woff*.woff2}' --hidden $no_ignore --line-number "\
 "--no-heading --no-mmap --smart-case --threads=3 --trim '\\s+'"
 
 	FZF_DEFAULT_COMMAND="$RG_PREFIX"
@@ -281,6 +285,10 @@ map _ jump-next
 map f
 map fb push :bookmark_jump<enter>
 map ff push :fzf_cd<enter>
+map fF :{{
+	set user_search_no_ignore "true"
+	push :fzf_cd<enter>
+}}
 map fs :{{
 	set user_anon "true"
 	push :fzf_search<enter>
