@@ -64,12 +64,12 @@
 							"y": 1.0
 						},
 						"align": 5,
-						"bounds_type": 0,
+						"bounds_type": 2,
 						"bounds_align": 0,
 						"bounds_crop": false,
 						"bounds": {
-							"x": 0.0,
-							"y": 0.0
+							"x": 5120.0,
+							"y": 2880.0
 						},
 						"crop_left": 0,
 						"crop_top": 0,
@@ -197,5 +197,9 @@
 			"active": false,
 			"switches": []
 		}
+	},
+	"resolution": {
+		"x": 2560,
+		"y": 1440
 	}
 }

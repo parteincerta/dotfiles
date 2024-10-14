@@ -46,7 +46,7 @@
 			"id": "scene",
 			"versioned_id": "scene",
 			"settings": {
-				"id_counter": 2,
+				"id_counter": 3,
 				"custom_size": false,
 				"items": [
 					{
@@ -64,12 +64,12 @@
 							"y": 1.0
 						},
 						"align": 5,
-						"bounds_type": 0,
+						"bounds_type": 2,
 						"bounds_align": 0,
 						"bounds_crop": false,
 						"bounds": {
-							"x": 0.0,
-							"y": 0.0
+							"x": 5120.0,
+							"y": 2880.0
 						},
 						"crop_left": 0,
 						"crop_top": 0,
@@ -90,16 +90,16 @@
 					},
 					{
 						"name": "WebCam",
-						"source_uuid": "baf09805-2247-406d-93fd-eb0bddb4989d",
+						"source_uuid": "47b82936-611d-416e-997d-78e4c07cb2bc",
 						"visible": true,
 						"locked": false,
 						"rot": 0.0,
 						"pos": {
-							"x": 5120.0,
+							"x": 4480.0,
 							"y": 2400.0
 						},
 						"scale": {
-							"x": -1.0,
+							"x": 1.0,
 							"y": 1.0
 						},
 						"align": 5,
@@ -114,7 +114,7 @@
 						"crop_top": 0,
 						"crop_right": 0,
 						"crop_bottom": 0,
-						"id": 2,
+						"id": 3,
 						"group_item_backup": false,
 						"scale_filter": "disable",
 						"blend_method": "default",
@@ -144,8 +144,8 @@
 				"OBSBasic.SelectScene": [],
 				"libobs.show_scene_item.1": [],
 				"libobs.hide_scene_item.1": [],
-				"libobs.show_scene_item.2": [],
-				"libobs.hide_scene_item.2": []
+				"libobs.show_scene_item.3": [],
+				"libobs.hide_scene_item.3": []
 			},
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
@@ -184,12 +184,12 @@
 		{
 			"prev_ver": 503447555,
 			"name": "WebCam",
-			"uuid": "baf09805-2247-406d-93fd-eb0bddb4989d",
+			"uuid": "47b82936-611d-416e-997d-78e4c07cb2bc",
 			"id": "macos-avcapture",
 			"versioned_id": "macos-avcapture",
 			"settings": {
 				"device_name": "HD Pro Webcam C920",
-				"device": "0x14443000046d082d",
+				"device": "0x14343000046d082d",
 				"preset": "AVCaptureSessionPreset640x480"
 			},
 			"mixers": 255,
@@ -217,7 +217,7 @@
 				{
 					"prev_ver": 503447555,
 					"name": "Image Mask/Blend",
-					"uuid": "25a883dc-482d-49f1-b3ed-a6086a2d8433",
+					"uuid": "ee87409e-744e-4968-b058-1d9b3608ba50",
 					"id": "mask_filter",
 					"versioned_id": "mask_filter_v2",
 					"settings": {
@@ -299,5 +299,9 @@
 			"active": false,
 			"switches": []
 		}
+	},
+	"resolution": {
+		"x": 5120,
+		"y": 2880
 	}
 }
