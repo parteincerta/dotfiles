@@ -1,1 +1,307 @@
-{"AuxAudioDevice1":{"prev_ver":503447555,"name":"Mic/Aux","uuid":"ece27a72-3d2c-4e4f-ae09-439a876d44b4","id":"coreaudio_input_capture","versioned_id":"coreaudio_input_capture","settings":{"device_id":"default"},"mixers":255,"sync":0,"flags":0,"volume":1.0,"balance":0.5,"enabled":true,"muted":false,"push-to-mute":false,"push-to-mute-delay":0,"push-to-talk":false,"push-to-talk-delay":0,"hotkeys":{"libobs.mute":[],"libobs.unmute":[],"libobs.push-to-mute":[],"libobs.push-to-talk":[]},"deinterlace_mode":0,"deinterlace_field_order":0,"monitoring_type":0,"private_settings":{}},"current_scene":"Scene","current_program_scene":"Scene","scene_order":[{"name":"Scene"}],"name":"27inch - Desktop + WebCam","sources":[{"prev_ver":503447555,"name":"Scene","uuid":"b32fac81-a48d-474c-b2c4-d89e7aef02af","id":"scene","versioned_id":"scene","settings":{"id_counter":3,"custom_size":false,"items":[{"name":"Desktop","source_uuid":"78223777-393a-4a68-9922-64344e60b6ba","visible":true,"locked":false,"rot":0.0,"pos":{"x":0.0,"y":0.0},"scale":{"x":1.0,"y":1.0},"align":5,"bounds_type":2,"bounds_align":0,"bounds_crop":false,"bounds":{"x":5120.0,"y":2880.0},"crop_left":0,"crop_top":0,"crop_right":0,"crop_bottom":0,"id":1,"group_item_backup":false,"scale_filter":"disable","blend_method":"default","blend_type":"normal","show_transition":{"duration":0},"hide_transition":{"duration":0},"private_settings":{}},{"name":"WebCam","source_uuid":"47b82936-611d-416e-997d-78e4c07cb2bc","visible":true,"locked":false,"rot":0.0,"pos":{"x":5120.0,"y":2400.0},"scale":{"x":-1.0,"y":1.0},"align":5,"bounds_type":0,"bounds_align":0,"bounds_crop":false,"bounds":{"x":0.0,"y":0.0},"crop_left":0,"crop_top":0,"crop_right":0,"crop_bottom":0,"id":3,"group_item_backup":false,"scale_filter":"disable","blend_method":"default","blend_type":"normal","show_transition":{"duration":0},"hide_transition":{"duration":0},"private_settings":{}}]},"mixers":0,"sync":0,"flags":0,"volume":1.0,"balance":0.5,"enabled":true,"muted":false,"push-to-mute":false,"push-to-mute-delay":0,"push-to-talk":false,"push-to-talk-delay":0,"hotkeys":{"OBSBasic.SelectScene":[],"libobs.show_scene_item.1":[],"libobs.hide_scene_item.1":[],"libobs.show_scene_item.3":[],"libobs.hide_scene_item.3":[]},"deinterlace_mode":0,"deinterlace_field_order":0,"monitoring_type":0,"private_settings":{}},{"prev_ver":503447555,"name":"Desktop","uuid":"78223777-393a-4a68-9922-64344e60b6ba","id":"screen_capture","versioned_id":"screen_capture","settings":{},"mixers":255,"sync":0,"flags":0,"volume":1.0,"balance":0.5,"enabled":true,"muted":false,"push-to-mute":false,"push-to-mute-delay":0,"push-to-talk":false,"push-to-talk-delay":0,"hotkeys":{"libobs.mute":[],"libobs.unmute":[],"libobs.push-to-mute":[],"libobs.push-to-talk":[]},"deinterlace_mode":0,"deinterlace_field_order":0,"monitoring_type":0,"private_settings":{}},{"prev_ver":503447555,"name":"WebCam","uuid":"47b82936-611d-416e-997d-78e4c07cb2bc","id":"macos-avcapture","versioned_id":"macos-avcapture","settings":{"device_name":"HD Pro Webcam C920","device":"0x14343000046d082d","preset":"AVCaptureSessionPreset640x480"},"mixers":255,"sync":0,"flags":0,"volume":1.0,"balance":0.5,"enabled":true,"muted":false,"push-to-mute":false,"push-to-mute-delay":0,"push-to-talk":false,"push-to-talk-delay":0,"hotkeys":{"libobs.mute":[],"libobs.unmute":[],"libobs.push-to-mute":[],"libobs.push-to-talk":[]},"deinterlace_mode":0,"deinterlace_field_order":0,"monitoring_type":0,"private_settings":{},"filters":[{"prev_ver":503447555,"name":"Image Mask/Blend","uuid":"ee87409e-744e-4968-b058-1d9b3608ba50","id":"mask_filter","versioned_id":"mask_filter_v2","settings":{"image_path":"/Users/fm/Documents/Misc/obs-mask.png"},"mixers":0,"sync":0,"flags":0,"volume":1.0,"balance":0.5,"enabled":true,"muted":false,"push-to-mute":false,"push-to-mute-delay":0,"push-to-talk":false,"push-to-talk-delay":0,"hotkeys":{},"deinterlace_mode":0,"deinterlace_field_order":0,"monitoring_type":0,"private_settings":{}}]}],"groups":[],"quick_transitions":[{"name":"Cut","duration":300,"hotkeys":[],"id":1,"fade_to_black":false},{"name":"Fade","duration":300,"hotkeys":[],"id":2,"fade_to_black":false},{"name":"Fade","duration":300,"hotkeys":[],"id":3,"fade_to_black":true}],"transitions":[],"saved_projectors":[],"current_transition":"Fade","transition_duration":300,"preview_locked":false,"scaling_enabled":false,"scaling_level":0,"scaling_off_x":0.0,"scaling_off_y":0.0,"virtual-camera":{"type2":3},"modules":{"scripts-tool":[],"output-timer":{"streamTimerHours":0,"streamTimerMinutes":0,"streamTimerSeconds":30,"recordTimerHours":0,"recordTimerMinutes":0,"recordTimerSeconds":30,"autoStartStreamTimer":false,"autoStartRecordTimer":false,"pauseRecordTimer":true},"auto-scene-switcher":{"interval":300,"non_matching_scene":"","switch_if_not_matching":false,"active":false,"switches":[]}},"resolution":{"x":5120,"y":2880}}
+{
+	"AuxAudioDevice1": {
+		"prev_ver": 503447555,
+		"name": "Mic/Aux",
+		"uuid": "ece27a72-3d2c-4e4f-ae09-439a876d44b4",
+		"id": "coreaudio_input_capture",
+		"versioned_id": "coreaudio_input_capture",
+		"settings": {
+			"device_id": "default"
+		},
+		"mixers": 255,
+		"sync": 0,
+		"flags": 0,
+		"volume": 1.0,
+		"balance": 0.5,
+		"enabled": true,
+		"muted": false,
+		"push-to-mute": false,
+		"push-to-mute-delay": 0,
+		"push-to-talk": false,
+		"push-to-talk-delay": 0,
+		"hotkeys": {
+			"libobs.mute": [],
+			"libobs.unmute": [],
+			"libobs.push-to-mute": [],
+			"libobs.push-to-talk": []
+		},
+		"deinterlace_mode": 0,
+		"deinterlace_field_order": 0,
+		"monitoring_type": 0,
+		"private_settings": {}
+	},
+	"current_scene": "Scene",
+	"current_program_scene": "Scene",
+	"scene_order": [
+		{
+			"name": "Scene"
+		}
+	],
+	"name": "27inch - Desktop + WebCam",
+	"sources": [
+		{
+			"prev_ver": 503447555,
+			"name": "Scene",
+			"uuid": "b32fac81-a48d-474c-b2c4-d89e7aef02af",
+			"id": "scene",
+			"versioned_id": "scene",
+			"settings": {
+				"id_counter": 3,
+				"custom_size": false,
+				"items": [
+					{
+						"name": "Desktop",
+						"source_uuid": "78223777-393a-4a68-9922-64344e60b6ba",
+						"visible": true,
+						"locked": false,
+						"rot": 0.0,
+						"pos": {
+							"x": 0.0,
+							"y": 0.0
+						},
+						"scale": {
+							"x": 1.0,
+							"y": 1.0
+						},
+						"align": 5,
+						"bounds_type": 2,
+						"bounds_align": 0,
+						"bounds_crop": false,
+						"bounds": {
+							"x": 5120.0,
+							"y": 2880.0
+						},
+						"crop_left": 0,
+						"crop_top": 0,
+						"crop_right": 0,
+						"crop_bottom": 0,
+						"id": 1,
+						"group_item_backup": false,
+						"scale_filter": "disable",
+						"blend_method": "default",
+						"blend_type": "normal",
+						"show_transition": {
+							"duration": 0
+						},
+						"hide_transition": {
+							"duration": 0
+						},
+						"private_settings": {}
+					},
+					{
+						"name": "WebCam",
+						"source_uuid": "47b82936-611d-416e-997d-78e4c07cb2bc",
+						"visible": true,
+						"locked": false,
+						"rot": 0.0,
+						"pos": {
+							"x": 5120.0,
+							"y": 2400.0
+						},
+						"scale": {
+							"x": -1.0,
+							"y": 1.0
+						},
+						"align": 5,
+						"bounds_type": 0,
+						"bounds_align": 0,
+						"bounds_crop": false,
+						"bounds": {
+							"x": 0.0,
+							"y": 0.0
+						},
+						"crop_left": 0,
+						"crop_top": 0,
+						"crop_right": 0,
+						"crop_bottom": 0,
+						"id": 3,
+						"group_item_backup": false,
+						"scale_filter": "disable",
+						"blend_method": "default",
+						"blend_type": "normal",
+						"show_transition": {
+							"duration": 0
+						},
+						"hide_transition": {
+							"duration": 0
+						},
+						"private_settings": {}
+					}
+				]
+			},
+			"mixers": 0,
+			"sync": 0,
+			"flags": 0,
+			"volume": 1.0,
+			"balance": 0.5,
+			"enabled": true,
+			"muted": false,
+			"push-to-mute": false,
+			"push-to-mute-delay": 0,
+			"push-to-talk": false,
+			"push-to-talk-delay": 0,
+			"hotkeys": {
+				"OBSBasic.SelectScene": [],
+				"libobs.show_scene_item.1": [],
+				"libobs.hide_scene_item.1": [],
+				"libobs.show_scene_item.3": [],
+				"libobs.hide_scene_item.3": []
+			},
+			"deinterlace_mode": 0,
+			"deinterlace_field_order": 0,
+			"monitoring_type": 0,
+			"private_settings": {}
+		},
+		{
+			"prev_ver": 503447555,
+			"name": "Desktop",
+			"uuid": "78223777-393a-4a68-9922-64344e60b6ba",
+			"id": "screen_capture",
+			"versioned_id": "screen_capture",
+			"settings": {},
+			"mixers": 255,
+			"sync": 0,
+			"flags": 0,
+			"volume": 1.0,
+			"balance": 0.5,
+			"enabled": true,
+			"muted": false,
+			"push-to-mute": false,
+			"push-to-mute-delay": 0,
+			"push-to-talk": false,
+			"push-to-talk-delay": 0,
+			"hotkeys": {
+				"libobs.mute": [],
+				"libobs.unmute": [],
+				"libobs.push-to-mute": [],
+				"libobs.push-to-talk": []
+			},
+			"deinterlace_mode": 0,
+			"deinterlace_field_order": 0,
+			"monitoring_type": 0,
+			"private_settings": {}
+		},
+		{
+			"prev_ver": 503447555,
+			"name": "WebCam",
+			"uuid": "47b82936-611d-416e-997d-78e4c07cb2bc",
+			"id": "macos-avcapture",
+			"versioned_id": "macos-avcapture",
+			"settings": {
+				"device_name": "HD Pro Webcam C920",
+				"device": "0x14343000046d082d",
+				"preset": "AVCaptureSessionPreset640x480"
+			},
+			"mixers": 255,
+			"sync": 0,
+			"flags": 0,
+			"volume": 1.0,
+			"balance": 0.5,
+			"enabled": true,
+			"muted": false,
+			"push-to-mute": false,
+			"push-to-mute-delay": 0,
+			"push-to-talk": false,
+			"push-to-talk-delay": 0,
+			"hotkeys": {
+				"libobs.mute": [],
+				"libobs.unmute": [],
+				"libobs.push-to-mute": [],
+				"libobs.push-to-talk": []
+			},
+			"deinterlace_mode": 0,
+			"deinterlace_field_order": 0,
+			"monitoring_type": 0,
+			"private_settings": {},
+			"filters": [
+				{
+					"prev_ver": 503447555,
+					"name": "Image Mask/Blend",
+					"uuid": "ee87409e-744e-4968-b058-1d9b3608ba50",
+					"id": "mask_filter",
+					"versioned_id": "mask_filter_v2",
+					"settings": {
+						"image_path": "/Users/fm/Documents/Misc/obs-mask.png"
+					},
+					"mixers": 0,
+					"sync": 0,
+					"flags": 0,
+					"volume": 1.0,
+					"balance": 0.5,
+					"enabled": true,
+					"muted": false,
+					"push-to-mute": false,
+					"push-to-mute-delay": 0,
+					"push-to-talk": false,
+					"push-to-talk-delay": 0,
+					"hotkeys": {},
+					"deinterlace_mode": 0,
+					"deinterlace_field_order": 0,
+					"monitoring_type": 0,
+					"private_settings": {}
+				}
+			]
+		}
+	],
+	"groups": [],
+	"quick_transitions": [
+		{
+			"name": "Cut",
+			"duration": 300,
+			"hotkeys": [],
+			"id": 1,
+			"fade_to_black": false
+		},
+		{
+			"name": "Fade",
+			"duration": 300,
+			"hotkeys": [],
+			"id": 2,
+			"fade_to_black": false
+		},
+		{
+			"name": "Fade",
+			"duration": 300,
+			"hotkeys": [],
+			"id": 3,
+			"fade_to_black": true
+		}
+	],
+	"transitions": [],
+	"saved_projectors": [],
+	"current_transition": "Fade",
+	"transition_duration": 300,
+	"preview_locked": false,
+	"scaling_enabled": false,
+	"scaling_level": 0,
+	"scaling_off_x": 0.0,
+	"scaling_off_y": 0.0,
+	"virtual-camera": {
+		"type2": 3
+	},
+	"modules": {
+		"scripts-tool": [],
+		"output-timer": {
+			"streamTimerHours": 0,
+			"streamTimerMinutes": 0,
+			"streamTimerSeconds": 30,
+			"recordTimerHours": 0,
+			"recordTimerMinutes": 0,
+			"recordTimerSeconds": 30,
+			"autoStartStreamTimer": false,
+			"autoStartRecordTimer": false,
+			"pauseRecordTimer": true
+		},
+		"auto-scene-switcher": {
+			"interval": 300,
+			"non_matching_scene": "",
+			"switch_if_not_matching": false,
+			"active": false,
+			"switches": []
+		}
+	},
+	"resolution": {
+		"x": 5120,
+		"y": 2880
+	}
+}
