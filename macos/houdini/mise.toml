@@ -1,6 +1,6 @@
 [settings]
 always_keep_download = true
-disable_hints = ["registry"]
+disable_hints = ["registry", "outdated_bump"]
 experimental = true
 plugin_autoupdate_last_check_duration = "0"
 
