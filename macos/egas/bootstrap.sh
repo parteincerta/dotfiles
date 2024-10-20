@@ -127,8 +127,6 @@ nvim --headless -c "Lazy! install" -c qall
 
 log_info "\t >>> Installing VSCode plugins ..."
 source "$rootdir/shared/scripts/install-vscode-plugins.sh"
-source "$rootdir/shared/scripts/install-vscode-plugins.sh" --plugins-list \
-	"$rootdir/shared/scripts/install-vscode-plugins-list-extra.txt"
 
 
 log_info "\t >>> Updating power settings"
