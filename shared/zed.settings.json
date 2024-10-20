@@ -43,5 +43,9 @@
     "dark": "Andromeda"
   },
   "ui_font_size": 14,
-  "vim_mode": true
+  "vim_mode": true,
+  "vim": {
+    "use_multiline_find": true,
+    "use_system_clipboard": "never"
+  }
 }
