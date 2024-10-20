@@ -60,7 +60,7 @@ cp "$rootdir/shared/obs-mask.png" "$DOCUMENTS/Misc/"
 cp "$rootdir/shared/pip.conf" "$XDG_CONFIG_HOME/pip/"
 cp "$rootdir/shared/ssh.conf" "$HOME/.ssh/config"
 cp "$rootdir/shared/tokyonight-moon.tmTheme" "$XDG_CONFIG_HOME/bat/themes"
-cp "$rootdir/shared/zed.keymaps.json" "$XDG_CONFIG_HOME/zed/keymaps.json"
+cp "$rootdir/shared/zed.keymap.json" "$XDG_CONFIG_HOME/zed/"
 
 ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
 chmod u=rwx,g=,o= "$HOME/.gnupg"
