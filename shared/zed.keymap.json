@@ -9,6 +9,8 @@
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem",
       "space h": ["workspace::ActivatePaneInDirection", "Left"],
       "space l": ["workspace::ActivatePaneInDirection", "Right"],
       "space k": ["workspace::ActivatePaneInDirection", "Up"],
