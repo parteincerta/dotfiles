@@ -1,6 +1,10 @@
-// doc: https://zed.dev/docs/configuring-zed
-// To see all default settings run the `open default settings` command
 {
+  "comments": [
+    {
+      "data": "https://zed.dev/docs/configuring-zed",
+      "comment": "To see all default settings run the `open default settings` command"
+    }
+  ],
   "auto_update": false,
   "buffer_font_family": "JetBrainsMonoNL Nerd Font Mono",
   "buffer_font_size": 0,
@@ -35,8 +39,8 @@
   },
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Solarized Light",
+    "dark": "Andromeda"
   },
   "ui_font_size": 14,
   "vim_mode": true
