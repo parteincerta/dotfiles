@@ -37,6 +37,7 @@
     "diagnostics": false,
     "metrics": false
   },
+  "show_wrap_guides": true,
   "theme": {
     "mode": "system",
     "light": "Solarized Light",
@@ -47,5 +48,6 @@
   "vim": {
     "use_multiline_find": true,
     "use_system_clipboard": "never"
-  }
+  },
+  "wrap_guides": [80, 120, 160]
 }
