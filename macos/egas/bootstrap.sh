@@ -76,16 +76,7 @@ homebrew_cli=(
 )
 brew install "${homebrew_cli[@]}"
 
-# `jdtls` depends on `openjdk` and `python@3.12`.
-# JDK will be handled by `mise`. `python@3.12` will be installed next.
-# Hence the usage of --ignore-dependencies.
-brew install --ignore-dependencies gradle jdtls maven
-
-# Java's LSP needs Homebrew's Python (see `brew info jdtls`) but we don't so
-# lets unlink it after installation. Also unlink openssl@3 in favor of Apple's
-# OpenSSL.
-brew install python@3.12
-brew unlink python@3.12
+# Unlink openssl@3 in favor of Apple's OpenSSL.
 brew unlink openssl@3
 
 
