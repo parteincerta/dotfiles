@@ -9,7 +9,7 @@
   "buffer_font_family": "JetBrainsMonoNL Nerd Font Mono",
   "buffer_font_size": 0,
   "ensure_final_newline_on_save": true,
-  "hard_tabs": false,
+  "hard_tabs": true,
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware"
