@@ -117,7 +117,9 @@
 			"uuid": "fb6eac4f-22ab-4209-8d7f-3e1373b933c8",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
-			"settings": {},
+			"settings": {
+				"hide_obs": true
+			},
 			"mixers": 255,
 			"sync": 0,
 			"flags": 0,
