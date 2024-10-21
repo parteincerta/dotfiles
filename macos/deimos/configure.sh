@@ -121,9 +121,9 @@ mv "$TMPDIR/zed.settings.json" "$XDG_CONFIG_HOME/zed/settings.json"
 
 # NOTE: The following can only be patched once Homebrew is installed.
 if [ -n "$HOMEBREW_PREFIX" ]; then
+	cp "$rootdir/shared/kitty_theme.conf" "$XDG_CONFIG_HOME/kitty/"
 	cp "$rootdir/shared_macos/kitty.conf" "$TMPDIR/"
 	sed -i '' "s|%font_size|$font_size|g" "$TMPDIR/kitty.conf"
 	sed -i '' "s|%homebrew_path|$HOMEBREW_PREFIX|g" "$TMPDIR/kitty.conf"
-	mv "$TMPDIR/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
-	cp "$rootdir/shared/kitty_theme.conf" "$XDG_CONFIG_HOME/kitty/"
+	mv "$TMPDIR/kitty.conf" "$XDG_CONFIG_HOME/kitty/"
 fi
