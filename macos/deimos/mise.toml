@@ -5,6 +5,8 @@ experimental = true
 plugin_autoupdate_last_check_duration = "0"
 
 [tools]
-bun = ["1"]
-deno = ["2"]
-node = ["18"]
+bun = "1"
+deno = "2"
+node = "18"
+odin = "dev-2024-10"
+zig = "0.13.0"

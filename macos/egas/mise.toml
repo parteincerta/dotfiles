@@ -8,3 +8,5 @@ plugin_autoupdate_last_check_duration = "0"
 bun = "1"
 deno = "2"
 node = ["18", "14"]
+odin = "dev-2024-10"
+zig = "0.13.0"
