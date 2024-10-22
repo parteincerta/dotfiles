@@ -10,15 +10,13 @@ trap "popd >/dev/null" EXIT
 source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
+source "$rootdir/shared_macos/.bash_profile" || true
 
-nice_hostname="${HOSTNAME/%.local/}"
-if [ "deimos" != "$nice_hostname" ]; then
+if [ "deimos" != "$SHORT_HOSTNAME" ]; then
 	log_warning ">>> This configuration script belongs to another host: deimos".
-	log_warning ">>> The current host is: $nice_hostname"
+	log_warning ">>> The current host is: $SHORT_HOSTNAME"
 	exit 1
 fi
-
-source "$rootdir/shared_macos/.bash_profile" || true
 
 mkdir -p \
 "$HOME"/{.gnupg,.local/{bin,share/lf},.m2,.ssh/sockets} \
@@ -95,8 +93,8 @@ defaults import "$alttab_key" "$alttab_file"
 # defaults import "$betterdisplay_key" "$betterdisplay_file"
 cp "$macmousefix_file" "$app_support_folder/com.nuebling.mac-mouse-fix/config.plist"
 
-# NOTE: The following are configuration files that
-# must be patched before being put in their place.
+# The following section is reserved for configuration files that must be patched
+# before being put in their place.
 
 cp "$rootdir/shared_macos/.bunfig.toml" "$TMPDIR/"
 sed -i '' "s|#bun.install.globalDir|$XDG_CACHE_HOME/bun/lib|" "$TMPDIR/.bunfig.toml"
@@ -119,7 +117,9 @@ mv "$TMPDIR/zed.settings.json" "$XDG_CONFIG_HOME/zed/settings.json"
 (echo "cat <<EOF"; cat "$rootdir/shared_macos/lfmarks"; echo EOF) |
 	sh >"$HOME/.local/share/lf/marks"
 
-# NOTE: The following can only be patched once Homebrew is installed.
+# The following section is reserved for configuration files that can only be
+# patched once Homebrew is available.
+
 if [ -n "$HOMEBREW_PREFIX" ]; then
 	cp "$rootdir/shared/kitty_theme.conf" "$XDG_CONFIG_HOME/kitty/"
 	cp "$rootdir/shared_macos/kitty.conf" "$TMPDIR/"
