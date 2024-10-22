@@ -274,7 +274,7 @@ prompt_git() {
 	if git rev-parse --is-inside-work-tree &>/dev/null; then
 		local git_status="$(git status --porcelain --short)"
 		if [ $! ]; then
-			local git_status_dirty="$([ "$(echo "$git_status" | grep . | wc -l)" -gt 0 ] && echo "*")"
+			local git_status_dirty="$([ "$(echo "$git_status" | grep -c .)" -gt 0 ] && echo "*")"
 			local git_branch_name="$(git branch --show-current)"
 			if [ -z "$git_branch_name" ]; then
 				git_branch_name="#$(git describe --tags HEAD)"
@@ -290,7 +290,7 @@ prompt_lf_level() {
 }
 prompt_sh_level() {
 	if [ "$SHLVL" -gt "1" ]; then
-		printf "${color_bg_dark_white}${color_fg_dark_black} $(($SHLVL - 1)) ${color_reset} "
+		printf "${color_bg_dark_white}${color_fg_dark_black} $((SHLVL - 1)) ${color_reset} "
 	fi
 }
 export PS1='\D{%a} \t $(prompt_sh_level)$(printf $color_fg_dark_green)\w$(printf $color_reset) $(prompt_git)\n· '
