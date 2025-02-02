@@ -73,7 +73,7 @@ if [ -z "$(command -v brew)" ]; then
 fi
 
 
-log_info "\t >>> Installing Homebrew apps ..."
+log_info "\t >>> Installing Homebrew command line tools ..."
 homebrew_clt=(
 	7zip aria2 bat bash bash-completion@2 bzip2 coreutils eza fd findutils fish
 	font-jetbrains-mono-nerd-font fzf gettext git-delta gnupg gsed jq lf
@@ -84,7 +84,7 @@ brew install "${homebrew_clt[@]}"
 brew unlink openssl@3
 
 
-log_info "\t >>> Installing Homebrew casks ..."
+log_info "\t >>> Installing Homebrew apps ..."
 compass=(mongodb-compass-isolated-edition)
 microsoft=(microsoft-excel microsoft-powerpoint microsoft-word windows-app)
 homebrew_casks=(
