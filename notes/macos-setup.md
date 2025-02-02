@@ -18,15 +18,13 @@
   - Hide Spotlight icon.
 - Siri and Spotlight
   - Search results only for: Applications, Calculator and Conversion.
-  - Add the following locations to Spotlight Privacy list:
-    - System: `/opt`, `/usr/local`, `/Library/Developer` and `/System/Library/Frameworks`.
-    - User: `~/{Desktop,Developer,Documents,Downloads,Library,.cache,.config,.local,.m2,.ssh}`.
   - Prevent Siri from learning from any application.
 - Privacy and Security
   - Show location icon when System Services request my location.
   - Disable location access for HomeKit and Mac Analytics.
   - Set Apple Terminal permissions: `Full Disk Access`, `App Management` and `Developer Tools`.
 - Desktop & Dock
+  - Scale down, add Applications folder and control icons' size with `Cmd+` and `Cmd-`.
   - Minimize using the `Scale Effect`.
   - Disable: Minimize windows into application icon.
   - Enable: Automatically hide and show the dock.
@@ -90,6 +88,9 @@
       - Icon size: 36x36.
       - Enable: Show item info.
       - Enable: Show item preview.
+  - Add the following locations to Spotlight Privacy list:
+    - System: `/opt`, `/usr/local`, `/Library/Developer` and `/System/Library/Frameworks`.
+    - User: `~/{Desktop,Developer,Documents,Downloads,Library,.cache,.config,.local,.m2,.ssh}`.
 - Safari
   - View: Show status bar.
   - General
@@ -118,7 +119,7 @@
   - Note: Using `xcode-select --install` would be easier but it's
     [causing problems][macos-notes-02] with Homebrew when upgrading packages.
 - Add `/Library/Developer` Spotlight's Privacy list.
-- Clone this repo and run `./bootstrap.sh`.
+- Clone this repo and run `./bootstrap.sh`. Setup 1st-party apps while the bootstrap is running.
 - Import the `tokyo-night` profile for Apple Terminal and set it as default.
 - Start neovim and let the installation of TreeSitter grammars and LSP servers finish.
 - Clone personal repositories and set `git config user.name` and `git config user.email`.
@@ -128,7 +129,7 @@
 - Configure installed applications.
   - Always disable automatic updates where possible.
   - Brave
-    - `brave://flags`: Set `Trab Scrolling` to `tab shrink to pinned tab width`.
+    - `brave://flags`: Set `Tab Scrolling` to `tab shrink to pinned tab width`.
   - Docker
     - Configure startup settings, resources, folder permissions and notifications.
     - Install the `Disk usage`, `Logs Explorer` and `Resource usage` extensions.
@@ -141,6 +142,6 @@
 - Shutdown Ethernet/Wi-Fi and run Onyx. Revoke its permissions afterwards.
 - Reboot.
 
-[macos-setup-01]: https://developer.apple.com/download/all
+[macos-notes-01]: https://developer.apple.com/download/all
 [macos-notes-02]: https://github.com/orgs/Homebrew/discussions/5723#discussioncomment-11185411
 [macos-notes-03]: https://github.com/parteincerta/docker-recipes
