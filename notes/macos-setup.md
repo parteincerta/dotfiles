@@ -1,0 +1,146 @@
+# macOS Setup Notes
+
+## System Settings
+- General
+  - Set the host name.
+  - Disable all Software Updates.
+- Networking
+  - Set IPv4 DNSs: `1.1.1.1` and `1.0.0.1`.
+  - Set IPv6 DNSs: `2606:4700:4700::1111` and `2606:4700:4700::1001`.
+- Notifications: Disable all unecessary ones, configure the others.
+- Sound: Disable macOS startup sound and reduce alert volume.
+- Accessibility
+  - Enable keyboard shortcut to zoom.
+  - Enable trackpad's three-finger drag.
+- Control Center
+  - Show Bluetooth, Airdrop, Sound, Battery and VPN (when available).
+  - Flash time separators and show time with seconds.
+  - Hide Spotlight icon.
+- Siri and Spotlight
+  - Search results only for: Applications, Calculator and Conversion.
+  - Add the following locations to Spotlight Privacy list:
+    - System: `/opt`, `/usr/local`, `/Library/Developer` and `/System/Library/Frameworks`.
+    - User: `~/{Desktop,Developer,Documents,Downloads,Library,.cache,.config,.local,.m2,.ssh}`.
+  - Prevent Siri from learning from any application.
+- Privacy and Security
+  - Show location icon when System Services request my location.
+  - Disable location access for HomeKit and Mac Analytics.
+  - Set Apple Terminal permissions: `Full Disk Access`, `App Management` and `Developer Tools`.
+- Desktop & Dock
+  - Minimize using the `Scale Effect`.
+  - Disable: Minimize windows into application icon.
+  - Enable: Automatically hide and show the dock.
+  - Disable: Animate opening application.
+  - Enable: Show indicators for open application.
+  - Disable: Show suggested and recent apps in Dock.
+  - Click wallpaper to reveal desktop: Only in Stage Manager.
+  - Disable: Stage Manager.
+  - Prefer tabs when opening documents: Always
+  - Disable: Automatically rearrange Spaces based on most recent use.
+  - Enable: Group windows by application.
+  - Hot Corners: Set `Cmd + top right` to show the Desktop.
+- Displays
+  - Disable iPad interoperability.
+  - Enable Night Shit with `Sunset to Sunrise` and temperature on top of `More Warm`.
+- Battery: TODO
+- Lock Screen
+  - Start Screen Saver when active: `Never`.
+  - Require password: `After 5 seconds`.
+- Game Center: Disable.
+- Wallet & Apple Pay: Disable `Add Orders to Wallet`.
+- Keyboard
+  - Create five more virtual desktops before entering this section.
+  - Set `Key repeat rate` and `Delay until repeat` to their max levels.
+  - Turn off keyboard backlight after `30 seconds` of inactivity.
+  - Set globe key to `Change Input Source`.
+  - Keyboard Shortcuts
+    - Mission Control
+      - Disable F11 to Show Desktop (consider disabling some others too).
+      - Enable all `^<n>` Desktop chords.
+    - Input sources: Disable `^Space` and `^+Opt+Space` chords.
+    - Function Keys: Use F-keys as standard function keys.
+    - Modifier Keys: Map Caps Lock to Escape.
+  - Disable all automatic actions in Input Sources.
+  - Remove all Text Replacements.
+- Trackpad
+  - Set tracking speed to one point bellow the maximum.
+  - Enable App Exposé with `Swip Down with Four Fingers`.
+- Mouse: Set tracking speed to two points bellow the maximum.
+
+## Finder and Safari
+- Settings
+  - General
+    - Show all items in Desktop.
+    - New finder window shows: Home folder.
+    - Enable: Open folders in tabs instead of windows.
+  - Sidebar: Show home folder, show all disks and hide tags.
+  - Advanced: When performing a search: Search in Current Folder.
+  - View: Show Path Bar and Hide Preview.
+  - Show View Options:
+    - Home and Apps folders
+      - Icons view. 
+      - Set icon size to 40x40.
+      - Reduce grid size by one point.
+      - Sort items by `name`.
+    - Other folders:
+      - Column view (always) and disable `Show icone preview`.
+      - Explicitly set the above for: `Macintosh HD` and `Macintosh HD / Users`.
+    - Specifically for the Desktop view:
+      - Sort by: kind.
+      - Icon size: 36x36.
+      - Enable: Show item info.
+      - Enable: Show item preview.
+- Safari
+  - View: Show status bar.
+  - General
+    - Safari opens with: `All windows from the last session`.
+    - New windows open with: `Empty page`.
+    - New tabs open with: `Empty page`.
+    - Homepage: `https://github.com/parteincerta`.
+    - Disable: Open "safe" files after downloading.
+  - Search
+    - Search engine: `DuckDuckGo`.
+    - Disable: Also use in Private Browsing.
+    - Private search engine: `Google`.
+    - Disable: Include search engine suggestions.
+    - Disable: Preload Top Hit in the background.
+    - Disable: Show start page.
+  - Security: Disable: Warn when visiting a fraudulent website.
+  - Privacy: Disable: Require Touch ID to view locked tabs.
+  - Advanced
+    - Disable: Allow websites to check for Apple Pay and Apple Card.
+    - Enable: Save articles for offline reading automatically.
+    - Enable: Show features for web developers.
+  - Developer: Turn on `Disable site-specific hacks`.
+
+## Development Environment
+- Manually install the latest Command Line Tools from [Apple Developer][macos-notes-01].
+  - Note: Using `xcode-select --install` would be easier but it's
+    [causing problems][macos-notes-02] with Homebrew when upgrading packages.
+- Add `/Library/Developer` Spotlight's Privacy list.
+- Clone this repo and run `./bootstrap.sh`.
+- Import the `tokyo-night` profile for Apple Terminal and set it as default.
+- Start neovim and let the installation of TreeSitter grammars and LSP servers finish.
+- Clone personal repositories and set `git config user.name` and `git config user.email`.
+- Set `Developer Tools` permissions for Kitty/Ghostty.
+
+## Wrap up
+- Configure installed applications.
+  - Always disable automatic updates where possible.
+  - Brave
+    - `brave://flags`: Set `Trab Scrolling` to `tab shrink to pinned tab width`.
+  - Docker
+    - Configure startup settings, resources, folder permissions and notifications.
+    - Install the `Disk usage`, `Logs Explorer` and `Resource usage` extensions.
+- Disable auto-updates: `bash shared_macos/scripts/disable-updates.sh`.
+- Configure Notifications, Login Items and Siri.
+- Press `Cmd+Shift+5`, select `Options` and set folder used for screenshots/recordings.
+- Install DBeaver's connections.
+- Setup the [Docker containers][macos-notes-03].
+- Configure VPNs and show the VPN icon in the Menu Bar.
+- Shutdown Ethernet/Wi-Fi and run Onyx. Revoke its permissions afterwards.
+- Reboot.
+
+[macos-setup-01]: https://developer.apple.com/download/all
+[macos-notes-02]: https://github.com/orgs/Homebrew/discussions/5723#discussioncomment-11185411
+[macos-notes-03]: https://github.com/parteincerta/docker-recipes

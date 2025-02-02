@@ -1,0 +1,32 @@
+{
+	"shared": [
+		".*[[:blank:]|\\.]cdninstagram\\.com$",
+		".*[[:blank:]|\\.]instagram\\.com$",
+
+		".*[[:blank:]|\\.]licdn\\.com$",
+		".*[[:blank:]|\\.]linkedin\\.com$",
+
+		".*[[:blank:]|\\.]redd\\.it$",
+		".*[[:blank:]|\\.]reddit\\.com$",
+		".*[[:blank:]|\\.]redditmedia\\.com$",
+		".*[[:blank:]|\\.]redditstatic\\.com$",
+		".*www\\.reddit\\.com$",
+
+		".*[[:blank:]|\\.]twimg\\.com$",
+		".*[[:blank:]|\\.]twitter\\.com$",
+		".*[[:blank:]|\\.]x\\.com$"
+	],
+	"shared_extra": [
+		".*[[:blank:]|\\.]fbcdn\\.net$",
+		".*[[:blank:]|\\.]whatsapp\\.com$",
+		".*[[:blank:]|\\.]whatsapp\\.net$"
+	],
+	"specific": {
+		"macos13-ventura": [],
+		"mbp13-i7": [],
+		"mbp15-i7": [],
+		"mbp16-i9a": [],
+		"mbp16-i9b": [],
+		"ms-m1u": []
+	}
+}

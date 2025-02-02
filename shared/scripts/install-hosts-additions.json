@@ -1,0 +1,18 @@
+{
+	"shared": {
+		"127.0.0.1": [
+			"$hostname",
+			"$hostname.localdomain",
+			"host.docker.internal",
+			"kubernetes.docker.internal"
+		]
+	},
+	"specific": {
+		"macos13-ventura": {},
+		"mbp13-i7": {},
+		"mbp15-i7": {},
+		"mbp16-i9a": {},
+		"mbp16-i9b": {},
+		"ms-m1u": {}
+	}
+}
