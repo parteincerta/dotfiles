@@ -29,7 +29,7 @@ if [ -s "$bootstrap_mark_file" ]; then
 	exit 1
 fi
 
-expected_hostname="mbp16-i9a"
+expected_hostname="mbp16-i9"
 nice_hostname="${HOSTNAME/%.local/}"
 if [ "$expected_hostname" != "$nice_hostname" ]; then
 	# Apple MacBook Pro 16-inch (2019)

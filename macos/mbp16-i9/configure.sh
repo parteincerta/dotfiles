@@ -12,7 +12,7 @@ source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
 source "$rootdir/shared_macos/.bash_profile" || true
-expected_hostname="mbp16-i9a"
+expected_hostname="mbp16-i9"
 if [ "$expected_hostname" != "$SHORT_HOSTNAME" ]; then
 	log_warning ">>> This configuration script belongs to another host: $expected_hostname".
 	log_warning ">>> The current host is: $SHORT_HOSTNAME"
