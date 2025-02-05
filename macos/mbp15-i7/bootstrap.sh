@@ -75,11 +75,11 @@ fi
 
 
 log_info "\t >>> Installing Homebrew command line tools ..."
+fonts=(font-jetbrains-mono-nerd-font)
 homebrew_clt=(
 	7zip aria2 bat bash bash-completion@2 bzip2 coreutils eza fd findutils fish
-	font-jetbrains-mono-nerd-font fzf gettext git-delta gnupg gsed jq lf
-	miniserve mise mkcert moreutils neovim oha pbzip2 pigz ripgrep shellcheck
-	tokei xz zstd
+	"${fonts[@]}" fzf gettext git-delta gnupg gsed jq lf miniserve mise mkcert
+	moreutils neovim oha pbzip2 pigz ripgrep shellcheck tokei xz zstd
 )
 brew install "${homebrew_clt[@]}"
 brew unlink openssl@3
