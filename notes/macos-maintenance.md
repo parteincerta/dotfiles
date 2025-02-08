@@ -48,7 +48,7 @@
 
 - Update Docker plugins and artifacts
   - Check for updated extensions in Docker Desktop.
-  - Check for new versions of the [Docker images][maintenance-notes-06].
+  - Check for new versions of the [Docker images][macos-maintenance-06].
   - Run `docker compose up` for updated images.
   - Run `docker image prune --all` to remove unused images.
   - Run `docker system prune` to remove unused artifacts.
