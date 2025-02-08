@@ -10,7 +10,7 @@ trap 'rm -rf $TMPDIR/hosts*' EXIT
 source "$rootdir/shared/scripts/helper.sh"
 trap 'trap_error;rm -rf $TMPDIR/hosts*' ERR
 
-version="3.15.15"
+version="3.15.16"
 url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/gambling-porn-social/hosts"
 system="$(uname -s)"
 
