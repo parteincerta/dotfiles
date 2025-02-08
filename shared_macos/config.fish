@@ -159,6 +159,7 @@ set --export FZF_DEFAULT_OPTS "--ansi --border=rounded --cycle " \
 set --export FZF_ALT_C_COMMAND "fd --hidden --threads 2 --type d"
 set --export FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 set --export GPG_TTY (tty)
+set --export HOMEBREW_NO_ANALYTICS 1
 set --export HOMEBREW_NO_AUTO_UPDATE 1
 set --export HOMEBREW_NO_INSTALL_CLEANUP 1
 set --export LESSCHARSET UTF-8
