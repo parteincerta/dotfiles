@@ -48,7 +48,7 @@
 
 - Update Docker plugins and artifacts
   - Check for updated extensions in Docker Desktop.
-  - Check for new versions of images.
+  - Check for new versions of the [Docker images][maintenance-notes-06].
   - Run `docker compose up` for updated images.
   - Run `docker image prune --all` to remove unused images.
   - Run `docker system prune` to remove unused artifacts.
@@ -66,6 +66,7 @@
 [macos-maintenance-03]: https://github.com/mongodb/mongo-tools/tags
 [macos-maintenance-04]: https://github.com/dortania/OpenCore-Legacy-Patcher/releases
 [macos-maintenance-05]: https://github.com/microsoft/vcpkg/releases
+[macos-maintenance-06]: https://github.com/parteincerta/docker-recipes
 
 ## Extra
 
