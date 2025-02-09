@@ -16,7 +16,9 @@ local lazy_path_plugins = vim.fn.stdpath("data") .. "/lazy"
 -- https://github.com/nvim-treesitter/nvim-treesitter
 -- https://github.com/kevinhwang91/nvim-ufo
 -- https://github.com/s1n7ax/nvim-window-picker
+-- https://github.com/MunifTanjim/nui.nvim
 -- https://github.com/stevearc/oil.nvim
+-- https://github.com/nvim-lua/plenary.nvim
 -- https://github.com/akinsho/toggleterm.nvim
 -- https://github.com/folke/tokyonight.nvim
 -- https://github.com/folke/trouble.nvim
