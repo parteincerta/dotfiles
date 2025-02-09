@@ -139,6 +139,7 @@
 - Install DBeaver's connections.
 - Setup the [Docker containers][macos-notes-03].
 - Configure VPNs and show the VPN icon in the Menu Bar.
+- Clone and configure 3rd party git repos.
 - Shutdown Ethernet/Wi-Fi and run Onyx. Revoke its permissions afterwards.
 - Reboot.
 
