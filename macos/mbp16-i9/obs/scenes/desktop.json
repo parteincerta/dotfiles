@@ -1,6 +1,6 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520093696,
+		"prev_ver": 520093697,
 		"name": "Mic/Aux",
 		"uuid": "f323638c-b024-4f4b-ba96-35cf318be11e",
 		"id": "coreaudio_input_capture",
@@ -40,7 +40,7 @@
 	"name": "Desktop",
 	"sources": [
 		{
-			"prev_ver": 520093696,
+			"prev_ver": 520093697,
 			"name": "Scene",
 			"uuid": "7dc04f97-3296-4f6a-a604-f41345eeaa99",
 			"id": "scene",
@@ -56,8 +56,8 @@
 						"locked": false,
 						"rot": 0.0,
 						"scale_ref": {
-							"x": 5120.0,
-							"y": 2880.0
+							"x": 3584.0,
+							"y": 2240.0
 						},
 						"align": 5,
 						"bounds_type": 0,
@@ -116,7 +116,7 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093696,
+			"prev_ver": 520093697,
 			"name": "Desktop",
 			"uuid": "6c2373a3-8a8e-41c0-ad82-35c27327b6c5",
 			"id": "screen_capture",
