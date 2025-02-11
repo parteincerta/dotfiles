@@ -1,5 +1,8 @@
 {
 	"shared": {
+		"0.0.0.0": [
+			"updates-cdn.bravesoftware.com"
+		],
 		"127.0.0.1": [
 			"$hostname",
 			"$hostname.localdomain",

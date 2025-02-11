@@ -133,7 +133,6 @@
   - Docker
     - Configure startup settings, resources, folder permissions and notifications.
     - Install the `Disk usage`, `Logs Explorer` and `Resource usage` extensions.
-- Disable auto-updates: `bash shared_macos/scripts/disable-updates.sh`.
 - Configure Notifications, Login Items and Siri.
 - Press `Cmd+Shift+5`, select `Options` and set folder used for screenshots/recordings.
 - Install DBeaver's connections.

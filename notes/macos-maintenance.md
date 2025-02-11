@@ -24,12 +24,14 @@
 
 - Update Homebrew applications
   - Quit all apps.
+  - Disable `hosts` rules for Brave and WhatsApp.
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Update all installed formulae and casks: `brew upgrade --greedy`.
   - Formulae w/ special upgrade instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
     * `brew unlink python@3.13 openssl@3`.
   - Purge cache: `brew cleanup [--dry-run]`.
+  - Re-enable `hosts` rules for Brave and WhatsApp.
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
@@ -56,7 +58,6 @@
 - Other update/maintenance tasks
   - Update Brave's Content Filters lists and clear its cache.
   - Update VSCode plugins.
-  - Disable auto-updates: `bash shared_macos/scripts/disable-updates.sh`.
   - Export updated configurations: `bash shared_macos/scripts/export-defaults.sh`.
   - Purge caches from CLI tools: `purge bash clipboard nvim zsh` and `purge fish`.
   - Install App Store updates.
