@@ -13,5 +13,5 @@ indent_size = 2
 indent_style = space
 trim_trailing_whitespace = false
 
-[*.{json,plist,py,xml}]
+[*.{json,mobileconfig,plist,py,xml}]
 indent_size = 2
