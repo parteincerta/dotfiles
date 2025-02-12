@@ -126,6 +126,7 @@
 - Set `Developer Tools` permissions for Kitty/Ghostty.
 
 ## Wrap up
+- Start by configuring: BetterDisplay, Mac Mouse Fix, AltTab and SpaceId.
 - Configure installed applications.
   - Always disable automatic updates where possible.
   - Brave
