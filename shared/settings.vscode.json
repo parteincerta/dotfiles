@@ -28,10 +28,12 @@
 	"window.autoDetectColorScheme": true,
 	"window.newWindowDimensions": "inherit",
 	"window.zoomLevel": 0.0,
+	"workbench.activityBar.location": "top",
 	"workbench.colorTheme": null,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.preferredDarkColorTheme": "Default Dark Modern",
 	"workbench.preferredLightColorTheme": "Default Light+",
+	"workbench.sideBar.location": "right",
 	"workbench.startupEditor": "none",
 	"auto-close-tag.activationOnLanguage": [
 		"HTML (EEx)",
