@@ -74,7 +74,7 @@
 ### Homebrew
 - List outdated formulae: `brew outdated --greedy`.
 - List dependencies of a formula: `brew deps --tree <formula>`.
-- List installed dependencies of a formula: `brew uses --installed <formula>`.
+- List (installed) dependent formulae : `brew uses --installed <formula>`.
 - List installed formulae which are not dependencies of others: `brew leaves`.
 - List artifacts of a formula: `brew ls <formula>`.
 

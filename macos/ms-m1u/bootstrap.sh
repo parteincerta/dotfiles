@@ -33,7 +33,7 @@ expected_hostname="ms-m1u"
 nice_hostname="${HOSTNAME/%.local/}"
 if [ "$expected_hostname" != "$nice_hostname" ]; then
 	# Apple Mac Studio (2022)
-	# CPU: Apple M1 Ultra (16P @3.2GHz + 4E @2.0GHz)
+	# CPU: Apple M1 Ultra (16P@3.2GHz + 4E@2.0GHz)
 	# RAM: 64GB LPDDR5-6400 (800GB/s)
 	# GPU: 48C (@450MHz ~ @1.3GHz)
 	# NPU: 22 TOPS
