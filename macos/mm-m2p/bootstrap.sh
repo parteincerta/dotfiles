@@ -29,15 +29,15 @@ if [ -s "$bootstrap_mark_file" ]; then
 	exit 1
 fi
 
-expected_hostname="mbp16-m2m"
+expected_hostname="mm-m2p"
 nice_hostname="${HOSTNAME/%.local/}"
 if [ "$expected_hostname" != "$nice_hostname" ]; then
-	# Apple MacBook Pro 16-inch (2023)
-	# CPU: Apple M2 Max (8P@3.7GHz + 4E@3.4GHz)
-	# RAM: 96GB LPDDR5-6400 (400GB/s)
-	# GPU: 38C
+	# Apple Mac Mini (2023)
+	# CPU: Apple M2 Pro (8P@3.7GHz + 4E@3.4GHz)
+	# RAM: 32GB LPDDR5-6400 (200GB/s)
+	# GPU: 19C
 	# NPU: 15.8 TOPS
-	# SSD: 2TB NVMe
+	# SSD: 1TB NVMe
 	log_warning ">>> This bootstrap script belongs to another host: $expected_hostname".
 	log_warning ">>> The current host is: $nice_hostname"
 	exit 1
@@ -54,6 +54,7 @@ source other/disable-services.sh || true
 log_info "\t >>> Configuring the Desktop and keyboard"
 defaults write com.apple.dock autohide-delay -int 0
 defaults write com.apple.dock autohide-time-modifier -float 0.30
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
