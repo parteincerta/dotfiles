@@ -8,11 +8,26 @@ rootdir="$(cd "$scriptdir/../../" && pwd)"
 trap 'rm -rf $TMPDIR/hosts*' EXIT
 
 source "$rootdir/shared/scripts/helper.sh"
-trap 'trap_error;rm -rf $TMPDIR/hosts*' ERR
+trap 'trap_error; rm -rf $TMPDIR/hosts*' ERR
 
+system="$(uname -s)"
 version="3.15.16"
 url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/gambling-porn-social/hosts"
-system="$(uname -s)"
+user_defined_hostname=""
+
+parse_arguments () {
+	while [[ $# -gt 0 ]]; do case $1 in
+		--basic)
+			url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/hosts";
+			shift;;
+		--hostname)
+			user_defined_hostname="$2";
+			shift; shift;;
+		*)
+			shift;;
+	esac; done
+}
+parse_arguments "${@}"
 
 if [ "$system" = "Darwin" ]; then
 
@@ -25,7 +40,7 @@ if [ "$system" = "Darwin" ]; then
 
 	hosts_additions_orig="$rootdir/shared/scripts/install-hosts-additions.json"
 	hosts_additions_subst="${TMPDIR}hosts-additions.json"
-	export hostname="${1:-${HOSTNAME%.*}}"
+	export _hostname="${user_defined_hostname:-$SHORT_HOSTNAME}"
 	envsubst <"$hosts_additions_orig" >"$hosts_additions_subst"
 
 	echo "" >>"$TMPDIR/hosts"
@@ -45,25 +60,23 @@ if [ "$system" = "Darwin" ]; then
 	done
 	echo "# END --- General additions" >>"$TMPDIR/hosts"
 
-	if [ -n "$1" ]; then
-		echo "" >>"$TMPDIR/hosts"
-		echo "# START --- Specific additions for $1" >>"$TMPDIR/hosts"
-		declare -a specific_address_list=($(
-			jq --raw-output ".specific.\"$1\" | keys[]" "$hosts_additions_subst" |
+	echo "" >>"$TMPDIR/hosts"
+	echo "# START --- Specific additions for $_hostname" >>"$TMPDIR/hosts"
+	declare -a specific_address_list=($(
+		jq --raw-output ".specific.\"${_hostname}\" | keys[]" "$hosts_additions_subst" |
+		tr "\n" " "
+	))
+	for addr in "${specific_address_list[@]}"; do
+		if [ -z "$addr" ]; then continue; fi
+		declare -a specific_names_list=($(
+			jq --raw-output ".specific.\"$_hostname\"[\"$addr\"][]" "$hosts_additions_subst" |
 			tr "\n" " "
 		))
-		for addr in "${specific_address_list[@]}"; do
-			if [ -z "$addr" ]; then continue; fi
-			declare -a specific_names_list=($(
-				jq --raw-output ".specific.\"$1\"[\"$addr\"][]" "$hosts_additions_subst" |
-				tr "\n" " "
-			))
-			for name in "${specific_names_list[@]}"; do
-				echo "$addr $name" >>"$TMPDIR/hosts"
-			done
+		for name in "${specific_names_list[@]}"; do
+			echo "$addr $name" >>"$TMPDIR/hosts"
 		done
-		echo "# END --- Specific additions for $1" >>"$TMPDIR/hosts"
-	fi
+	done
+	echo "# END --- Specific additions for $_hostname" >>"$TMPDIR/hosts"
 
 	echo "-> Applying exclusions ..."
 
@@ -78,18 +91,16 @@ if [ "$system" = "Darwin" ]; then
 		sed -i '' -r "/$name/s//# &/" "$TMPDIR/hosts"
 	done
 
-	if [ -n "$1" ]; then
-		declare -a specific_address_list=($(
-			jq --raw-output ".specific.\"$1\"[]" \
-				"$rootdir/shared/scripts/install-hosts-exclusions.json" |
-			tr "\n" " "
-		))
-		for name in "${specific_address_list[@]}"; do
-			if [ -z "$name" ]; then continue; fi
-			echo -e "\t-> Excluding $name ..."
-			sed -i '' -r "/$name/s//# &/" "$TMPDIR/hosts"
-		done
-	fi
+	declare -a specific_address_list=($(
+		jq --raw-output ".specific.\"$_hostname\"[]" \
+			"$rootdir/shared/scripts/install-hosts-exclusions.json" |
+		tr "\n" " "
+	))
+	for name in "${specific_address_list[@]}"; do
+		if [ -z "$name" ]; then continue; fi
+		echo -e "\t-> Excluding $name ..."
+		sed -i '' -r "/$name/s//# &/" "$TMPDIR/hosts"
+	done
 
 	echo "-> Setting new /private/etc/hosts ..."
 	sudo mv "$TMPDIR/hosts" /private/etc/hosts

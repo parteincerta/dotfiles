@@ -5,8 +5,8 @@
 			"updates-cdn.bravesoftware.com"
 		],
 		"127.0.0.1": [
-			"$hostname",
-			"$hostname.localdomain",
+			"${_hostname}",
+			"${_hostname}.localdomain",
 			"host.docker.internal",
 			"kubernetes.docker.internal"
 		]
