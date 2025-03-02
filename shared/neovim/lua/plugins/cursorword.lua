@@ -12,6 +12,7 @@ return {
 			min_match_len = 3,
 			max_match_len = 64,
 			highlight_single_match = false,
+			animate = { enabled = false },
 		})
 
 		vim.cmd.set('updatetime=60')
