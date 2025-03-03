@@ -2,7 +2,8 @@
 -- https://github.com/tzachar/local-highlight.nvim
 
 return {
-	'tzachar/local-highlight.nvim',
+	'parteincerta/local-highlight.nvim',
+	branch = 'fix_hlsm',
 	config = function()
 		local lh = require('local-highlight')
 		lh.setup({
