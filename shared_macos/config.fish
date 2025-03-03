@@ -188,6 +188,10 @@ set __fish_git_prompt_show_informative_status 1
 set fish_handle_reflow 0
 set fish_color_command blue --bold
 set fish_color_error brred --bold
+set fish_cursor_default block
+set fish_cursor_insert line
+set fish_cursor_replace_one underscore
+set fish_cursor_visual block
 set fish_escape_delay_ms 30
 
 function fish_mode_prompt;
