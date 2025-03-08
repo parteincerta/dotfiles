@@ -13,7 +13,7 @@ trap "popd >/dev/null; trap_error" ERR
 
 source "$rootdir/shared_macos/.bash_profile" || true
 expected_hostname="macos13-ventura"
-if [[ "$nice_hostname" == "$expected_hostname"* ]]; then
+if [ "$expected_hostname" != "$SHORT_HOSTNAME" ]; then
 	log_warning ">>> This configuration script belongs to another host: $expected_hostname".
 	log_warning ">>> The current host is: $SHORT_HOSTNAME"
 	exit 1
