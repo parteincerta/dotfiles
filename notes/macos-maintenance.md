@@ -10,7 +10,7 @@
 - Update dotfiles and `/private/etc/hosts`
   - `cd $DEVELOPER/parteincerta/dotfiles && git pull && ./configure.sh`
   - Check for [Steven Black's hosts][macos-maintenance-01] updates and patch `install-hosts.sh`.
-  - `bash shared/scripts/install-hosts.sh $SHORT_HOSTNAME`
+  - `bash shared/scripts/install-hosts.sh`
   
 - Update MongoDB utilities
   - Check for [MongoDB Shell][macos-maintenance-02] and
