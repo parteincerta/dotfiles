@@ -31,6 +31,7 @@ fi
 
 expected_hostname="macos13-ventura"
 nice_hostname="${HOSTNAME/%.local/}"
+[[ $nice_hostname == macos13-ventura* ]] && nice_hostname="macos13-ventura"
 if [ "$expected_hostname" != "$nice_hostname" ]; then
 	# Apple macOS Ventura (Virtual Machine)
 	log_warning ">>> This bootstrap script belongs to another host: $expected_hostname".
@@ -98,7 +99,7 @@ bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh"
+source "$rootdir/shared/scripts/install-hosts.sh" --hostname "$nice_hostname"
 
 
 log_info "\t >>> Installing pip packages ..."
