@@ -100,7 +100,3 @@
 
 ## Other
 - Get Apple's Command Line Tools version: `pkgutil --pkg-info=com.apple.pkg.CLTools_Executables`
-- Programmatically set the hostname:
-  - `sudo scutil --set HostName <hostname>`
-  - `sudo scutil --set LocalHostName <hostname>`
-  - `sudo scutil --set ComputerName <hostname>`

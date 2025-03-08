@@ -2,7 +2,10 @@
 
 ## System Settings
 - General
-  - Set the host name.
+  - Programmatically set the hostname:
+    - `sudo scutil --set HostName <hostname>`
+    - `sudo scutil --set LocalHostName <hostname>`
+    - `sudo scutil --set ComputerName <hostname>`
   - Disable all Software Updates.
 - Networking
   - Set IPv4 DNSs: `1.1.1.1` and `1.0.0.1`.
