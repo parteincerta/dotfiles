@@ -11,7 +11,7 @@ source "$rootdir/shared/scripts/helper.sh"
 trap 'trap_error; rm -rf $TMPDIR/hosts*' ERR
 
 system="$(uname -s)"
-version="3.15.22"
+version="3.15.23"
 url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/gambling-porn-social/hosts"
 user_defined_hostname=""
 
