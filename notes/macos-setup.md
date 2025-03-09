@@ -3,7 +3,7 @@
 ## System Settings
 - General
   - Programmatically set the hostname:
-    - `sudo scutil --set HostName <hostname>`
+    - `sudo scutil --set HostName <hostname>.local`
     - `sudo scutil --set LocalHostName <hostname>`
     - `sudo scutil --set ComputerName <hostname>`
   - Disable all Software Updates.
