@@ -75,7 +75,7 @@ touch "$HOME/.hushlogin"
 touch "$XDG_CONFIG_HOME/lf/bookmarks"
 
 source "$rootdir/shared_macos/scripts/export-defaults.sh" --source-keys-only
-# defaults import "$actmon_key" "$actmon_file"
+defaults import "$actmon_key" "$actmon_file"
 defaults import "$alttab_key" "$alttab_file"
 
 # This section is reserved for files that must be patched upfront.
