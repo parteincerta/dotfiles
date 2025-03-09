@@ -9,6 +9,9 @@ source "$rootdir/shared/scripts/helper.sh"
 trap trap_error ERR
 
 nice_hostname="${HOSTNAME/%.local/}"
+[[ $nice_hostname == macos13-ventura* ]] && nice_hostname="macos13-ventura"
+[[ $nice_hostname == macos14-sonoma* ]] && nice_hostname="macos14-sonoma"
+[[ $nice_hostname == macos15-sequoia* ]] && nice_hostname="macos15-sequoia"
 hostdir="$rootdir/macos/$nice_hostname"
 
 # Activity Monitor
@@ -49,8 +52,10 @@ defaults export "$alttab_key" "$alttab_file"
 log_info ">>> Exporting Betterdisplay settings..."
 defaults export "$betterdisplay_key" "$betterdisplay_file"
 
-log_info ">>> Exporting Mac Mouse Fix settings..."
-cp "$HOME/Library/Application Support/${macmousefix_key}/config.plist" "$macmousefix_file"
+if [ -f "$HOME/Library/Application Support/${macmousefix_key}/config.plist" ]; then
+	log_info ">>> Exporting Mac Mouse Fix settings..."
+	cp "$HOME/Library/Application Support/${macmousefix_key}/config.plist" "$macmousefix_file"
+fi
 
 if [ -d  "$obsdir" ]; then
 	log_info ">>> Exporting OBS settings..."
