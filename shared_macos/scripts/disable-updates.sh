@@ -14,14 +14,14 @@ force_disable_brave () {
 
 	echo ">>> Disabling Brave's automatic updates ..."
 
-	local aupath=$(join_strings \
+	local auto_updater_path=$(join_strings \
 		"/Applications/Brave Browser.app/Contents/Frameworks/"\
 		"Brave Browser Framework.framework/Versions/Current/"\
 		"/Frameworks/Sparkle.framework/Versions/A/Resources"
 	)
 
-	if [ -d "$aupath/Autoupdate.app" ]; then
-		mv "$aupath/Autoupdate.app" "$aupath/DisableAutoupdate.app"
+	if [ -d "$auto_updater_path/Autoupdate.app" ]; then
+		mv "$auto_updater_path/Autoupdate.app" "$auto_updater_path/DisableAutoupdate.app"
 	fi
 }
 
