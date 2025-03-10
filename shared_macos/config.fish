@@ -189,7 +189,7 @@ set fish_handle_reflow 0
 set fish_color_command blue --bold
 set fish_color_error brred --bold
 set fish_cursor_default block
-set fish_cursor_insert line
+set fish_cursor_insert block blink
 set fish_cursor_replace_one underscore
 set fish_cursor_visual block
 set fish_escape_delay_ms 30
