@@ -3,7 +3,7 @@
 
 return {
 	'parteincerta/local-highlight.nvim',
-	branch = 'fix_hlsm',
+	branch = 'master',
 	config = function()
 		local lh = require('local-highlight')
 		lh.setup({
