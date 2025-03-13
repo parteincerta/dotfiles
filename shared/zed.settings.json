@@ -42,12 +42,9 @@
 		"enabled": false
 	},
 	"languages": {
-		"JSON": {
-			"format_on_save": "off"
-		},
-		"Lua": {
-			"format_on_save": "off"
-		}
+		"C": { "format_on_save": "off" },
+		"JSON": { "format_on_save": "off" },
+		"Lua": { "format_on_save": "off" }
 	},
 	"relative_line_numbers": true,
 	"terminal": {
