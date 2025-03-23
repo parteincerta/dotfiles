@@ -61,6 +61,7 @@
   - Export updated configurations: `bash shared_macos/scripts/export-defaults.sh`.
   - Purge caches from CLI tools: `purge bash clipboard nvim zsh` and `purge fish`.
   - Install App Store updates.
+  - Disable automatic updates: `bash shared_macos/scripts/disable-updates.sh`
 
 [macos-maintenance-01]: https://github.com/StevenBlack/hosts/releases
 [macos-maintenance-02]: https://github.com/mongodb-js/mongosh/releases
