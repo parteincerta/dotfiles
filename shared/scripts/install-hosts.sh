@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck source-path=SCRIPTDIR
 # shellcheck disable=SC2207
+# shellcheck disable=SC2129
 
 set -e
 scriptdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
@@ -14,6 +15,7 @@ system="$(uname -s)"
 version="3.15.24"
 url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/gambling-porn-social/hosts"
 user_defined_hostname=""
+skip_extra="false"
 
 parse_arguments () {
 	while [[ $# -gt 0 ]]; do case $1 in
@@ -23,6 +25,9 @@ parse_arguments () {
 		--hostname)
 			user_defined_hostname="$2";
 			shift; shift;;
+		--skip-extra)
+			skip_extra="true";
+			shift;;
 		*)
 			shift;;
 	esac; done
@@ -81,7 +86,12 @@ if [ "$system" = "Darwin" ]; then
 	echo "-> Applying exclusions ..."
 
 	declare -a shared_address_list=($(
-		jq --raw-output '.shared+.shared_extra|.[]' \
+		if [ $skip_extra = true ]; then
+			shared_filter=".shared|.[]"
+		else
+			shared_filter=".shared+.shared_extra|.[]"
+		fi
+		jq --raw-output "$shared_filter" \
 			"$rootdir/shared/scripts/install-hosts-exclusions.json" |
 		tr "\n" " "
 	))
