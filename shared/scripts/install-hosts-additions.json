@@ -8,6 +8,12 @@
 			"kubernetes.docker.internal"
 		]
 	},
+	"shared_extra": {
+		"0.0.0.0": [
+			"laptop-updates.brave.com",
+			"updates-cdn.bravesoftware.com"
+		]
+	},
 	"specific": {
 		"macos13-ventura": {},
 		"mbp13-i7": {},

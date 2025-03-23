@@ -24,7 +24,7 @@
 
 - Update Homebrew applications
   - Quit all apps.
-  - Disable extra host rules: `bash shared/scripts/install-hosts.sh --skip-extra`.
+  - Disable known app host rules: `bash shared/scripts/install-hosts.sh --no-block-known-app-domains`.
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Update all installed formulae and casks: `brew upgrade --greedy`.
   - Formulae w/ special upgrade instructions:
@@ -61,7 +61,6 @@
   - Export updated configurations: `bash shared_macos/scripts/export-defaults.sh`.
   - Purge caches from CLI tools: `purge bash clipboard nvim zsh` and `purge fish`.
   - Install App Store updates.
-  - Disable automatic updates: `bash shared_macos/scripts/disable-updates.sh`
 
 [macos-maintenance-01]: https://github.com/StevenBlack/hosts/releases
 [macos-maintenance-02]: https://github.com/mongodb-js/mongosh/releases

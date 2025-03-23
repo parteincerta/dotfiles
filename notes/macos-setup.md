@@ -132,7 +132,6 @@
 - Start by configuring: BetterDisplay, Mac Mouse Fix, AltTab and SpaceId.
 - Configure installed applications.
   - Disable automatic updates where possible.
-    - `bash shared_macos/scripts/disable-updates.sh`.
   - Brave
     - `brave://flags`: Set `Tab Scrolling` to `tab shrink to pinned tab width`.
   - Docker

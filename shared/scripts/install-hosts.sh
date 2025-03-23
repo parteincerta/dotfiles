@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck source-path=SCRIPTDIR
-# shellcheck disable=SC2207
 # shellcheck disable=SC2129
+# shellcheck disable=SC2207
 
 set -e
 scriptdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
@@ -15,7 +15,7 @@ system="$(uname -s)"
 version="3.15.24"
 url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/gambling-porn-social/hosts"
 user_defined_hostname=""
-skip_extra="false"
+block_known_app_domains="true"
 
 parse_arguments () {
 	while [[ $# -gt 0 ]]; do case $1 in
@@ -25,8 +25,8 @@ parse_arguments () {
 		--hostname)
 			user_defined_hostname="$2";
 			shift; shift;;
-		--skip-extra)
-			skip_extra="true";
+		--no-block-known-app-domains)
+			block_known_app_domains="false";
 			shift;;
 		*)
 			shift;;
@@ -44,6 +44,7 @@ if [ "$system" = "Darwin" ]; then
 	echo "-> Applying additions ..."
 
 	hosts_additions_orig="$rootdir/shared/scripts/install-hosts-additions.json"
+	hosts_exclusions_orig="$rootdir/shared/scripts/install-hosts-exclusions.json"
 	hosts_additions_subst="${TMPDIR}hosts-additions.json"
 	export _hostname="${user_defined_hostname:-$SHORT_HOSTNAME}"
 	envsubst <"$hosts_additions_orig" >"$hosts_additions_subst"
@@ -60,9 +61,26 @@ if [ "$system" = "Darwin" ]; then
 			tr "\n" " "
 		))
 		for name in "${shared_names_list[@]}"; do
+			echo -e "\t-> Including $addr\t$name"
 			echo "$addr $name" >>"$TMPDIR/hosts"
 		done
 	done
+	declare -a shared_address_list=($(
+		jq --raw-output '.shared_extra | keys[]' "$hosts_additions_subst" |
+		tr "\n" " "
+	))
+	if [ $block_known_app_domains = "true" ]; then
+		for addr in "${shared_address_list[@]}"; do
+			declare -a shared_names_list=($(
+				jq --raw-output ".shared_extra[\"$addr\"][]" "$hosts_additions_subst" |
+				tr "\n" " "
+			))
+			for name in "${shared_names_list[@]}"; do
+				echo -e "\t-> Including $addr\t$name"
+				echo "$addr $name" >>"$TMPDIR/hosts"
+			done
+		done
+	fi
 	echo "# END --- General additions" >>"$TMPDIR/hosts"
 
 	echo "" >>"$TMPDIR/hosts"
@@ -78,6 +96,7 @@ if [ "$system" = "Darwin" ]; then
 			tr "\n" " "
 		))
 		for name in "${specific_names_list[@]}"; do
+			echo -e "\t-> Including $addr:$name ..."
 			echo "$addr $name" >>"$TMPDIR/hosts"
 		done
 	done
@@ -86,13 +105,12 @@ if [ "$system" = "Darwin" ]; then
 	echo "-> Applying exclusions ..."
 
 	declare -a shared_address_list=($(
-		if [ $skip_extra = true ]; then
+		if [ $block_known_app_domains = "true" ]; then
 			shared_filter=".shared|.[]"
 		else
 			shared_filter=".shared+.shared_extra|.[]"
 		fi
-		jq --raw-output "$shared_filter" \
-			"$rootdir/shared/scripts/install-hosts-exclusions.json" |
+		jq --raw-output "$shared_filter" "$hosts_exclusions_orig" |
 		tr "\n" " "
 	))
 	for name in "${shared_address_list[@]}"; do
@@ -102,8 +120,7 @@ if [ "$system" = "Darwin" ]; then
 	done
 
 	declare -a specific_address_list=($(
-		jq --raw-output ".specific.\"$_hostname\"[]" \
-			"$rootdir/shared/scripts/install-hosts-exclusions.json" |
+		jq --raw-output ".specific.\"$_hostname\"[]" "$hosts_exclusions_orig" |
 		tr "\n" " "
 	))
 	for name in "${specific_address_list[@]}"; do
