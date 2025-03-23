@@ -24,14 +24,14 @@
 
 - Update Homebrew applications
   - Quit all apps.
-  - Disable known app host rules: `bash shared/scripts/install-hosts.sh --no-block-known-app-domains`.
+  - Disable known app's host rules: `bash shared/scripts/install-hosts.sh --no-block-known-app-domains`.
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Update all installed formulae and casks: `brew upgrade --greedy`.
   - Formulae w/ special upgrade instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
     * `brew unlink python@3.13 openssl@3`.
   - Purge cache: `brew cleanup [--dry-run]`.
-  - Re-enable extra host rules: `bash shared/scripts/install-hosts.sh`.
+  - Re-enable know app's host rules: `bash shared/scripts/install-hosts.sh`.
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
