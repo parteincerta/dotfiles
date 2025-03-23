@@ -11,7 +11,7 @@
   - `cd $DEVELOPER/parteincerta/dotfiles && git pull && ./configure.sh`
   - Check for [Steven Black's hosts][macos-maintenance-01] updates and patch `install-hosts.sh`.
   - `bash shared/scripts/install-hosts.sh`
-  
+
 - Update MongoDB utilities
   - Check for [MongoDB Shell][macos-maintenance-02] and
     [MongoDB Tools][macos-maintenance-03] updates and patch `install-mongo-utils.sh`.
@@ -24,14 +24,14 @@
 
 - Update Homebrew applications
   - Quit all apps.
-  - Disable `hosts` rules for Brave and WhatsApp.
+  - Disable extra host rules: `bash shared/scripts/install-hosts.sh --skip-extra`.
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Update all installed formulae and casks: `brew upgrade --greedy`.
   - Formulae w/ special upgrade instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
     * `brew unlink python@3.13 openssl@3`.
   - Purge cache: `brew cleanup [--dry-run]`.
-  - Re-enable `hosts` rules for Brave and WhatsApp.
+  - Re-enable extra host rules: `bash shared/scripts/install-hosts.sh`.
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
