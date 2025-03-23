@@ -31,6 +31,11 @@ mkdir -p \
 
 app_support_folder="$HOME/Library/Application Support"
 
+[ -f "/Library/Managed Preferences/com.google.keystone.plist" ] &&
+	echo "Disabling Google's Auto Updater requires elevated privileges ..." &&
+	sudo mkdir -p "/Library/Managed Preferences" &&
+	sudo cp "$rootdir/shared_macos/plist/com.google.keystone.plist /Library/Managed Preferences/"
+
 cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
 
