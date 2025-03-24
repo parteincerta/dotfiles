@@ -2,7 +2,7 @@
 
 # System Services
 
-# NOTE: Don't disable the following ones:
+# NOTE: Don't disable the following service.
 # com.apple.icloud.findmydeviced -> No longer able to format external volumes.
 system_services=(
 	com.apple.AppStoreDaemon.StorePrivilegedODRService
@@ -23,6 +23,7 @@ system_services=(
 )
 for item in "${system_services[@]}"; do
 	echo "Disabling system/$item ..."
+	sudo launchctl bootout "system/$item"
 	sudo launchctl disable "system/$item"
 done
 
@@ -76,10 +77,12 @@ user_services=(
 	com.apple.storedownloadd
 	com.apple.studentd
 	com.apple.suggestd
+	com.apple.tipsd
 	com.apple.triald
 )
 uid=$(id -u)
 for item in "${user_services[@]}"; do
 	echo "Disabling user/$uid/$item ..."
+	launchctl bootout "gui/$uid/$item"
 	launchctl disable "user/$uid/$item"
 done

@@ -74,7 +74,7 @@ uid=$(id -u)
 for item in "${user_services[@]}"; do
 	echo "Disabling user/$uid/$item ..."
 	# `bootout` only possible if SIP is disabled.
-	# launchctl bootout "system/$item"
+	# launchctl bootout "gui/$uid/$item"
 	launchctl disable "gui/$uid/$item"
 
 	pid=$(echo "$user_services_launchctl" | grep "$item" | awk '{print $1}')
