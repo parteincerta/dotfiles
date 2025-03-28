@@ -86,10 +86,11 @@ brew unlink openssl@3
 log_info "\t >>> Installing Homebrew apps ..."
 microsoft=(microsoft-excel microsoft-powerpoint microsoft-word)
 homebrew_casks=(
-	alt-tab betterdisplay google-chrome iina mac-mouse-fix "${microsoft[@]}"
-	numi onyx spaceid whatsapp zoom
+	alt-tab betterdisplay google-chrome iina mac-mouse-fix  numi onyx spaceid
+	whatsapp zoom
 )
 brew install --cask "${homebrew_casks[@]}"
+brew install --cask --ignore-dependencies "${microsoft[@]}"
 
 
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
