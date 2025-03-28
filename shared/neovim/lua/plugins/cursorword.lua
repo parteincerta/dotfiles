@@ -2,7 +2,7 @@
 -- https://github.com/tzachar/local-highlight.nvim
 
 return {
-	'parteincerta/local-highlight.nvim',
+	'tzachar/local-highlight.nvim',
 	branch = 'master',
 	config = function()
 		local lh = require('local-highlight')
