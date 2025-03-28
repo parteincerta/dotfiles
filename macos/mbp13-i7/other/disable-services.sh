@@ -41,6 +41,7 @@ system_services=(
 )
 for item in "${system_services[@]}"; do
 	echo "Disabling system/$item ..."
+	sudo launchctl bootout "system/$item"
 	sudo launchctl disable "system/$item"
 done
 
@@ -147,5 +148,6 @@ user_services=(
 uid=$(id -u)
 for item in "${user_services[@]}"; do
 	echo "Disabling user/$uid/$item ..."
+	launchctl bootout "user/$uid/$item"
 	launchctl disable "user/$uid/$item"
 done
