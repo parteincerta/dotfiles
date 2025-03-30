@@ -10,7 +10,7 @@
 - Update dotfiles and `/private/etc/hosts`
   - `cd $DEVELOPER/parteincerta/dotfiles && git pull && ./configure.sh`
   - Check for [Steven Black's hosts][macos-maintenance-01] updates and patch `install-hosts.sh`.
-  - `bash shared/scripts/install-hosts.sh`
+  - Update hosts file: `bash shared/scripts/install-hosts.sh [--hostname <hostname>]`
 
 - Update MongoDB utilities
   - Check for [MongoDB Shell][macos-maintenance-02] and
@@ -25,6 +25,8 @@
 - Update Homebrew applications
   - Quit all apps.
   - Disable known app's host rules: `bash shared/scripts/install-hosts.sh --no-block-known-app-domains`.
+    - Attention: If running the above command inside a VM where the DNS is
+      provided by the host, run it first in the host.
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Update all installed formulae and casks: `brew upgrade --greedy`.
   - Formulae w/ special upgrade instructions:
