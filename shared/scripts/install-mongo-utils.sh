@@ -59,7 +59,7 @@ elif [ "$1" == "tools" ]; then
 		unzip "${TMPDIR}mongodb-tools.zip" -d "$TMPDIR" >/dev/null
 
 		echo "-> Installing in $HOME/.local/bin/ ..."
-		rm -rf "$HOME/.local/bin"/mongo{dump,export,import,restore,stat,top}
+		rm -rf "$HOME/.local/bin"/mongo{dump,export,files,import,restore,stat,top}
 		mv "${TMPDIR}mongodb-database-tools-macos-${arch}-${mongo_tools_version}/bin/mongo"* "$HOME/.local/bin/"
 
 		echo "-> Finished."
