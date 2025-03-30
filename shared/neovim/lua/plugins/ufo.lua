@@ -32,7 +32,6 @@ end
 return {
 	'kevinhwang91/nvim-ufo',
 	enabled = os.getenv('IS_PAGER') ~= 'yes',
-	version = "v1.*",
 	dependencies = {{
 		'kevinhwang91/promise-async',
 		enabled = true,
