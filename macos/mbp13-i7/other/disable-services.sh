@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# System Services
-
-# NOTE: Don't disable the following ones:
-# com.apple.icloud.findmydeviced -> No longer able to format external volumes.
 system_services=(
 	com.apple.AppStoreDaemon.StorePrivilegedODRService
 	com.apple.AppStoreDaemon.StorePrivilegedTaskService
@@ -28,11 +24,12 @@ system_services=(
 	com.apple.icloud.fmfd
 	com.apple.icloud.searchpartyd
 	com.apple.itunescloudd
-	com.apple.mobile.obliteration # Remote device wipe functionality
-	com.apple.ospredictiond       # Predicts OS conditions
+	com.apple.mobile.obliteration
+	com.apple.ospredictiond
 	com.apple.protectedcloudstorage.protectedcloudkeysyncing
 	com.apple.rapportd
 	com.apple.security.cloudkeychainproxy3
+	com.apple.security.syspolicy
 	com.apple.siri.morphunassetsupdaterd
 	com.apple.siriinferenced
 	com.apple.touchbarserver
@@ -44,12 +41,6 @@ for item in "${system_services[@]}"; do
 	sudo launchctl bootout "system/$item"
 	sudo launchctl disable "system/$item"
 done
-
-# User Services
-
-# NOTE: Don't disable the following services.
-# com.apple.bird      : Annoying messages about iCloud will start to pop up randomly.
-# com.apple.contactsd : Spotlight search and share will stop working.
 
 user_services=(
 	com.apple.AddressBook.ContactsAccountsService
@@ -142,6 +133,7 @@ user_services=(
 	com.apple.storedownloadd
 	com.apple.suggestd
 	com.apple.telephonyutilities.callservicesd
+	com.apple.tipsd
 	com.apple.triald
 	com.apple.videosubscriptionsd
 )
