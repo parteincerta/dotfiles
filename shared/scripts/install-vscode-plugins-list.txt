@@ -9,6 +9,7 @@ VisualStudioExptTeam.vscodeintellicode
 Zignd.html-css-class-completion
 adpyke.codesnap
 alefragnani.Bookmarks
+biomejs.biome
 bmalehorn.vscode-fish
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
