@@ -1,4 +1,7 @@
 {
+	"biome": {
+		"enabled": false
+	},
 	"editor.cursorBlinking": "blink",
 	"editor.cursorSmoothCaretAnimation": "off",
 	"editor.fontFamily": "JetBrainsMonoNL Nerd Font Mono",
