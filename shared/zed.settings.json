@@ -32,8 +32,7 @@
 	"buffer_font_family": "JetBrainsMonoNL Nerd Font Mono",
 	"buffer_font_size": ${font_size},
 	"ensure_final_newline_on_save": true,
-	"format_on_save": "on",
-	"formatter": "language_server",
+	"format_on_save": "off",
 	"hard_tabs": true,
 	"indent_guides": {
 		"enabled": true,
@@ -42,12 +41,17 @@
 	"inlay_hints": {
 		"enabled": false
 	},
-	"languages": {
-		"C": { "format_on_save": "off" },
-		"JSON": { "format_on_save": "off" },
-		"Lua": { "format_on_save": "off" }
+	"lsp": {
+		"biome": {
+			"settings": {
+				"require_config_file": true
+			}
+		}
 	},
 	"relative_line_numbers": true,
+	"scrollbar": {
+		"git_diff": false
+	},
 	"terminal": {
 		"font_family": "JetBrainsMonoNL Nerd Font Mono",
 		"font_size": ${font_size},
