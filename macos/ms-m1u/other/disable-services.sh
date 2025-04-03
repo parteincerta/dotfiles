@@ -33,6 +33,7 @@ user_services=(
 	com.apple.TMHelperAgent.SetupOffer
 	com.apple.UsageTrackingAgent
 	com.apple.WiFiVelocityAgent
+	com.apple.XProtect.agent.scan
 	com.apple.XProtect.daemon.scan
 	com.apple.XProtect.daemon.scan.startup
 	com.apple.XprotectFramework.PluginService
