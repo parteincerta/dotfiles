@@ -46,7 +46,6 @@ user_services=(
 	com.apple.macos.studentd
 	com.apple.newsd
 	com.apple.parsec-fbf
-	com.apple.parsecd
 	com.apple.routined
 	com.apple.siri.context.service
 	com.apple.siriactionsd
