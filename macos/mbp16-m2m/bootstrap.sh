@@ -77,7 +77,7 @@ log_info "\t >>> Installing Homebrew command line tools ..."
 fonts=(font-jetbrains-mono-nerd-font)
 homebrew_clt=(
 	bat bash bash-completion@2 coreutils eza fd findutils "${fonts[@]}" fzf
-	gettext git-delta gnupg gsed lf moreutils neovim ripgrep
+	gettext git-delta gnupg gsed jq lf moreutils neovim ripgrep
 )
 brew install "${homebrew_clt[@]}"
 brew unlink openssl@3
