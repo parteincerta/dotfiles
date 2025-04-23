@@ -13,14 +13,14 @@ trap 'trap_error; rm -rf $TMPDIR/hosts*' ERR
 
 system="$(uname -s)"
 version="3.15.33"
-url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/gambling-porn-social/hosts"
+url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/fakenews-gambling-porn-social/hosts"
 user_defined_hostname=""
 block_known_app_domains="true"
 
 parse_arguments () {
 	while [[ $# -gt 0 ]]; do case $1 in
 		--basic)
-			url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/hosts";
+			url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/fakenews-gambling-porn-only/hosts";
 			shift;;
 		--hostname)
 			user_defined_hostname="$2";
