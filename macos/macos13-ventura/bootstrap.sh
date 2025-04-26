@@ -87,10 +87,9 @@ compass=(mongodb-compass-isolated-edition)
 microsoft=(microsoft-excel microsoft-powerpoint microsoft-word windows-app)
 homebrew_casks=(
 	alt-tab brave-browser bruno "${compass[@]}" dbeaver-community fork ghostty
-	iina json-viewer mist onyx visual-studio-code zed
+	iina json-viewer "${microsoft[@]}" mist onyx visual-studio-code zed
 )
 brew install --cask "${homebrew_casks[@]}"
-brew install --cask --ignore-dependencies "${microsoft[@]}"
 
 
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
