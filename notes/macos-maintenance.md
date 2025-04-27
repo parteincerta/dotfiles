@@ -2,10 +2,16 @@
 
 ## Core Maintenance
 - Update macOS
+  - Temporarily enable `syspolicyd`. Some installers will fail w/o it running:
+    * `sudo launchctl enable system/com.apple.security.syspolicy`
+    * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist`
   - To list available updates: `softwareupdate --list`.
   - To install an update: `softwareupdate --install "<label>"`.
   - To install an update and restart: `sudo softwareupdate --install --restart "<label>"`.
   - Install the latest version of [OpenCore Legacy Patcher][macos-maintenance-04], if applicable.
+  - Disable `syspolicyd`:
+    * `sudo launchctl bootout system/com.apple.security.syspolicy`
+    * `sudo launchctl disable system/com.apple.security.syspolicy`
 
 - Update dotfiles and `/private/etc/hosts`
   - `cd $DEVELOPER/parteincerta/dotfiles && git pull && ./configure.sh`
