@@ -31,10 +31,10 @@
     * `sudo launchctl enable system/com.apple.security.syspolicy`
     * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist`
   - Update Homebrew itself and the list of formulae: `brew update`.
-  - Update all installed formulae and casks: `brew upgrade --greedy`.
-  - Formulae w/ special upgrade instructions:
+  - Upgrade formulae which require specially instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
     * `brew unlink python@3.13 openssl@3`.
+  - Upgrade all installed formulae and casks: `brew upgrade --greedy`.
   - Purge cache: `brew cleanup [--dry-run]`.
   - Re-enable know app's host rules: `bash shared/scripts/install-hosts.sh`.
   - Disable `syspolicyd`:
