@@ -29,7 +29,7 @@
       provided by the host, run it first in the host.
   - Temporarily enable `syspolicyd`. Some installers will fail w/o it running:
     * `sudo launchctl enable system/com.apple.security.syspolicy`
-    * Reboot
+    * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist`
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Update all installed formulae and casks: `brew upgrade --greedy`.
   - Formulae w/ special upgrade instructions:
