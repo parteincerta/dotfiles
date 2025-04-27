@@ -47,10 +47,6 @@ log_info "\t >>> Installing dotfiles"
 source configure.sh
 
 
-log_info "\t >>> Configuring services ..."
-source other/disable-services.sh || true
-
-
 log_info "\t >>> Configuring the Desktop and keyboard"
 defaults write com.apple.dock autohide-delay -int 0
 defaults write com.apple.dock autohide-time-modifier -float 0.30
@@ -90,6 +86,10 @@ homebrew_casks=(
 	numi onyx spaceid whatsapp zoom
 )
 brew install --cask "${homebrew_casks[@]}"
+
+
+log_info "\t >>> Disabling services ..."
+source other/disable-services.sh || true
 
 
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
