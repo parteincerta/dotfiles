@@ -27,6 +27,9 @@
   - Disable known app's host rules: `bash shared/scripts/install-hosts.sh --no-block-known-app-domains`.
     - Attention: If running the above command inside a VM where the DNS is
       provided by the host, run it first in the host.
+  - Temporarily enable `syspolicyd` (some installer need it):
+    * `sudo launchctl enable system/com.apple.security.syspolicy`
+    * `sudo launchctl kickstart system/com.apple.security.syspolicy`
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Update all installed formulae and casks: `brew upgrade --greedy`.
   - Formulae w/ special upgrade instructions:
@@ -34,6 +37,9 @@
     * `brew unlink python@3.13 openssl@3`.
   - Purge cache: `brew cleanup [--dry-run]`.
   - Re-enable know app's host rules: `bash shared/scripts/install-hosts.sh`.
+  - Re-disable `syspolicyd`:
+    * `sudo launchctl bootout system/com.apple.security.syspolicy`
+    * `sudo launchctl disable system/com.apple.security.syspolicy`
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
