@@ -138,6 +138,7 @@
     - Configure startup settings, resources, folder permissions and notifications.
     - Install the `Disk usage`, `Logs Explorer` and `Resource usage` extensions.
 - Configure Notifications, Login Items and Siri.
+- Disable services: `bash macos/<hostname>/other/disable-services.sh`
 - Press `Cmd+Shift+5`, select `Options` and set folder used for screenshots/recordings.
 - Install DBeaver's connections.
 - Setup the [Docker containers][macos-notes-03].

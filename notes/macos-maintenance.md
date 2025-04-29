@@ -1,17 +1,17 @@
 # macOS Maintenance Notes
 
 ## Core Maintenance
-- Update macOS
-  - Temporarily enable `syspolicyd`. Some installers will fail w/o it running:
+- Re-enable `syspolicyd`
     * `sudo launchctl enable system/com.apple.security.syspolicy`
     * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist`
+    * Reboot
+
+- Update macOS
   - To list available updates: `softwareupdate --list`.
   - To install an update: `softwareupdate --install "<label>"`.
   - To install an update and restart: `sudo softwareupdate --install --restart "<label>"`.
   - Install the latest version of [OpenCore Legacy Patcher][macos-maintenance-04], if applicable.
-  - Disable `syspolicyd`:
-    * `sudo launchctl bootout system/com.apple.security.syspolicy`
-    * `sudo launchctl disable system/com.apple.security.syspolicy`
+  - Open system applications and make sure they're working as intended.
 
 - Update dotfiles and `/private/etc/hosts`
   - `cd $DEVELOPER/parteincerta/dotfiles && git pull && ./configure.sh`
@@ -33,9 +33,6 @@
   - Disable known app's host rules: `bash shared/scripts/install-hosts.sh --no-block-known-app-domains`.
     - Attention: If running the above command inside a VM where the DNS is
       provided by the host, run it first in the host.
-  - Temporarily enable `syspolicyd`. Some installers will fail w/o it running:
-    * `sudo launchctl enable system/com.apple.security.syspolicy`
-    * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist`
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Upgrade formulae which require specially instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
@@ -43,9 +40,6 @@
   - Upgrade all installed formulae and casks: `brew upgrade --greedy`.
   - Purge cache: `brew cleanup [--dry-run]`.
   - Re-enable know app's host rules: `bash shared/scripts/install-hosts.sh`.
-  - Disable `syspolicyd`:
-    * `sudo launchctl bootout system/com.apple.security.syspolicy`
-    * `sudo launchctl disable system/com.apple.security.syspolicy`
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
@@ -75,6 +69,12 @@
   - Export updated configurations: `bash shared_macos/scripts/export-defaults.sh`.
   - Purge caches from CLI tools: `purge bash clipboard nvim zsh` and `purge fish`.
   - Install App Store updates.
+  - Open all updated applications and make sure they're working as intended.
+
+- Re-disable `syspolicyd`
+    * `sudo launchctl bootout system/com.apple.security.syspolicy`
+    * `sudo launchctl disable system/com.apple.security.syspolicy`
+    * Reboot
 
 [macos-maintenance-01]: https://github.com/StevenBlack/hosts/releases
 [macos-maintenance-02]: https://github.com/mongodb-js/mongosh/releases
