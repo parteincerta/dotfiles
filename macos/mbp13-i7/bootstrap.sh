@@ -91,10 +91,6 @@ homebrew_casks=(
 brew install --cask "${homebrew_casks[@]}"
 
 
-log_info "\t >>> Disabling services ..."
-source other/disable-services.sh || true
-
-
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
 source "$rootdir/shared_macos/.bash_profile" || true
 source configure.sh
