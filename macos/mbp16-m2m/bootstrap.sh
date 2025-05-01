@@ -70,20 +70,20 @@ fi
 
 
 log_info "\t >>> Installing Homebrew command line tools ..."
-fonts=(font-jetbrains-mono-nerd-font)
 homebrew_clt=(
-	bat bash bash-completion@2 coreutils eza fd findutils "${fonts[@]}" fzf
-	gettext git-delta gnupg gsed jq lf moreutils neovim ripgrep
+	bat bash bash-completion@2 coreutils eza fd findutils fzf gettext git-delta
+	gnupg gsed jq lf moreutils neovim ripgrep
 )
 brew install "${homebrew_clt[@]}"
 brew unlink openssl@3
 
 
 log_info "\t >>> Installing Homebrew apps ..."
+fonts=(font-jetbrains-mono-nerd-font)
 microsoft=(microsoft-excel microsoft-powerpoint microsoft-word)
 homebrew_casks=(
-	alt-tab betterdisplay google-chrome iina mac-mouse-fix "${microsoft[@]}"
-	numi onyx spaceid whatsapp zoom
+	alt-tab betterdisplay "${fonts[@]}" google-chrome iina mac-mouse-fix
+	"${microsoft[@]}" numi onyx spaceid whatsapp zoom
 )
 brew install --cask "${homebrew_casks[@]}"
 
