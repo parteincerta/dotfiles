@@ -1,7 +1,7 @@
 # macOS Maintenance Notes
 
 ## Core Maintenance
-- Re-enable `syspolicyd`
+- Re-enable `syspolicyd`, in case it is disabled.
     * `sudo launchctl enable system/com.apple.security.syspolicy`
     * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist`
     * Reboot
@@ -71,7 +71,7 @@
   - Install App Store updates.
   - Open all updated applications and make sure they're working as intended.
 
-- Re-disable `syspolicyd`
+- Re-disable `syspolicyd`, in case it was disabled.
     * `sudo launchctl bootout system/com.apple.security.syspolicy`
     * `sudo launchctl disable system/com.apple.security.syspolicy`
     * Reboot
