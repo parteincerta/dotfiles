@@ -138,13 +138,16 @@
     - Configure startup settings, resources, folder permissions and notifications.
     - Install the `Disk usage`, `Logs Explorer` and `Resource usage` extensions.
 - Configure Notifications, Login Items and Siri.
-- Disable services: `bash macos/<hostname>/other/disable-services.sh`
 - Press `Cmd+Shift+5`, select `Options` and set folder used for screenshots/recordings.
 - Install DBeaver's connections.
 - Setup the [Docker containers][macos-notes-03].
 - Configure VPNs and show the VPN icon in the Menu Bar.
 - Clone and configure 3rd party git repos.
-- Shutdown Ethernet/Wi-Fi and run Onyx. Revoke its permissions afterwards.
+- Shutdown internet connections and run Onyx.
+  - Disable macOS GateKeeper.
+- Reboot.
+- Revoke Onyx permissions.
+- Disable services: `bash macos/<hostname>/other/disable-services.sh`
 - Reboot.
 
 [macos-notes-01]: https://developer.apple.com/download/all
