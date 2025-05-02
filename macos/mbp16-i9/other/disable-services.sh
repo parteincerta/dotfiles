@@ -6,8 +6,10 @@ system_services=(
 	com.apple.XProtect.daemon.scan.startup
 	com.apple.XprotectFramework.PluginService
 	com.apple.analyticsd
+	com.apple.audioanalyticsd
 	com.apple.backupd
 	com.apple.backupd-helper
+	com.apple.ecosystemanalyticsd
 	com.apple.familycontrols
 	com.apple.ospredictiond
 	com.apple.rtcreportingd
@@ -23,8 +25,10 @@ for item in "${system_services[@]}"; do
 done
 
 user_services=(
+	com.apple.ContextStoreAgent
 	com.apple.DiagnosticsReporter
 	com.apple.GameController.gamecontrolleragentd
+	com.apple.ManagedClientAgent.enrollagent
 	com.apple.ReportCrash
 	com.apple.ScreenTimeAgent
 	com.apple.SiriTTSTrainingAgent
@@ -37,11 +41,14 @@ user_services=(
 	com.apple.XProtect.daemon.scan
 	com.apple.XProtect.daemon.scan.startup
 	com.apple.XprotectFramework.PluginService
+	com.apple.accessibility.MotionTrackingAgent
+	com.apple.accessibility.axassetsd
 	com.apple.ap.adprivacyd
 	com.apple.ap.adservicesd
 	com.apple.ap.promotedcontentd
 	com.apple.assistant_service
 	com.apple.assistantd
+	com.apple.assistant_cdmd
 	com.apple.betaenrollmentd
 	com.apple.corespeechd
 	com.apple.familycircled
@@ -49,19 +56,32 @@ user_services=(
 	com.apple.familynotificationd
 	com.apple.financed
 	com.apple.gamed
+	com.apple.generativeexperiencesd
+	com.apple.geoanalyticsd
+	com.apple.geodMachServiceBridge
+	com.apple.helpd
+	com.apple.homed
+	com.apple.inputanalyticsd
+	com.apple.intelligencecontextd
+	com.apple.intelligenceflowd
 	com.apple.intelligenceplatformd
 	com.apple.knowledge-agent
+	com.apple.knowledgeconstructiond
 	com.apple.macos.studentd
+	com.apple.naturallanguaged
 	com.apple.newsd
 	com.apple.parsec-fbf
+	com.apple.parsecd
 	com.apple.routined
 	com.apple.siri.context.service
 	com.apple.siriactionsd
+	com.apple.siriinferenced
 	com.apple.siriknowledged
 	com.apple.sirittsd
 	com.apple.suggestd
 	com.apple.tipsd
 	com.apple.triald
+	com.apple.voicebankingd
 )
 
 uid=$(id -u)

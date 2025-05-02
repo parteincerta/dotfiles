@@ -13,6 +13,7 @@ system_services=(
 	com.apple.XprotectFramework.PluginService
 	com.apple.analyticsd
 	com.apple.appstored
+	com.apple.audioanalyticsd
 	com.apple.backupd
 	com.apple.backupd-helper
 	com.apple.biomed
@@ -20,6 +21,7 @@ system_services=(
 	com.apple.cloudpaird
 	com.apple.cloudphotod
 	com.apple.coreduetd
+	com.apple.ecosystemanalyticsd
 	com.apple.familycontrols
 	com.apple.findmymacmessenger
 	com.apple.followupd
@@ -62,6 +64,7 @@ user_services=(
 	com.apple.CloudSettingsSyncAgent
 	com.apple.CommCenter-osx
 	com.apple.ContactsAgent
+	com.apple.ContextStoreAgent
 	com.apple.CoreLocationAgent
 	com.apple.GameController.gamecontrolleragentd
 	com.apple.ManagedClient.cloudconfigurationd
@@ -87,6 +90,7 @@ user_services=(
 	com.apple.XProtect.daemon.scan.startup
 	com.apple.XprotectFramework.PluginService
 	com.apple.accessibility.MotionTrackingAgent
+	com.apple.accessibility.axassetsd
 	com.apple.amsengagementd
 	com.apple.ap.adprivacyd
 	com.apple.ap.adservicesd
@@ -95,6 +99,7 @@ user_services=(
 	com.apple.appstorecomponentsd
 	com.apple.assistant_service
 	com.apple.assistantd
+	com.apple.assistant_cdmd
 	com.apple.avconferenced
 	com.apple.betaenrollmentd
 	com.apple.biomesyncd
@@ -114,6 +119,9 @@ user_services=(
 	com.apple.financed
 	com.apple.followupd
 	com.apple.gamed
+	com.apple.generativeexperiencesd
+	com.apple.generativeexperiencesd
+	com.apple.geoanalyticsd
 	com.apple.geod
 	com.apple.geodMachServiceBridge
 	com.apple.homed
@@ -124,13 +132,18 @@ user_services=(
 	com.apple.imagent
 	com.apple.imautomatichistorydeletionagent
 	com.apple.imtransferagent
+	com.apple.inputanalyticsd
+	com.apple.intelligencecontextd
+	com.apple.intelligenceflowd
 	com.apple.intelligenceplatformd
 	com.apple.itunescloudd
 	com.apple.knowledge-agent
+	com.apple.knowledgeconstructiond
 	com.apple.macos.studentd
 	com.apple.mediaanalysisd
 	com.apple.mediastream.mstreamd
 	com.apple.newsd
+	com.apple.naturallanguaged
 	com.apple.parsec-fbf
 	com.apple.parsecd
 	com.apple.passd
@@ -154,6 +167,7 @@ user_services=(
 	com.apple.sidecar-relay
 	com.apple.siri.context.service
 	com.apple.siriactionsd
+	com.apple.siriinferenced
 	com.apple.siriknowledged
 	com.apple.storedownloadd
 	com.apple.suggestd
@@ -162,6 +176,7 @@ user_services=(
 	com.apple.triald
 	com.apple.universalaccessd
 	com.apple.videosubscriptionsd
+	com.apple.voicebankingd
 )
 uid=$(id -u)
 for item in "${user_services[@]}"; do
