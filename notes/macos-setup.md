@@ -145,8 +145,9 @@
 - Clone and configure 3rd party git repos.
 - Shutdown internet connections and run Onyx.
   - Disable macOS GateKeeper.
-- Reboot.
-- Revoke Onyx permissions.
+  - Clean up temporary artifacts.
+- Revoke Onyx permissions and shutdown the computer.
+- Disable SiP.
 - Disable services: `bash macos/<hostname>/other/disable-services.sh`
 - Reboot.
 
