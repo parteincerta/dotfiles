@@ -147,10 +147,11 @@
   - Disable macOS GateKeeper.
   - Clean up temporary artifacts.
 - Revoke Onyx permissions and shutdown the computer.
-- Disable SiP.
+- [Disable SiP][macos-notes-04].
 - Disable services: `bash macos/<hostname>/other/disable-services.sh`
 - Reboot.
 
 [macos-notes-01]: https://developer.apple.com/download/all
 [macos-notes-02]: https://github.com/orgs/Homebrew/discussions/5723#discussioncomment-11185411
 [macos-notes-03]: https://github.com/parteincerta/docker-recipes
+[macos-notes-04]: https://developer.apple.com/documentation/security/disabling-and-enabling-system-integrity-protection
