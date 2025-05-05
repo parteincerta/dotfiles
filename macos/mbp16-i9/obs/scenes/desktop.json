@@ -1,6 +1,5 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520093698,
 		"name": "Mic/Aux",
 		"uuid": "f323638c-b024-4f4b-ba96-35cf318be11e",
 		"id": "coreaudio_input_capture",
@@ -31,7 +30,6 @@
 		"private_settings": {},
 		"filters": [
 			{
-				"prev_ver": 520093698,
 				"name": "Noise Suppression",
 				"uuid": "dead043a-4920-4331-906c-e0cbc993a749",
 				"id": "noise_suppress_filter",
@@ -68,24 +66,23 @@
 	"name": "Desktop",
 	"sources": [
 		{
-			"prev_ver": 520093698,
 			"name": "Scene",
 			"uuid": "7dc04f97-3296-4f6a-a604-f41345eeaa99",
 			"id": "scene",
 			"versioned_id": "scene",
 			"settings": {
-				"id_counter": 1,
+				"id_counter": 2,
 				"custom_size": false,
 				"items": [
 					{
 						"name": "Desktop",
-						"source_uuid": "6c2373a3-8a8e-41c0-ad82-35c27327b6c5",
+						"source_uuid": "769209f2-4fc6-427c-a3c9-928e321b3904",
 						"visible": true,
 						"locked": false,
 						"rot": 0.0,
 						"scale_ref": {
-							"x": 5120.0,
-							"y": 2880.0
+							"x": 3584.0,
+							"y": 2240.0
 						},
 						"align": 5,
 						"bounds_type": 0,
@@ -95,14 +92,14 @@
 						"crop_top": 0,
 						"crop_right": 0,
 						"crop_bottom": 0,
-						"id": 1,
+						"id": 2,
 						"group_item_backup": false,
 						"pos": {
 							"x": 0.0,
 							"y": 0.0
 						},
 						"pos_rel": {
-							"x": -1.7777777910232544,
+							"x": -1.6000000238418579,
 							"y": -1.0
 						},
 						"scale": {
@@ -147,8 +144,8 @@
 			"push-to-talk-delay": 0,
 			"hotkeys": {
 				"OBSBasic.SelectScene": [],
-				"libobs.show_scene_item.1": [],
-				"libobs.hide_scene_item.1": []
+				"libobs.show_scene_item.2": [],
+				"libobs.hide_scene_item.2": []
 			},
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
@@ -156,9 +153,8 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093698,
 			"name": "Desktop",
-			"uuid": "6c2373a3-8a8e-41c0-ad82-35c27327b6c5",
+			"uuid": "769209f2-4fc6-427c-a3c9-928e321b3904",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
 			"settings": {
