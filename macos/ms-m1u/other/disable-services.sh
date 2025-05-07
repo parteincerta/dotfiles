@@ -11,10 +11,12 @@ system_services=(
 	com.apple.backupd-helper
 	com.apple.ecosystemanalyticsd
 	com.apple.familycontrols
+	com.apple.mobile.softwareupdated
 	com.apple.ospredictiond
 	com.apple.rtcreportingd
 	com.apple.security.syspolicy
 	com.apple.siriinferenced
+	com.apple.softwareupdated
 	com.apple.triald.system
 	com.apple.wifianalyticsd
 )

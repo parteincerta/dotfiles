@@ -1,9 +1,13 @@
 # macOS Maintenance Notes
 
 ## Core Maintenance
-- Re-enable `syspolicyd`, in case it is disabled.
+- Re-enable `softwareupdated` and `syspolicyd`, in case they're disabled.
+    * `sudo launchctl enable system/com.apple.mobile.softwareupdated`
     * `sudo launchctl enable system/com.apple.security.syspolicy`
+    * `sudo launchctl enable system/com.apple.softwareupdated`
+    * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.mobile.softwareupdated.plist`
     * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist`
+    * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.softwareupdated.plist`
     * Reboot
 
 - Update macOS
@@ -71,9 +75,13 @@
   - Install App Store updates.
   - Open all updated applications and make sure they're working as intended.
 
-- Re-disable `syspolicyd`, in case it was disabled.
+- Re-disable `softwareupdated` and `syspolicyd`, in case they were disabled.
+    * `sudo launchctl bootout system/com.apple.mobile.softwareupdated`
     * `sudo launchctl bootout system/com.apple.security.syspolicy`
+    * `sudo launchctl bootout system/com.apple.softwareupdated`
+    * `sudo launchctl disable system/com.apple.mobile.softwareupdated`
     * `sudo launchctl disable system/com.apple.security.syspolicy`
+    * `sudo launchctl disable system/com.apple.softwareupdated`
     * Reboot
 
 [macos-maintenance-01]: https://github.com/StevenBlack/hosts/releases
