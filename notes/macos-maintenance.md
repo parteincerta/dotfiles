@@ -77,6 +77,10 @@
   - Install App Store updates.
   - Open all updated applications and make sure they're working as intended.
 
+- Check if SiP is enabled and disable it if necessary:
+  - `csrutil status`.
+  - [Disable SiP][macos-maintenance-07].
+
 - Re-disable `softwareupdated` and `syspolicyd`, in case they were disabled.
   ```
   sudo launchctl bootout system/com.apple.mobile.softwareupdated
@@ -94,6 +98,7 @@
 [macos-maintenance-04]: https://github.com/dortania/OpenCore-Legacy-Patcher/releases
 [macos-maintenance-05]: https://github.com/microsoft/vcpkg/releases
 [macos-maintenance-06]: https://github.com/parteincerta/docker-recipes
+[macos-maintenance-07]: https://developer.apple.com/documentation/security/disabling-and-enabling-system-integrity-protection
 
 ## Extra
 
