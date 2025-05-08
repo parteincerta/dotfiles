@@ -81,7 +81,7 @@
   - `csrutil status`.
   - [Disable SiP][macos-maintenance-07].
 
-- Re-disable `softwareupdated` and `syspolicyd`, in case they were disabled.
+- Re-disable `softwareupdated` and `syspolicyd`, in case they were enabled.
   ```
   sudo launchctl bootout system/com.apple.mobile.softwareupdated
   sudo launchctl bootout system/com.apple.security.syspolicy
