@@ -2,13 +2,15 @@
 
 ## Core Maintenance
 - Re-enable `softwareupdated` and `syspolicyd`, in case they're disabled.
-    * `sudo launchctl enable system/com.apple.mobile.softwareupdated`
-    * `sudo launchctl enable system/com.apple.security.syspolicy`
-    * `sudo launchctl enable system/com.apple.softwareupdated`
-    * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.mobile.softwareupdated.plist`
-    * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist`
-    * `sudo launchctl load /System/Library/LaunchDaemons/com.apple.softwareupdated.plist`
-    * Reboot
+  ```
+  sudo launchctl enable system/com.apple.mobile.softwareupdated
+  sudo launchctl enable system/com.apple.security.syspolicy
+  sudo launchctl enable system/com.apple.softwareupdated
+  sudo launchctl load /System/Library/LaunchDaemons/com.apple.mobile.softwareupdated.plist
+  sudo launchctl load /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist
+  sudo launchctl load /System/Library/LaunchDaemons/com.apple.softwareupdated.plist
+  sudo shutdown -r now
+  ```
 
 - Update macOS
   - To list available updates: `softwareupdate --list`.
@@ -76,13 +78,15 @@
   - Open all updated applications and make sure they're working as intended.
 
 - Re-disable `softwareupdated` and `syspolicyd`, in case they were disabled.
-    * `sudo launchctl bootout system/com.apple.mobile.softwareupdated`
-    * `sudo launchctl bootout system/com.apple.security.syspolicy`
-    * `sudo launchctl bootout system/com.apple.softwareupdated`
-    * `sudo launchctl disable system/com.apple.mobile.softwareupdated`
-    * `sudo launchctl disable system/com.apple.security.syspolicy`
-    * `sudo launchctl disable system/com.apple.softwareupdated`
-    * Reboot
+  ```
+  sudo launchctl bootout system/com.apple.mobile.softwareupdated
+  sudo launchctl bootout system/com.apple.security.syspolicy
+  sudo launchctl bootout system/com.apple.softwareupdated
+  sudo launchctl disable system/com.apple.mobile.softwareupdated
+  sudo launchctl disable system/com.apple.security.syspolicy
+  sudo launchctl disable system/com.apple.softwareupdated
+  sudo shutdown -r now
+  ```
 
 [macos-maintenance-01]: https://github.com/StevenBlack/hosts/releases
 [macos-maintenance-02]: https://github.com/mongodb-js/mongosh/releases
