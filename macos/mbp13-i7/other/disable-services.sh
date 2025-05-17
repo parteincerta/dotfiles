@@ -25,12 +25,15 @@ system_services=(
 	com.apple.icloud.searchpartyd
 	com.apple.itunescloudd
 	com.apple.mobile.obliteration
+	com.apple.mobile.softwareupdated
 	com.apple.ospredictiond
 	com.apple.protectedcloudstorage.protectedcloudkeysyncing
 	com.apple.rapportd
 	com.apple.security.cloudkeychainproxy3
+	com.apple.security.syspolicy
 	com.apple.siri.morphunassetsupdaterd
 	com.apple.siriinferenced
+	com.apple.softwareupdated
 	com.apple.touchbarserver
 	com.apple.triald.system
 	com.apple.wifianalyticsd
