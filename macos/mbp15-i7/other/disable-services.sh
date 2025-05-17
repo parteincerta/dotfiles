@@ -30,7 +30,6 @@ system_services=(
 	com.apple.protectedcloudstorage.protectedcloudkeysyncing
 	com.apple.rapportd
 	com.apple.security.cloudkeychainproxy3
-	com.apple.security.syspolicy
 	com.apple.siri.morphunassetsupdaterd
 	com.apple.siriinferenced
 	com.apple.softwareupdated
