@@ -1,7 +1,7 @@
 -- Language Server Protocol integration
 -- https://github.com/hrsh7th/cmp-nvim-lsp
--- https://github.com/williamboman/mason.nvim
--- https://github.com/williamboman/mason-lspconfig.nvim
+-- https://github.com/mason-org/mason.nvim
+-- https://github.com/mason-org/mason-lspconfig.nvim
 -- https://github.com/neovim/nvim-lspconfig
 
 local _enabled = true
@@ -10,9 +10,9 @@ if os.getenv("IS_PAGER") == "yes" or os.getenv("IS_NOTES") == "yes" then
 end
 
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason.nvim",
 	enabled = _enabled,
-	version = "v1.*",
+	version = "v2.*",
 	config = function()
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
@@ -161,8 +161,8 @@ return {
 			end,
 		},
 		{
-			"williamboman/mason-lspconfig.nvim",
-			version = "v1.*",
+			"mason-org/mason-lspconfig.nvim",
+			version = "v2.*",
 		}
 	}
 }
