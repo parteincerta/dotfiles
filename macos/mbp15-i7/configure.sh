@@ -104,6 +104,7 @@ if [ -n "$HOMEBREW_PREFIX" ]; then
 	envsubst <"$rootdir/shared_macos/lfmarks" >"$HOME/.local/share/lf/marks"
 	envsubst <"$rootdir/shared/settings.vscode.json" >"$TMPDIR/settings.vscode.json"
 	envsubst <"$rootdir/shared/zed.settings.json" >"$XDG_CONFIG_HOME/zed/settings.json"
+	cp "$rootdir/shared_macos/quick-access-terminal.conf" "$XDG_CONFIG_HOME/kitty/"
 	cp "$TMPDIR/settings.vscode.json" "$vscode_cache_dir/settings.json"
 	cp "$TMPDIR/settings.vscode.json" "$vscode_settings_dir/settings.json"
 	rm "$TMPDIR/settings.vscode.json"
