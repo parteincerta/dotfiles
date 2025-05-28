@@ -12,7 +12,7 @@ source "$rootdir/shared/scripts/helper.sh"
 trap 'trap_error; rm -rf $TMPDIR/hosts*' ERR
 
 system="$(uname -s)"
-version="3.15.40"
+version="3.15.41"
 url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/fakenews-gambling-porn-social/hosts"
 user_defined_hostname=""
 block_known_app_domains="true"
