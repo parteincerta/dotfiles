@@ -142,7 +142,8 @@
 - Install DBeaver's connections.
 - Setup the [Docker containers][macos-notes-03].
 - Configure VPNs and show the VPN icon in the Menu Bar.
-- Clone and configure 3rd party git repos.
+- Clone and configure 3rd party git repositories.
+- Setup 3rd party Remote Desktop connections.
 - Shutdown internet connections and run Onyx.
   - Disable macOS GateKeeper.
   - Clean up temporary artifacts.
