@@ -72,19 +72,23 @@ fi
 
 log_info "\t >>> Installing Homebrew command line tools ..."
 homebrew_clt=(
-	bat bash bash-completion@2 coreutils eza fd findutils fzf gettext git-delta
-	gnupg gsed lf moreutils neovim ripgrep
+	7zip aria2 bat bash bash-completion@2 bzip2 coreutils eza fd findutils fio
+	fish fzf gettext git-delta gnupg gsed jq lf miniserve mise mkcert moreutils
+	neovim oha pbzip2 pigz ripgrep shellcheck tokei xz zstd
 )
 brew install "${homebrew_clt[@]}"
 brew unlink openssl@3
 
 
 log_info "\t >>> Installing Homebrew apps ..."
+compass=(mongodb-compass-isolated-edition)
 fonts=(font-jetbrains-mono-nerd-font)
-microsoft=(microsoft-excel microsoft-powerpoint microsoft-word)
+microsoft=(microsoft-excel microsoft-powerpoint microsoft-word windows-app)
 homebrew_casks=(
-	alt-tab betterdisplay "${fonts[@]}" google-chrome iina mac-mouse-fix
-	"${microsoft[@]}" numi onyx spaceid whatsapp zoom
+	alt-tab betterdisplay brave-browser bruno chatgpt "${compass[@]}"
+	dbeaver-community docker "${fonts[@]}" fork iina json-viewer kitty
+	mac-mouse-fix "${microsoft[@]}" mist numi obs onyx parallels signal spaceid
+	transmission visual-studio-code whatsapp windows-app zed
 )
 brew install --cask "${homebrew_casks[@]}"
 
@@ -96,12 +100,44 @@ bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh" --basic
+source "$rootdir/shared/scripts/install-hosts.sh"
+
+
+log_info "\t >>> Installing pip packages ..."
+pip3 install --user wheel
+pip3 install --user pynvim
+
+
+log_info "\t >>> Installing mise packages ..."
+MISE_YES=1 mise install
+
+
+log_info "\t >>> Installing vcpkg ..."
+source "$rootdir/shared/scripts/install-vcpkg.sh"
+
+
+log_info "\t >>> Installing MongoDB Shell and Tools .."
+source "$rootdir/shared/scripts/install-mongo-utils.sh" shell
+source "$rootdir/shared/scripts/install-mongo-utils.sh" tools
+
+
+log_info "\t >>> Installing Neovim plugins ..."
+nvim --headless -c "Lazy! install" -c qall
+
+
+log_info "\t >>> Installing VSCode plugins ..."
+source "$rootdir/shared/scripts/install-vscode-plugins.sh"
+
+
+log_info "\t >>> Ignoring Focusrite Scarlett Solo automount"
+echo "UUID=DC798778-543D-396B-A11F-2EC42F3500F9 none msdos ro,noauto" |
+	sudo tee -a /etc/fstab >/dev/null
 
 
 if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
 	log_info "\t >>> Setting Homebrew's bash as the default shell"
 	echo "$HOMEBREW_PREFIX/bin/bash" | sudo tee -a /etc/shells
+	echo "$HOMEBREW_PREFIX/bin/fish" | sudo tee -a /etc/shells
 	chsh -s "$HOMEBREW_PREFIX/bin/bash" "$(whoami)"
 fi
 
