@@ -45,6 +45,7 @@ user_services=(
 	com.apple.XprotectFramework.PluginService
 	com.apple.accessibility.MotionTrackingAgent
 	com.apple.accessibility.axassetsd
+	com.apple.accessibility.heard
 	com.apple.ap.adprivacyd
 	com.apple.ap.adservicesd
 	com.apple.ap.promotedcontentd

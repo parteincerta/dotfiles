@@ -78,6 +78,9 @@ user_services=(
 	com.apple.XProtect.daemon.scan
 	com.apple.XProtect.daemon.scan.startup
 	com.apple.XprotectFramework.PluginService
+	com.apple.accessibility.MotionTrackingAgent
+	com.apple.accessibility.axassetsd
+	com.apple.accessibility.heard
 	com.apple.amsengagementd
 	com.apple.ap.adprivacyd
 	com.apple.ap.adservicesd
