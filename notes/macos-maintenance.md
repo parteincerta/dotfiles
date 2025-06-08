@@ -71,7 +71,6 @@
 
 - Other update/maintenance tasks
   - Update Brave's Content Filters lists and clear its cache.
-  - Update Docker's extensions.
   - Update VSCode plugins.
   - Export updated configurations: `bash shared_macos/scripts/export-defaults.sh`.
   - Purge caches from CLI tools: `purge bash clipboard nvim zsh` and `purge fish`.
