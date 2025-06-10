@@ -35,6 +35,7 @@ user_services=(
 	com.apple.ScreenTimeAgent
 	com.apple.SiriTTSTrainingAgent
 	com.apple.Siri.agent
+	com.apple.SoftwareUpdateNotificationManager
 	com.apple.TMHelperAgent
 	com.apple.TMHelperAgent.SetupOffer
 	com.apple.UsageTrackingAgent
@@ -45,6 +46,7 @@ user_services=(
 	com.apple.XprotectFramework.PluginService
 	com.apple.accessibility.MotionTrackingAgent
 	com.apple.accessibility.axassetsd
+	com.apple.accessibility.heard
 	com.apple.ap.adprivacyd
 	com.apple.ap.adservicesd
 	com.apple.ap.promotedcontentd

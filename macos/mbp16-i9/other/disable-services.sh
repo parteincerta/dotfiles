@@ -35,6 +35,7 @@ user_services=(
 	com.apple.ScreenTimeAgent
 	com.apple.SiriTTSTrainingAgent
 	com.apple.Siri.agent
+	com.apple.SoftwareUpdateNotificationManager
 	com.apple.TMHelperAgent
 	com.apple.TMHelperAgent.SetupOffer
 	com.apple.UsageTrackingAgent
