@@ -61,6 +61,10 @@ defaults write -g NSWindowShouldDragOnGesture -bool true
 killall Dock
 
 
+log_info "\t >>> Installing Apple Rosetta"
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+
+
 if [ -z "$(command -v brew)" ]; then
 	log_info "\t >>> Installing Homebrew ..."
 	homebrew_url="https://raw.githubusercontent.com/Homebrew/install/master/install.sh"
