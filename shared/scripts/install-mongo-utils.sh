@@ -27,7 +27,7 @@ if [ "$1" == "shell" ]; then
 	if [ "$system" = "Darwin" ]; then
 
 		if [ "$arch" = "x86_64" ]; then arch="x64"; fi
-		url="https://downloads.mongodb.com/compass/mongosh-${mongo_sh_version}-darwin-${arch}.zip"
+		url="https://github.com/mongodb-js/mongosh/releases/download/v${mongo_sh_version}/mongosh-${mongo_sh_version}-darwin-${arch}.zip"
 
 		echo "-> Downloading $url ..."
 		curl --fail --connect-timeout 13 --retry 5 --retry-delay 2 \
