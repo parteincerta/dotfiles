@@ -236,6 +236,14 @@ function fish_right_prompt
 	echo -n "$(__fish_git_prompt) $(date '+%a %T')"
 end
 
+function fish_should_add_to_history
+	if type -q $argv[1]
+		return 0
+	else
+		return 1
+	end
+end
+
 ! type -q fzf-cd-widget &&
 type -fq fzf &>/dev/null &&
 	fzf --fish | source
