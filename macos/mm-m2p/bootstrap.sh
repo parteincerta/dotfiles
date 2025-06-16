@@ -38,6 +38,12 @@ if [ "$expected_hostname" != "$nice_hostname" ]; then
 	# GPU: 19C
 	# NPU: 15.8 TOPS
 	# SSD: 1TB NVMe
+
+	# -- RAM consumption stats --
+	# macOS 15.5 (Sequoia)
+	# After cold boot: 5.7GB
+	# After bold boot + devenv: 10.5GB
+	# After long period + devenv: 12.3GB
 	log_warning ">>> This bootstrap script belongs to another host: $expected_hostname".
 	log_warning ">>> The current host is: $nice_hostname"
 	exit 1
