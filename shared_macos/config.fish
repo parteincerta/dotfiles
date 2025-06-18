@@ -112,12 +112,8 @@ function gpg_enc_file --description "Encrypt a file with a password."
 end
 
 function howlong --description "Display for how long the computer has been turned on"
-	set --local time (string match --groups-only --regex 'up (?:(\d+) days, )?(\d+):(\d+)' (uptime))
-	if test (count $time) -eq 3
-		echo "$time[1] days, $time[2] hours, $time[3] minutes"
-	else
-		echo "$time[1] hours, $time[2] minutes"
-	end
+	echo (string match --regex --groups-only '.*Time since boot: (.+)' \
+		(system_profiler SPSoftwareDataType -detailLevel mini))
 end
 
 # Handling mise for AMD64 under Apple Silicon
