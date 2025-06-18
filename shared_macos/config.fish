@@ -246,7 +246,9 @@ function fish_right_prompt
 end
 
 function fish_should_add_to_history
-	if type -q $argv[1]
+	set --local cmd (string split --no-empty ' ' $argv)
+	echo $cmd[1] >>~/Desktop/out.txt
+	if type -q $cmd[1]
 		return 0
 	else
 		return 1
