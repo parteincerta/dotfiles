@@ -36,9 +36,8 @@
 
 - Update Homebrew applications
   - Quit all apps.
-  - Disable known app's host rules: `bash shared/scripts/install-hosts.sh --no-block-known-app-domains`.
-    - Attention: If running the above command inside a VM where the DNS is
-      provided by the host, run it first in the host.
+  - Disable known apps' host rules: `bash shared/scripts/install-hosts.sh --no-block-known-app-domains`.
+    - Attention: If you're inside a VM, run the command above on the host first too.
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Upgrade formulae which require specially instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
