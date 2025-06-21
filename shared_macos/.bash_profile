@@ -141,6 +141,12 @@ gpg_enc_file () {
 	fi
 }
 
+# Display for how long the computer has been turned on
+howlong ()  {
+	system_profiler SPSoftwareDataType -detailLevel mini |
+		sed -nE 's/.*Time since boot: (.+)/\1/p'
+}
+
 # Handling mise for AMD64 under Apple Silicon
 [ "$_arch" = "arm64" ] &&
 mise64 () {

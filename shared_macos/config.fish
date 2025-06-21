@@ -112,8 +112,8 @@ function gpg_enc_file --description "Encrypt a file with a password."
 end
 
 function howlong --description "Display for how long the computer has been turned on"
-	echo (string match --regex --groups-only '.*Time since boot: (.+)' \
-		(system_profiler SPSoftwareDataType -detailLevel mini))
+	string match --regex --groups-only '.*Time since boot: (.+)' \
+		(system_profiler SPSoftwareDataType -detailLevel mini)
 end
 
 # Handling mise for AMD64 under Apple Silicon
