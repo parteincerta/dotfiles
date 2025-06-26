@@ -18,6 +18,7 @@ trap trap_exit EXIT
 arch="$(uname -m)"
 system="$(uname -s)"
 target="$1"
+version=""
 shift;
 
 while [[ $# -gt 0 ]]; do case $1 in
