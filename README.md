@@ -1,0 +1,1 @@
+- macOS [setup](notes/macos-setup.md) and [maintenance](notes/macos-maintenance.md) guides.

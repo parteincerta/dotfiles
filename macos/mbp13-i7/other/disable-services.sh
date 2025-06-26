@@ -1,0 +1,152 @@
+#!/usr/bin/env bash
+
+system_services=(
+	com.apple.AppStoreDaemon.StorePrivilegedODRService
+	com.apple.AppStoreDaemon.StorePrivilegedTaskService
+	com.apple.CloudPhotosConfiguration
+	com.apple.GameController.gamecontrollerd
+	com.apple.EmbeddedOSInstallService
+	com.apple.ManagedClient.cloudconfigurationd
+	com.apple.XProtect.daemon.scan
+	com.apple.XProtect.daemon.scan.startup
+	com.apple.XprotectFramework.PluginService
+	com.apple.analyticsd
+	com.apple.appstored
+	com.apple.backupd
+	com.apple.backupd-helper
+	com.apple.biomed
+	com.apple.cloudd
+	com.apple.cloudpaird
+	com.apple.cloudphotod
+	com.apple.coreduetd
+	com.apple.familycontrols
+	com.apple.findmymacmessenger
+	com.apple.icloud.fmfd
+	com.apple.icloud.searchpartyd
+	com.apple.itunescloudd
+	com.apple.mobile.obliteration
+	com.apple.mobile.softwareupdated
+	com.apple.ospredictiond
+	com.apple.protectedcloudstorage.protectedcloudkeysyncing
+	com.apple.rapportd
+	com.apple.security.cloudkeychainproxy3
+	# com.apple.security.syspolicy : Disabling `syspolicyd` cause problems with OCLP
+	com.apple.siri.morphunassetsupdaterd
+	com.apple.siriinferenced
+	com.apple.softwareupdated
+	com.apple.touchbarserver
+	com.apple.triald.system
+	com.apple.wifianalyticsd
+)
+for item in "${system_services[@]}"; do
+	echo "Disabling system/$item ..."
+	sudo launchctl bootout "system/$item"
+	sudo launchctl disable "system/$item"
+done
+
+user_services=(
+	com.apple.AddressBook.ContactsAccountsService
+	com.apple.AddressBook.ContactsAccountsService
+	com.apple.AMPArtworkAgent
+	com.apple.AMPDeviceDiscoveryAgent
+	com.apple.AMPLibraryAgent
+	com.apple.BiomeAgent
+	com.apple.BTServer.cloudpairing
+	com.apple.CalendarAgent
+	com.apple.CallHistoryPluginHelper
+	com.apple.CloudPhotosConfiguration
+	com.apple.CloudSettingsSyncAgent
+	com.apple.ContactsAgent
+	com.apple.GameController.gamecontrolleragentd
+	com.apple.ManagedClient.cloudconfigurationd
+	com.apple.ManagedClientAgent.enrollagent
+	com.apple.Safari.History
+	com.apple.Safari.PasswordBreachAgent
+	com.apple.Safari.SafeBrowsing.Service
+	com.apple.SafariBookmarksSyncAgent
+	com.apple.SafariCloudHistoryPushAgent
+	com.apple.SafariHistoryServiceAgent
+	com.apple.SafariLaunchAgent
+	com.apple.SafariNotificationAgent
+	com.apple.ScreenTimeAgent
+	com.apple.Siri.agent
+	com.apple.SoftwareUpdateNotificationManager
+	com.apple.TMHelperAgent
+	com.apple.TMHelperAgent.SetupOffer
+	com.apple.UsageTrackingAgent
+	com.apple.WiFiVelocityAgent
+	com.apple.XProtect.agent.scan
+	com.apple.XProtect.daemon.scan
+	com.apple.XProtect.daemon.scan.startup
+	com.apple.XprotectFramework.PluginService
+	com.apple.accessibility.MotionTrackingAgent
+	com.apple.accessibility.axassetsd
+	com.apple.accessibility.heard
+	com.apple.amsengagementd
+	com.apple.ap.adprivacyd
+	com.apple.ap.adservicesd
+	com.apple.ap.promotedcontentd
+	com.apple.appstoreagent
+	com.apple.appstorecomponentsd
+	com.apple.assistant_service
+	com.apple.assistantd
+	com.apple.avconferenced
+	com.apple.betaenrollmentd
+	com.apple.biomesyncd
+	com.apple.calaccessd
+	com.apple.cloudd
+	com.apple.cloudpaird
+	com.apple.cloudphotod
+	com.apple.cmio.ContinuityCaptureAgent
+	com.apple.commerce
+	com.apple.corespeechd
+	com.apple.dataaccess.dataaccessd
+	com.apple.email.maild
+	com.apple.familycircled
+	com.apple.familycontrols.useragent
+	com.apple.familynotificationd
+	com.apple.financed
+	com.apple.gamed
+	com.apple.homed
+	com.apple.icloud.fmfd
+	com.apple.icloud.searchpartyuseragent
+	com.apple.iCloudNotificationAgent
+	com.apple.iCloudUserNotifications
+	com.apple.imagent
+	com.apple.imautomatichistorydeletionagent
+	com.apple.imtransferagent
+	com.apple.intelligenceplatformd
+	com.apple.itunescloudd
+	com.apple.knowledge-agent
+	com.apple.macos.studentd
+	com.apple.mediastream.mstreamd
+	com.apple.newsd
+	com.apple.parsec-fbf
+	com.apple.parsecd
+	com.apple.passd
+	com.apple.photoanalysisd
+	com.apple.photolibraryd
+	com.apple.progressd
+	com.apple.protectedcloudstorage.protectedcloudkeysyncing
+	com.apple.rapportd-user
+	com.apple.routined
+	com.apple.security.cloudkeychainproxy3
+	com.apple.security.keychain-circle-notification
+	com.apple.sidecar-hid-relay
+	com.apple.sidecar-relay
+	com.apple.siri.context.service
+	com.apple.siriactionsd
+	com.apple.siriknowledged
+	com.apple.storedownloadd
+	com.apple.suggestd
+	com.apple.telephonyutilities.callservicesd
+	com.apple.tipsd
+	com.apple.triald
+	com.apple.videosubscriptionsd
+)
+uid=$(id -u)
+for item in "${user_services[@]}"; do
+	echo "Disabling user/$uid/$item ..."
+	launchctl bootout "user/$uid/$item"
+	launchctl disable "user/$uid/$item"
+done

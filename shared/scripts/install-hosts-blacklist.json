@@ -1,0 +1,27 @@
+{
+	"shared": {
+		"0.0.0.0": [],
+		"127.0.0.1": [
+			"${_hostname}",
+			"${_hostname}.localdomain",
+			"host.docker.internal",
+			"kubernetes.docker.internal"
+		]
+	},
+	"shared_optional": {
+		"0.0.0.0": [
+			"laptop-updates.brave.com",
+			"updates-cdn.bravesoftware.com"
+		]
+	},
+	"specific": {
+		"macos13-ventura": {},
+		"mba15-m4": {},
+		"mbp13-i7": {},
+		"mbp15-i7": {},
+		"mbp16-i9": {},
+		"mbp16-m2m": {},
+		"mm-m2p": {},
+		"ms-m1u": {}
+	}
+}
