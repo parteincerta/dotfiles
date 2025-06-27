@@ -137,7 +137,7 @@
   - Install the `Disk usage`, `Logs Explorer` and `Resource Usage` extensions.
 - Manually install VSCode plugins.
   - Open VSCode for the first time.
-  - `bash shared/scripts/install-vscode-plugins.sh [--plugins-list <file>] [--silent]`.
+  - `bash shared/scripts/install-vscode-plugins.sh --silent [--plugins-list <file>]`.
 - Set Brave's `Tab Scrolling` to `tab shrink to pinned tab width` in `brave://flags`.
 - Configure Notifications, Login Items and Siri.
 - Press `Cmd+Shift+5`, select `Options` and set folder used for screenshots/recordings.
