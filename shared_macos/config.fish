@@ -189,7 +189,7 @@ set __fish_git_prompt_color_invalidstate red
 set __fish_git_prompt_color_untrackedfiles $fish_color_normal
 set __fish_git_prompt_color_cleanstate green
 set __fish_git_prompt_show_informative_status 1
-set fish_handle_reflow 0
+set fish_handle_reflow 1
 set fish_color_command blue --bold
 set fish_color_error brred --bold
 set fish_cursor_default block
