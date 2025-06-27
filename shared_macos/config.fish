@@ -172,7 +172,6 @@ set --export MANPAGER "env IS_PAGER=yes nvim -n +Man!"
 set --export NVIM_PAGER "env IS_PAGER=yes nvim -n -R"
 
 set fish_greeting
-set __fish_git_prompt_show_informative_status 1
 set __fish_git_prompt_hide_untrackedfiles 1
 set __fish_git_prompt_showupstream "informative"
 set __fish_git_prompt_char_upstream_ahead "↑"
