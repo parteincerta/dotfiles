@@ -116,7 +116,7 @@ MISE_YES=1 mise install
 
 
 log_info "\t >>> Installing vcpkg ..."
-source "$rootdir/shared/scripts/install-vcpkg.sh"
+source "$rootdir/shared/scripts/install-vcpkg.sh" --silent
 
 
 log_info "\t >>> Installing MongoDB Shell and Tools .."

@@ -15,7 +15,7 @@ while [[ $# -gt 0 ]]; do case $1 in
 		plugins_list="$2";
 		shift;;
 	--silent)
-		silent="&>/dev/null";
+		silent="yes";
 		shift;;
 	*)
 		shift;;
@@ -39,11 +39,11 @@ do
 	extension_author=${extension%%*.}
 	extension_name=${extension##*.}
 	echo -e "\t-> Installing $extension_name of $extension_author"
-	eval code \
+	run code \
 		--user-data-dir "$vsc_data_dir" \
 		--extensions-dir "$vsc_extensions_dir" \
 		--install-extension "$extension" \
-		--force "$silent"
+		--force
 
 	# Remove the last extension that was successfully installed so it won't be
 	# reprocessed when the script it re-executed after a failure.

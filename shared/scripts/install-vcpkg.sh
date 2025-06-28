@@ -9,10 +9,13 @@ source "$rootdir/shared/scripts/helper.sh"
 trap 'rm -rf "$TMPDIR/vcpkg"; [[ ${#DIRSTACK[@]} -gt 1 ]] && popd >/dev/null; trap_error' ERR
 trap 'rm -rf "$TMPDIR/vcpkg"' EXIT
 
+silent=""
 tag=""
 url="https://github.com/microsoft/vcpkg.git"
-
 while [[ $# -gt 0 ]]; do case $1 in
+	--silent)
+		silent="&>/dev/null"
+		shift;;
 	--tag)
 		tag="$2";
 		shift; shift;;
@@ -22,10 +25,10 @@ esac; done
 
 clean_install () {
 	echo "-> Cloning vcpkg @$tag ..."
-	git clone -q --branch "$tag" "$url" "$TMPDIR/vcpkg"
+	_run git clone --branch "$tag" "$url" "$TMPDIR/vcpkg"
 
 	echo "-> Bootstrapping vcpkg ..."
-	cd "$TMPDIR/vcpkg" && ./bootstrap-vcpkg.sh && cd -
+	cd "$TMPDIR/vcpkg" && _run ./bootstrap-vcpkg.sh && cd - &>/dev/null
 
 	echo "-> Installing vcpkg ..."
 	[ -d "$VCPKG_ROOT" ] && rm -rf "$VCPKG_ROOT"
@@ -38,12 +41,12 @@ clean_install () {
 update_preexisting () {
 	echo "-> Updating preexisting setup @$tag ..."
 	pushd "$VCPKG_ROOT" >/dev/null
-	git checkout master
-	git pull --prune
-	git checkout "$tag"
+	_run git checkout master
+	_run git pull --prune
+	_run git checkout "$tag"
 
 	echo "-> Bootstrapping and installing vcpkg ..."
-	./bootstrap-vcpkg.sh
+	_run ./bootstrap-vcpkg.sh
 	ln -sf "$VCPKG_ROOT/vcpkg" ~/.local/bin/vcpkg
 
 	popd >/dev/null

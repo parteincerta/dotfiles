@@ -75,6 +75,14 @@ log_warning () {
 	>&2 echo -e "${color_fg_dark_yellow}$1${color_reset}"
 }
 
+_run () {
+	if [ -n "$silent" ]; then
+		"$@" &>/dev/null
+	else
+		"$@"
+	fi
+}
+
 trap_error () {
     local exit_code=$?
     local failed_cmd="$BASH_COMMAND"
