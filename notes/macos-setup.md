@@ -16,7 +16,8 @@
   - Enable trackpad's three-finger drag.
   - Enable _Reduce motion_ in the _Display_ section.
 - Appearance: Set _Show scroll bars_ to _When scrolling_.
-- Siri: Disable learning from from any application.
+- Siri: Disable _Show Siri suggestions in application_ and _Learn from this
+  application_ for all entries.
 - Control Center
   - Show Bluetooth, Airdrop, Sound, Battery and VPN (when available).
   - Clock: Display the time with seconds.
