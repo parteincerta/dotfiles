@@ -41,7 +41,6 @@
 	"inlay_hints": {
 		"enabled": false
 	},
-	"language_servers": ["!biome"],
 	"lsp": {
 		"biome": {
 			"settings": {
