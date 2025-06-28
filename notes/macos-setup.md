@@ -1,55 +1,70 @@
 # macOS Setup Notes
 
 ## System Settings
-- General
-  - Programmatically set the hostname:
-    - `sudo scutil --set HostName <hostname>.local`
-    - `sudo scutil --set LocalHostName <hostname>`
-    - `sudo scutil --set ComputerName <hostname>`
-  - Disable all Software Updates.
-- Networking
+- WiFi, Bluetooth and Network
   - IPv4 DNS: `1.1.1.1` and `1.0.0.1`.
   - IPv6 DNS: `2606:4700:4700::1111` and `2606:4700:4700::1001`.
-- Notifications: Disable all unecessary ones, configure the others.
-- Sound: Disable macOS startup sound and reduce alert volume to half.
+  - Disable _Open when no keyboard is detected_.
+  - Disable _Open when no mouse or trackpad is detected_.
+- Battery:
+  - Low Power Mode: _Only on Battery_.
+  - Enable _Optimize video streaming while on battery_.
+- General
+  - Disable all Software Updates.
 - Accessibility
   - Enable keyboard shortcut to zoom.
   - Enable trackpad's three-finger drag.
   - Enable _Reduce motion_ in the _Display_ section.
+- Appearance: Set _Show scroll bars_ to _When scrolling_.
+- Siri: Disable learning from from any application.
 - Control Center
   - Show Bluetooth, Airdrop, Sound, Battery and VPN (when available).
-  - Show time with seconds.
-  - Hide Spotlight icon.
-- Siri and Spotlight
-  - Disable results for _Contacts_, _Definition_, _Folders_, _Fonts_, _Movies_,
-    _Music_, _Siri Suggestions_, _System Settings_, _Tips_ and _Websites_.
-  - Prevent Siri from learning from any application.
-- Privacy and Security
-  - Show location icon when System Services request my location.
-  - Disable location access for _HomeKit_, _Mac Analytics_ and _Suggestions & Search_.
-  - Set Apple Terminal permissions: _Full Disk Access_ and _Developer Tools_.
+  - Clock: Display the time with seconds.
+  - Spolight: Don't show in Menu Bar.
+  - Weather: Show in Menu Bar.
 - Desktop & Dock
-  - Scale down, add Applications folder and control icons' size with `Cmd+` and `Cmd-`.
-  - Minimize using the _Scale Effect_.
-  - Disable: Minimize windows into application icon.
-  - Enable: Automatically hide and show the dock.
-  - Disable: Animate opening application.
-  - Enable: Show indicators for open application.
-  - Disable: Show suggested and recent apps in Dock.
-  - Click wallpaper to reveal desktop: Only in Stage Manager.
-  - Disable: Stage Manager.
-  - Prefer tabs when opening documents: Always.
-  - Disable: Automatically rearrange Spaces based on most recent use.
-  - Enable: Group windows by application.
-  - Hot Corners: Set `Cmd + top right` to show the Desktop.
+  - Dock
+    - Position on screen: Bottom.
+    - Minimize windows using: Scale Effect.
+    - Enable: Automatically hide and show the Dock.
+    - Disable: Animate opening applications.
+    - Enable: Show indicators for open application.
+    - Disable: Show suggested and recent apps in Dock.
+  - Desktop and Stage Manager
+    - Click wallpaper to reveal desktop: Only in Stage Manager.
+    - Stage Manager: Disabled.
+    - Show recent apps in Stage Manager: Disabled.
+    - Show Widgets: Disabled for both Desktop and Stage Manager.
+  - Widgets
+    - Show Widgets: Disable both _On Desktop_ and _In Stage Manager_.
+    - Use iPhone widgets: Disabled.
+  - Windows
+    - Prefer tabs when opening documents: _Always_.
+    - Disable all tilling options.
+  Mission Control
+    - Disable: Automatically rearrange Spaced based on most recent use.
+    - Enable: Group windows by application.
+    - Hot Corners: `Cmd + top right` to show the Desktop.
 - Displays
   - Disable iPad interoperability.
-  - Enable Night Shift with _Sunset to Sunrise_ and place the tempeature gauge
-    right on top of _More Warm_.
+  - Night Shift: _Sunset to Sunrise_. Increase temporary to be beginning of
+    _More Warm_.
+- Spotlight
+  - Disable results for _Contacts_, _Definition_, _Folders_, _Fonts_, _Movies_,
+    _Music_, _Siri Suggestions_, _System Settings_, _Tips_ and _Websites_.
+  - Disable: Help Apple improve Search.
+- Sound
+  - Disable: Play sound on startup.
+  - Reduce alert volume to half.
 - Lock Screen
   - Start Screen Saver when active: _Never_.
   - Require password: _After 5 seconds_.
-- Game Center: Disable.
+- Privacy and Security
+  - Enable: Show location icon in Control Center when System Services requests
+    your location.
+  - Disable location access for _Suggestions & Search_, _HomeKit_ and
+    _Mac Analytics_.
+  - Set Apple Terminal permissions: _Full Disk Access_ and _Developer Tools_.
 - Wallet & Apple Pay: Disable _Add Orders to Wallet_.
 - Keyboard
   - Create five more virtual desktops before entering this section.
@@ -69,8 +84,19 @@
   - Set tracking speed to one point bellow the maximum.
   - Enable App Exposé with _Swipe Down with Four Fingers_.
 - Mouse: Set tracking speed to two points bellow the maximum.
+- Other
+  - Programmatically set the hostname
+    - `sudo scutil --set HostName <hostname>.local`.
+    - `sudo scutil --set LocalHostName <hostname>`.
+    - `sudo scutil --set ComputerName <hostname>`.
+  - Folders in the Dock
+    - Add Applications, Documents and Downloads.
+    - Set all to display as _Folder_.
+    - For Applications, set _View content as_: _Grid_.
+    - For Document and Downloads, set _View content as_: _List_.
+    - Scale down Applications folder icons with `Cmd+`/`Cmd-`.
 
-## Finder and Safari
+## Finder, iCloud and Safari
 - Settings
   - General
     - Show all items in Desktop.
@@ -98,12 +124,18 @@
   - Add the following locations to Spotlight Privacy list:
     - System: `/opt`, `/usr/local`, `/Library` and `/System`.
     - User: `~/{Developer,Library,.cache,.config,.local,.m2,.ssh}`.
+- iCloud
+  - Authenticate with the iCloud account.
+  - Disable the synchronization of Stocks, Home, Wallet and Sire.
+  - Enable FireVault with iCloud authentication in Privacy & Security.
+  - Allow Apple Watch to unlock macOS in TouchID & Password.
+  - Sign out of Game Center.
 - Safari
   - View: Show status bar.
   - General
     - Safari opens with: _All windows from the last session_.
-    - New windows open with: `Start page`.
-    - New tabs open with: `Start page`.
+    - New windows open with: _Start page_.
+    - New tabs open with: _Start page_.
     - Homepage: `https://github.com/parteincerta`.
     - Disable _Open "safe" files after downloading_.
   - Search
