@@ -20,10 +20,9 @@
   - Open system applications and make sure they're working as intended.
 
 - Update dotfiles, [hosts][macos-maintenance-01] and [vcpkg][macos-maintenance-05]
-  - `cd $DEVELOPER/parteincerta/dotfiles && git pull && ./configure.sh`
-  - Update hosts:
-    `bash shared/scripts/install-hosts.sh [--basic] [--force-hostname <hostname>] [--skip-optional-whitelist]`.
-  - Update vcpkg: `bash ./shared/scripts/install-vcpkg.sh [--tag <tag>]`.
+  - `cd $DEVELOPER/parteincerta/dotfiles && git pull && ./configure.sh`.
+  - `bash shared/scripts/install-hosts.sh [--basic] [--force-hostname <hostname>] [--skip-optional-whitelist]`.
+  - `bash ./shared/scripts/install-vcpkg.sh [--tag <tag>]`.
 
 - Update MongoDB [Shell][macos-maintenance-02] and [Tools][macos-maintenance-03]
   - Update Shell: `bash shared/scripts/install-mongo-utils.sh shell [--version <ver>]`.
@@ -41,8 +40,7 @@
     * `brew unlink python@3.13 openssl@3`.
   - Upgrade all installed formulae and casks: `brew upgrade --greedy`.
   - Purge cache: `brew cleanup [--dry-run]`.
-  - Re-enable hosts blacklist:
-    `bash shared/scripts/install-hosts.sh [--basic] [--force-hostname <hostname>] [--skip-optional-whitelist]`.
+  - Reinstate hosts: `bash shared/scripts/install-hosts.sh [--basic] [--force-hostname <hostname>] [--skip-optional-whitelist]`.
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
