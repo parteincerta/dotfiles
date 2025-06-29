@@ -41,7 +41,7 @@
     * `brew unlink python@3.13 openssl@3`.
   - Upgrade all installed formulae and casks: `brew upgrade --greedy`.
   - Purge cache: `brew cleanup [--dry-run]`.
-  - Reinstate the hosts file: `bash shared/scripts/install-hosts.sh []`.
+  - Reinstate the hosts file: `bash shared/scripts/install-hosts.sh`.
     - Optional switches to consider: `--basic`, `--force-hostname <host>` and
       `--skip-optional-whitelist`.
 
