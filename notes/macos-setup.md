@@ -174,7 +174,8 @@
   `bash shared/scripts/install-vscode-plugins.sh --silent [--plugins-list <file>]`.
 - Set Brave's _Tab Scrolling_ to _tab shrink to pinned tab width_ in `brave://flags`.
 - Configure Notifications, Login Items and Siri.
-- Press `Cmd+Shift+5`, select `Options` and set folder used for screenshots/recordings.
+- Press `Cmd+Shift+5`, select `Options` and select the folder where
+  screenshots/recordings must be stored.
 - Install DBeaver's connections.
 - Setup the [Docker containers][macos-notes-03].
 - Configure VPNs and show the VPN icon in the Menu Bar.
