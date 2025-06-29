@@ -102,7 +102,7 @@ bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh"
+source "$rootdir/shared/scripts/install-hosts.sh" --skip-optional-whitelist
 
 
 log_info "\t >>> Installing pip packages ..."

@@ -11,7 +11,8 @@ trap 'rm -rf $TMPDIR/hosts*' EXIT
 source "$rootdir/shared/scripts/helper.sh"
 trap 'trap_error; rm -rf $TMPDIR/hosts*' ERR
 
-skip_optional="false"
+skip_optional_blacklist="no"
+skip_optional_whitelist="no"
 force_hostname=""
 system="$(uname -s)"
 target="fakenews-gambling-porn-social"
@@ -25,8 +26,11 @@ while [[ $# -gt 0 ]]; do case $1 in
 	--force-hostname)
 		force_hostname="$2";
 		shift; shift;;
-	--skip-optional)
-		skip_optional="true";
+	--skip-optional-blacklist)
+		skip_optional_blacklist="yes";
+		shift;;
+	--skip-optional-whitelist)
+		skip_optional_whitelist="yes";
 		shift;;
 	--version)
 		version="$2";
@@ -85,7 +89,7 @@ if [ "$system" = "Darwin" ]; then
 		jq --raw-output '.shared_optional| keys[]' "$hosts_blacklist" |
 		tr "\n" " "
 	))
-	if [ $skip_optional = "false" ]; then
+	if [ $skip_optional_blacklist = "no" ]; then
 		for addr in "${shared_address_list[@]}"; do
 			declare -a shared_names_list=($(
 				jq --raw-output ".shared_optional[\"$addr\"][]" "$hosts_blacklist" |
@@ -121,10 +125,10 @@ if [ "$system" = "Darwin" ]; then
 	echo "-> Whitelisting domains ..."
 
 	declare -a shared_address_list=($(
-		if [ $skip_optional = "false" ]; then
-			shared_filter=".shared|.[]"
-		else
+		if [ $skip_optional_whitelist = "no" ]; then
 			shared_filter=".shared+.shared_optional|.[]"
+		else
+			shared_filter=".shared|.[]"
 		fi
 		jq --raw-output "$shared_filter" "$hosts_whitelist_orig" |
 		tr "\n" " "

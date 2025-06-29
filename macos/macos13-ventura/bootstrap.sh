@@ -98,7 +98,9 @@ bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh" --force-hostname "$nice_hostname"
+source "$rootdir/shared/scripts/install-hosts.sh" \
+	--force-hostname "$nice_hostname" \
+	--skip-optinal-whitelist
 
 
 log_info "\t >>> Installing pip packages ..."
