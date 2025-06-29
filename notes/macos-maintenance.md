@@ -34,13 +34,16 @@
   - Quit all apps.
   - Disable hosts blacklist: `bash shared/scripts/install-hosts.sh --skip-optional-blacklist`.
     - Attention: If you're inside a VM, run the command above on the host first too.
+    - Optional switches to consider: `--basic` and `--force-hostname <host>`.
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Upgrade formulae which require specially instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
     * `brew unlink python@3.13 openssl@3`.
   - Upgrade all installed formulae and casks: `brew upgrade --greedy`.
   - Purge cache: `brew cleanup [--dry-run]`.
-  - Reinstate hosts: `bash shared/scripts/install-hosts.sh [--basic] [--force-hostname <host>] [--skip-optional-whitelist]`.
+  - Reinstate the hosts file: `bash shared/scripts/install-hosts.sh []`.
+    - Optional switches to consider: `--basic`, `--force-hostname <host>` and
+      `--skip-optional-whitelist`.
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
