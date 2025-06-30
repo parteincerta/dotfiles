@@ -39,7 +39,7 @@ do
 	extension_author=${extension%%*.}
 	extension_name=${extension##*.}
 	echo -e "\t-> Installing $extension_name of $extension_author"
-	run code \
+	_run code \
 		--user-data-dir "$vsc_data_dir" \
 		--extensions-dir "$vsc_extensions_dir" \
 		--install-extension "$extension" \
