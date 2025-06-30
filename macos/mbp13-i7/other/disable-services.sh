@@ -119,6 +119,7 @@ user_services=(
 	com.apple.itunescloudd
 	com.apple.knowledge-agent
 	com.apple.macos.studentd
+	com.apple.mediaanalysisd
 	com.apple.mediastream.mstreamd
 	com.apple.newsd
 	com.apple.parsec-fbf
