@@ -41,7 +41,7 @@ vscode_settings_dir="$app_support_folder/Code/User"
 rm -rf "$XDG_CONFIG_HOME/nvim/"{init.lua,lua/}
 
 cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
-# cp -R obs/* "$app_support_folder/obs-studio/basic"
+cp -R obs/* "$app_support_folder/obs-studio/basic"
 
 cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
 cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
