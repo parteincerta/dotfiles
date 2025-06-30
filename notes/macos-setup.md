@@ -4,11 +4,11 @@
 - WiFi, Bluetooth and Network
   - IPv4 DNS: `1.1.1.1` and `1.0.0.1`.
   - IPv6 DNS: `2606:4700:4700::1111` and `2606:4700:4700::1001`.
-  - Disable _Open when no keyboard is detected_.
-  - Disable _Open when no mouse or trackpad is detected_.
+  - Disable: _Open when no keyboard is detected_.
+  - Disable: _Open when no mouse or trackpad is detected_.
 - Battery:
   - Low Power Mode: _Only on Battery_.
-  - Enable _Optimize video streaming while on battery_.
+  - Enable: _Optimize video streaming while on battery_.
 - General
   - Disable all Software Updates.
 - Accessibility
@@ -48,8 +48,8 @@
     - Hot Corners: `Cmd + top right` to show the Desktop.
 - Displays
   - Disable iPad interoperability.
-  - Night Shift: _Sunset to Sunrise_. Increase temporary to be beginning of
-    _More Warm_.
+  - Night Shift: _Sunset to Sunrise_. Move the temperator slider to the
+    beginning of _More Warm_.
 - Spotlight
   - Disable results for _Contacts_, _Definition_, _Folders_, _Fonts_, _Movies_,
     _Music_, _Siri Suggestions_, _System Settings_, _Tips_ and _Websites_.
