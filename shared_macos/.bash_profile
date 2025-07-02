@@ -18,6 +18,7 @@ export DENO_DIR="$XDG_CACHE_HOME/deno/cache"
 export DO_NOT_TRACK=1
 export DOCUMENTS="$HOME/Documents"
 export DOWNLOADS="$HOME/Downloads"
+export EXTERNAL_VOLUME="#EXTERNAL_VOLUME"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 export LF_BOOKMARKS_PATH="$XDG_CONFIG_HOME/lf/bookmarks"
@@ -27,12 +28,6 @@ export VCPKG_ROOT="$HOME/Developer/github/vcpkg"
 export VCPKG_DISABLE_METRICS=true
 export VOLUMES="/Volumes"
 export YARN_CACHE_FOLDER="$XDG_CACHE_HOME/yarn"
-
-if [ "${BASH_VERSINFO[0]}" -gt 3 ]; then
-	export EXTERNAL_VOLUME="/Volumes/${SHORT_HOSTNAME^^}"
-else
-	export EXTERNAL_VOLUME="/Volumes/$(echo "$SHORT_HOSTNAME" | awk '{print toupper($0)}')"
-fi
 
 _arch="$(uname -m)"
 

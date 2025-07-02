@@ -46,6 +46,7 @@ cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
 cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
 cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
+sed -i '' "s/#EXTERNAL_VOLUME/\/Volumes\/S1/" "$HOME/.bash_profile"
 
 cp "$rootdir/shared/.inputrc" "$HOME/"
 cp "$rootdir/shared/git.conf" "$XDG_CONFIG_HOME/git/config"
