@@ -123,7 +123,7 @@
       - Enable: Show item info.
       - Enable: Show item preview.
   - Add the following locations to Spotlight Privacy list:
-    - System: `/opt`, `/usr/local`, `/Library` and `/System/Library`.
+    - System: `/opt`, `/usr/local`, `/Library` and `/System/Library/Frameworks`.
     - User: `~/{Developer,Library,.cache,.config,.local,.m2,.ssh}`.
 - iCloud
   - Authenticate with the iCloud account.
