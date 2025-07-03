@@ -11,7 +11,12 @@ trap "popd >/dev/null" EXIT
 source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
-source "$rootdir/shared_macos/.bash_profile" || true
+cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
+sed -i '' "s|#EXTERNAL_VOLUME||" "$HOME/.bash_profile"
+ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
+# shellcheck disable=SC1091
+source "$HOME/.bash_profile" || true
+
 expected_hostname="mba15-m4"
 if [ "$expected_hostname" != "$SHORT_HOSTNAME" ]; then
 	log_warning ">>> This configuration script belongs to another host: $expected_hostname".
@@ -31,9 +36,6 @@ mkdir -p \
 
 app_support_folder="$HOME/Library/Application Support"
 
-cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
-cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
-
 cp "$rootdir/shared/.inputrc" "$HOME/"
 cp "$rootdir/shared/git.conf" "$XDG_CONFIG_HOME/git/config"
 cp "$rootdir/shared/gpg.conf" "$HOME/.gnupg/"
@@ -43,13 +45,13 @@ cp "$rootdir/shared/lfpreview" "$HOME/.local/bin/"
 cp "$rootdir/shared/pip.conf" "$XDG_CONFIG_HOME/pip/"
 cp "$rootdir/shared/ssh.conf" "$HOME/.ssh/config"
 cp "$rootdir/shared/tokyonight-moon.tmTheme" "$XDG_CONFIG_HOME/bat/themes"
+cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
 
 [ ! -f "/Library/Managed Preferences/com.google.keystone.plist" ] &&
 	echo "Disabling Google's Auto Updater requires elevated privileges ..." &&
 	sudo mkdir -p "/Library/Managed Preferences" &&
 	sudo cp "$rootdir/shared_macos/plist/com.google.Keystone.plist" "/Library/Managed Preferences/"
 
-ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
 chmod u=rwx,g=,o= "$HOME/.gnupg"
 chmod u=rw,g=,o= "$HOME/.gnupg/"*
 chmod u=rwx,g=,o= "$HOME/.ssh"

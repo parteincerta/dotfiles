@@ -11,7 +11,12 @@ trap "popd >/dev/null" EXIT
 source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
-source "$rootdir/shared_macos/.bash_profile" || true
+cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
+sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/S1|" "$HOME/.bash_profile"
+ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
+# shellcheck disable=SC1091
+source "$HOME/.bash_profile" || true
+
 expected_hostname="mbp16-i9"
 if [ "$expected_hostname" != "$SHORT_HOSTNAME" ]; then
 	log_warning ">>> This configuration script belongs to another host: $expected_hostname".
@@ -39,15 +44,6 @@ vscode_cache_dir="$XDG_CACHE_HOME/code/data/User"
 vscode_settings_dir="$app_support_folder/Code/User"
 
 rm -rf "$XDG_CONFIG_HOME/nvim/"{init.lua,lua/}
-
-cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
-# cp -R obs/* "$app_support_folder/obs-studio/basic"
-
-cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
-cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
-cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
-sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/S1|" "$HOME/.bash_profile"
-
 cp "$rootdir/shared/.inputrc" "$HOME/"
 cp "$rootdir/shared/git.conf" "$XDG_CONFIG_HOME/git/config"
 cp "$rootdir/shared/gpg.conf" "$HOME/.gnupg/"
@@ -63,8 +59,11 @@ cp "$rootdir/shared/pip.conf" "$XDG_CONFIG_HOME/pip/"
 cp "$rootdir/shared/ssh.conf" "$HOME/.ssh/config"
 cp "$rootdir/shared/tokyonight-moon.tmTheme" "$XDG_CONFIG_HOME/bat/themes"
 cp "$rootdir/shared/zed.keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
+cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
+cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
+# cp -R obs/* "$app_support_folder/obs-studio/basic"
+cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
 
-ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
 chmod u=rwx,g=,o= "$HOME/.gnupg"
 chmod u=rw,g=,o= "$HOME/.gnupg/"*
 chmod u=rwx,g=,o= "$HOME/.ssh"
