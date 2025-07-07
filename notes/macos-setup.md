@@ -166,7 +166,7 @@
 
 ## Wrap up
 - Start by configuring: SpaceId, BetterDisplay, Mac Mouse Fix and AltTab.
-  - Add SpaceId to the _Login Items_ list and enable `Automatic launch at login`
+  - Add SpaceId to the _Login Items_ list and enable _Automatic launch at login_
     for BetterDisplay.
 - Disable automatic updates across all apps, when possible.
 - Setup Docker.

@@ -248,25 +248,25 @@ cmd pager ${{
 
 	case "$f" in
 		*.tar*)
-			tar tf "$f" | $nvim_cmd
+			tar tf "$f" | $nvim_cmd -c "nmap q :q!<CR>"
 			;;
 		*.zip)
-			unzip -l "$f" | $nvim_cmd
+			unzip -l "$f" | $nvim_cmd -c "nmap q :q!<CR>"
 			;;
 		*.rar)
-			unrar l "$f" | $nvim_cmd
+			unrar l "$f" | $nvim_cmd -c "nmap q :q!<CR>"
 			;;
 		*.7z)
-			7zz l "$f" | $nvim_cmd
+			7zz l "$f" | $nvim_cmd -c "nmap q :q!<CR>"
 			;;
 		*.pdf)
-			pdftotext "$f" - | $nvim_cmd
+			pdftotext "$f" - | $nvim_cmd -c "nmap q :q!<CR>"
 			;;
 		*)
 			if [ -f "$f" ]; then
-				$nvim_cmd "$f"
+				$nvim_cmd -c "nmap q :q!<CR>" "$f"
 			elif [ -d "$f" ]; then
-				ls -la "$f" | $nvim_cmd
+				ls -la "$f" | $nvim_cmd -c "nmap q :q!<CR>"
 			fi ;;
 	esac
 }}
