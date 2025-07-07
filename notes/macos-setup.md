@@ -98,7 +98,7 @@
     - Scale down Applications folder icons with `Cmd+`/`Cmd-`.
 
 ## Finder, iCloud and Safari
-- Settings
+- Finder
   - General
     - Show all items in Desktop.
     - New finder window shows: Home folder.
@@ -166,6 +166,8 @@
 
 ## Wrap up
 - Start by configuring: SpaceId, BetterDisplay, Mac Mouse Fix and AltTab.
+  - Add SpaceId to the _Login Items_ list and enable `Automatic launch at login`
+    for BetterDisplay.
 - Disable automatic updates across all apps, when possible.
 - Setup Docker.
   - Configure startup settings, resources, folder permissions and notifications.
