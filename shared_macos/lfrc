@@ -247,20 +247,23 @@ cmd pager ${{
 	 nvim_cmd="$NVIM_PAGER"
 
 	case "$f" in
-		*.tar*)
-			tar tf "$f" | $nvim_cmd -c "nmap q :q!<CR>"
-			;;
-		*.zip)
-			unzip -l "$f" | $nvim_cmd -c "nmap q :q!<CR>"
-			;;
-		*.rar)
-			unrar l "$f" | $nvim_cmd -c "nmap q :q!<CR>"
-			;;
 		*.7z)
 			7zz l "$f" | $nvim_cmd -c "nmap q :q!<CR>"
 			;;
 		*.pdf)
 			pdftotext "$f" - | $nvim_cmd -c "nmap q :q!<CR>"
+			;;
+		*.plist)
+			plutil -convert xml1 -o - "$f" | $nvim_cmd -c "nmap q :q!<CR>"
+			;;
+		*.rar)
+			unrar l "$f" | $nvim_cmd -c "nmap q :q!<CR>"
+			;;
+		*.tar*)
+			tar tf "$f" | $nvim_cmd -c "nmap q :q!<CR>"
+			;;
+		*.zip)
+			unzip -l "$f" | $nvim_cmd -c "nmap q :q!<CR>"
 			;;
 		*)
 			if [ -f "$f" ]; then
