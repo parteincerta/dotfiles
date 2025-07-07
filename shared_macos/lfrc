@@ -241,31 +241,35 @@ cmd fzf_search ${{
 }}
 
 cmd pager ${{
+
+	[ "$lf_user_anon" = "true" ] &&
+	 nvim_cmd="$NVIM_PAGER -u NONE -i NONE" ||
+	 nvim_cmd="$NVIM_PAGER"
+
 	case "$f" in
 		*.tar*)
-			tar tf "$f" | $NVIM_PAGER
+			tar tf "$f" | $nvim_cmd
 			;;
 		*.zip)
-			unzip -l "$f" | $NVIM_PAGER
+			unzip -l "$f" | $nvim_cmd
 			;;
 		*.rar)
-			unrar l "$f" | $NVIM_PAGER
+			unrar l "$f" | $nvim_cmd
 			;;
 		*.7z)
-			7zz l "$f" | $NVIM_PAGER
+			7zz l "$f" | $nvim_cmd
 			;;
 		*.pdf)
-			pdftotext "$f" - | $NVIM_PAGER
+			pdftotext "$f" - | $nvim_cmd
 			;;
 		*)
 			if [ -f "$f" ]; then
-				 $NVIM_PAGER "$f"
+				$nvim_cmd "$f"
 			elif [ -d "$f" ]; then
-				ls -la "$f" | $NVIM_PAGER
+				ls -la "$f" | $nvim_cmd
 			fi ;;
 	esac
 }}
-
 
 cmd secure_rm ${{
     source "$HOME/.bash_profile"
@@ -303,7 +307,10 @@ map e :{{
 	set user_anon "true"
 	push :edit<enter>
 }}
-map i push :pager<enter>
+map i :{{
+	set user_anon "true"
+	push :pager<enter>
+}}
 map n push :create<enter>
 map o push :cd_selection<enter>
 map q quit
@@ -315,6 +322,10 @@ map C push :bookmark_clear<enter>
 map E :{{
 	set user_anon "false"
 	push :edit<enter>
+}}
+map I :{{
+	set user_anon "false"
+	push :pager<enter>
 }}
 map O push :cd_selection_quit<enter>
 map R push :bulk_rename<enter>
