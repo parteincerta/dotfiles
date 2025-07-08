@@ -7,6 +7,8 @@
 export HOSTNAME="$HOSTNAME"
 export SHORT_HOSTNAME="${HOSTNAME/%.local/}"
 
+export LC_CTYPE="UTF-8"
+export LC_COLLATE="en_US.UTF-8"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
