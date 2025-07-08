@@ -16,6 +16,7 @@
 		"html": true,
 		"ini": true,
 		"java": true,
+		"json5": true,
 		"make": true,
 		"neocmake": true,
 		"nginx": true,
