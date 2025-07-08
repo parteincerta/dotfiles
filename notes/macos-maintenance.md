@@ -38,8 +38,9 @@
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Upgrade formulae which require specially instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
-    * `brew unlink python@3.13 openssl@3`.
   - Upgrade all installed formulae and casks: `brew upgrade --greedy`.
+  - Configure specific formulae if they got updated:.
+    * `brew unlink python@3.13 openssl@3`.
   - Purge cache: `brew cleanup [--dry-run]`.
   - Reinstate the hosts file: `bash shared/scripts/install-hosts.sh`.
     - Optional switches to consider: `--basic`, `--force-hostname <host>` and
