@@ -128,6 +128,7 @@
 - iCloud
   - Authenticate with the iCloud account.
   - Disable the synchronization of Stocks, Home, Wallet and Siri.
+  - Consider disabling _Private Relay_.
   - Enable FireVault with iCloud authentication in Privacy & Security.
   - Allow Apple Watch to unlock macOS in TouchID & Password.
   - Sign out of Game Center.
