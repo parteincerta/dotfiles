@@ -38,6 +38,7 @@ oven.bun-vscode
 rebornix.toggle
 redhat.vscode-xml
 redhat.vscode-yaml
+savh.json5-kit
 sumneko.lua
 svelte.svelte-vscode
 tamasfe.even-better-toml
