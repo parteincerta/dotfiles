@@ -29,14 +29,14 @@ if [ -s "$bootstrap_mark_file" ]; then
 	exit 1
 fi
 
-expected_hostname="ms-m1u"
+expected_hostname="mm-m1"
 nice_hostname="${HOSTNAME/%.local/}"
 if [ "$expected_hostname" != "$nice_hostname" ]; then
-	# Apple Mac Studio (2022)
-	# CPU: Apple M1 Ultra (16P@3.2GHz + 4E@2.0GHz)
-	# RAM: 64GB LPDDR5-6400 (800GB/s)
-	# GPU: 48C (@450MHz ~ @1.3GHz)
-	# NPU: 22 TOPS
+	# Apple Mac Mini (2020)
+	# CPU: Apple M1 (4P@3.2GHz + 4E@2.0GHz)
+	# RAM: 16GB LPDDR4X-4266 (68.3/s)
+	# GPU: 8C @1.28GHz
+	# NPU: 11 TOPS
 	# SSD: 1TB NVMe
 	log_warning ">>> This bootstrap script belongs to another host: $expected_hostname".
 	log_warning ">>> The current host is: $nice_hostname"
@@ -95,7 +95,7 @@ vscode="visual-studio-code"
 homebrew_casks=(
 	alt-tab betterdisplay "$brave" bruno chatgpt "$compass" "$dbeaver" "$docker"
 	"$font" fork ghostty iina mac-mouse-fix "${microsoft[@]}" mist numi obs onyx
-	parallels spaceid transmission "$vscode" zed
+	signal spaceid transmission "$vscode" whatsapp zed
 )
 brew install --cask "${homebrew_casks[@]}"
 
