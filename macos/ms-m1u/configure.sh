@@ -12,7 +12,7 @@ source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
 cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
-sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/S3|" "$HOME/.bash_profile"
+sed -i '' "s|#EXTERNAL_VOLUME||" "$HOME/.bash_profile"
 ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
 # shellcheck disable=SC1091
 source "$HOME/.bash_profile" || true
@@ -39,8 +39,9 @@ mkdir -p \
 
 if [ -d "$EXTERNAL_VOLUME" ]; then
 	mkdir -p \
-		"$EXTERNAL_VOLUME/Developer/"{github,icnew/{git-icone,misc},parteincerta} \
-		"$EXTERNAL_VOLUME/"{Docker,Captures,Misc,Other,Remote,Torrents,VMs}
+		"$EXTERNAL_VOLUME"/Developer/{github,parteincerta} \
+		"$EXTERNAL_VOLUME"/Developer/icnew/{git-icone,git-icone-dog,misc} \
+		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,Torrents,VMs}
 
 	ln -fs "$EXTERNAL_VOLUME/Developer/github" "$CODE"
 	ln -fs "$EXTERNAL_VOLUME/Developer/icnew" "$CODE"

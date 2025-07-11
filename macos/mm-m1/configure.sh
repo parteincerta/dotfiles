@@ -12,7 +12,7 @@ source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
 cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
-sed -i '' "s|#EXTERNAL_VOLUME||" "$HOME/.bash_profile"
+sed -i '' "s|#EXTERNAL_VOLUME|A1|" "$HOME/.bash_profile"
 ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
 # shellcheck disable=SC1091
 source "$HOME/.bash_profile" || true
@@ -35,9 +35,26 @@ mkdir -p \
 "$XDG_CACHE_HOME/bun"/{bin,cache-install,cache-transpiler,lib} \
 "$XDG_CACHE_HOME/deno/cache" \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,gradle,fish/completions,ghostty,git,kitty,lf,mise,nvim,pip,zed} \
-"$CODE"/{github,icnew/{git-icone,misc},parteincerta} \
-"$DOCUMENTS"/{Captures,Misc,Remote} \
-"$DOWNLOADS"/{Brave,Other,Safari,Torrents}
+"$DOWNLOADS"/{Brave,Safari}
+
+if [ -d "$EXTERNAL_VOLUME" ]; then
+	mkdir -p \
+		"$EXTERNAL_VOLUME"/Developer/{github,parteincerta} \
+		"$EXTERNAL_VOLUME"/Developer/icnew/{git-icone,git-icone-dog,misc} \
+		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,Torrents,VMs}
+
+	ln -fs "$EXTERNAL_VOLUME/Developer/github" "$CODE"
+	ln -fs "$EXTERNAL_VOLUME/Developer/icnew" "$CODE"
+	ln -fs "$EXTERNAL_VOLUME/Developer/parteincerta" "$CODE"
+
+	ln -fs "$EXTERNAL_VOLUME/Captures" "$DOCUMENTS"
+	ln -fs "$EXTERNAL_VOLUME/Misc" "$DOCUMENTS"
+	ln -fs "$EXTERNAL_VOLUME/Remote" "$DOCUMENTS"
+	ln -fs "$EXTERNAL_VOLUME/VMs" "$DOCUMENTS"
+
+	ln -fs "$EXTERNAL_VOLUME/Other" "$DOWNLOADS"
+	ln -fs "$EXTERNAL_VOLUME/Torrents" "$DOWNLOADS"
+fi
 
 app_support_folder="$HOME/Library/Application Support"
 vscode_cache_dir="$XDG_CACHE_HOME/code/data/User"

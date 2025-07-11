@@ -172,6 +172,7 @@
 - Disable automatic updates across all apps, when possible.
 - Setup Docker.
   - Configure startup settings, resources, folder permissions and notifications.
+  - Move the Docker folder to the auxiliary/external volume (desktop hosts only).
   - Install the _Disk usage_, _Logs Explorer_ and _Resource Usage_ extensions.
 - Install VSCode plugins:
   `bash shared/scripts/install-vscode-plugins.sh --silent [--plugins-list <file>]`.

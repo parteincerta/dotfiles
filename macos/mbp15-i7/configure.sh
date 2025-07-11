@@ -12,7 +12,7 @@ source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
 cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
-sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/S1|" "$HOME/.bash_profile"
+sed -i '' "s|#EXTERNAL_VOLUME||" "$HOME/.bash_profile"
 ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
 # shellcheck disable=SC1091
 source "$HOME/.bash_profile" || true
@@ -35,7 +35,8 @@ mkdir -p \
 "$XDG_CACHE_HOME/bun"/{bin,cache-install,cache-transpiler,lib} \
 "$XDG_CACHE_HOME/deno/cache" \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,fish/completions,ghostty,git,kitty,lf,mise,nvim,pip,zed} \
-"$CODE"/{github,icnew/{git-icone,misc},parteincerta} \
+"$CODE"/{github,parteincerta} \
+"$CODE"/icnew/{git-icone,git-icone-dog,misc} \
 "$DOCUMENTS"/{Captures,Misc,Remote} \
 "$DOWNLOADS"/{Brave,Other,Safari,Torrents}
 
