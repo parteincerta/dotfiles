@@ -70,6 +70,7 @@ chmod u=rw,g=,o= "$HOME/.gnupg/"*
 chmod u=rwx,g=,o= "$HOME/.ssh"
 chmod u=rwx,g=,o= "$HOME/.ssh/sockets"
 chmod u+x "$HOME/.local/bin/lfpreview"
+sed -i '' "s|#EXTERNAL_VOLUME||" "$XDG_CONFIG_HOME/fish/config.fish"
 
 touch "$HOME/.bash_sessions_disable"
 touch "$HOME/.hushlogin"

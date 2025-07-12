@@ -80,6 +80,7 @@ cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
 # cp -R obs/* "$app_support_folder/obs-studio/basic"
 cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
+sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A4|" "$XDG_CONFIG_HOME/fish/config.fish"
 
 chmod u=rwx,g=,o= "$HOME/.gnupg"
 chmod u=rw,g=,o= "$HOME/.gnupg/"*

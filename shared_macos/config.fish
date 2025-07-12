@@ -16,7 +16,7 @@ set --export DENO_DIR "$XDG_CACHE_HOME/deno/cache"
 set --export DO_NOT_TRACK 1
 set --export DOCUMENTS "$HOME/Documents"
 set --export DOWNLOADS "$HOME/Downloads"
-set --export EXTERNAL_VOLUME (string upper "/Volumes/$SHORT_HOSTNAME")
+set --export EXTERNAL_VOLUME "#EXTERNAL_VOLUME"
 set --export GRADLE_USER_HOME "$XDG_CACHE_HOME/gradle"
 set --export ICLOUD "$HOME/Library/Mobile Documents/com~apple~CloudDocs/"
 set --export LF_BOOKMARKS_PATH "$XDG_CONFIG_HOME/lf/bookmarks"
