@@ -207,10 +207,25 @@ function prompt_cwd
 	set_color $fish_color_normal
 end
 
+function prompt_lf_level
+	if [ -n "$LF_LEVEL" ]
+		set_color black --background white
+		echo -n " $LF_LEVEL "
+		set_color $fish_color_normal
+		echo -n " "
+	end
+end
+
 function prompt_sh_level
 	if [ "$SHLVL" -gt "1" ]
+		if [ -n "$LF_LEVEL" ]
+			set --function lvl (math $SHLVL - $LF_LEVEL - 1)
+		else
+			set --function lvl (math $SHLVL - 1)
+		end
+
 		set_color black --background white
-		echo -n " $(math $SHLVL - 1) "
+		echo -n " $lvl "
 		set_color $fish_color_normal
 		echo -n " "
 	end

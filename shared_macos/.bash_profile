@@ -303,7 +303,11 @@ prompt_lf_level() {
 }
 prompt_sh_level() {
 	if [ "$SHLVL" -gt "1" ]; then
-		printf "${color_bg_dark_white}${color_fg_dark_black} $((SHLVL - 1)) ${color_reset} "
+		local nested_level="0"
+		[ -n "$LF_LEVEL" ] &&
+			nested_level="$((SHLVL - LF_LEVEL - 1))" ||
+			nested_level="$((SHLVL - 1))"
+		printf "${color_bg_dark_white}${color_fg_dark_black} $nested_level ${color_reset} "
 	fi
 }
 export PS1='\D{%a} \t $(prompt_sh_level)$(printf $color_fg_dark_green)\w$(printf $color_reset) $(prompt_git)\n· '
