@@ -66,6 +66,7 @@
   - Disable location access for _Suggestions & Search_, _HomeKit_ and
     _Mac Analytics_.
   - Set Apple Terminal permissions: _Full Disk Access_ and _Developer Tools_.
+  - Disable: _Apple Intelligence Report_.
 - Wallet & Apple Pay: Disable _Add Orders to Wallet_.
 - Keyboard
   - Create five more virtual desktops before entering this section.
