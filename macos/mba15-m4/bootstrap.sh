@@ -98,6 +98,10 @@ log_info "\t >>> Setting up the hosts file ..."
 source "$rootdir/shared/scripts/install-hosts.sh" --basic
 
 
+log_info "\t >>> Installing iSCM ..."
+source "$rootdir/shared_macos/scripts/install-ismc.sh"
+
+
 if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
 	log_info "\t >>> Setting Homebrew's bash as the default shell"
 	echo "$HOMEBREW_PREFIX/bin/bash" | sudo tee -a /etc/shells

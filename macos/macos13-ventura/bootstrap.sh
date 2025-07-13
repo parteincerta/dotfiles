@@ -121,6 +121,10 @@ source "$rootdir/shared/scripts/install-mongo-utils.sh" shell
 source "$rootdir/shared/scripts/install-mongo-utils.sh" tools
 
 
+log_info "\t >>> Installing iSCM ..."
+source "$rootdir/shared_macos/scripts/install-ismc.sh"
+
+
 log_info "\t >>> Installing Neovim plugins ..."
 nvim --headless -c "Lazy! install" -c qall
 
