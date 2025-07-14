@@ -264,6 +264,10 @@ function fish_should_add_to_history
 	end
 end
 
+function fish_title
+	echo (prompt_pwd --dir-length=3 --full-length-dirs=1)
+end
+
 ! type -q fzf-cd-widget &&
 type -fq fzf &>/dev/null &&
 	fzf --fish | source
