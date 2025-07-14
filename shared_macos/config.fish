@@ -203,7 +203,7 @@ end
 
 function prompt_cwd
 	set_color green
-	echo -n (prompt_pwd)
+	echo -n (prompt_pwd --dir-length=3 --full-length-dirs=1)
 	set_color $fish_color_normal
 end
 
