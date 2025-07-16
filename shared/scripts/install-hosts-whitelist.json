@@ -1,25 +1,10 @@
 {
+	"_comment1": "Use sed expressions to detect and ignore domains.",
+	"_comment2": "Example: .*[[:blank:]|\\.]instagram\\.com$",
+
 	"shared": [
-		".*[[:blank:]|\\.]cdninstagram\\.com$",
-		".*[[:blank:]|\\.]instagram\\.com$",
-
-		".*[[:blank:]|\\.]licdn\\.com$",
-		".*[[:blank:]|\\.]linkedin\\.com$",
-
-		".*[[:blank:]|\\.]redd\\.it$",
-		".*[[:blank:]|\\.]reddit\\.com$",
-		".*[[:blank:]|\\.]redditmedia\\.com$",
-		".*[[:blank:]|\\.]redditstatic\\.com$",
-		".*www\\.reddit\\.com$",
-
-		".*[[:blank:]|\\.]twimg\\.com$",
-		".*[[:blank:]|\\.]twitter\\.com$",
-		".*[[:blank:]|\\.]x\\.com$"
 	],
 	"shared_optional": [
-		".*[[:blank:]|\\.]fbcdn\\.net$",
-		".*[[:blank:]|\\.]whatsapp\\.com$",
-		".*[[:blank:]|\\.]whatsapp\\.net$"
 	],
 	"specific": {
 		"macos13-ventura": [],

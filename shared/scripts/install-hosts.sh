@@ -15,14 +15,10 @@ skip_optional_blacklist="no"
 skip_optional_whitelist="no"
 force_hostname=""
 system="$(uname -s)"
-target="fakenews-gambling-porn-social"
 version=""
 url=""
 
 while [[ $# -gt 0 ]]; do case $1 in
-	--basic)
-		target="fakenews-gambling-porn-only";
-		shift;;
 	--force-hostname)
 		force_hostname="$2";
 		shift; shift;;
@@ -51,7 +47,7 @@ if [ -z "$version" ]; then
 	)
 fi
 
-url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/alternates/${target}/hosts"
+url="https://raw.githubusercontent.com/StevenBlack/hosts/${version}/hosts"
 
 if [ "$system" = "Darwin" ]; then
 
