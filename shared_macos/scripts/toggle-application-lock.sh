@@ -30,7 +30,7 @@ apps_list=(
 )
 
 [ "$action" != "lock" ] && [ "$action" != "unlock" ] &&
-	echo "Error: No specific action was select: --lock/unlock." &&
+	echo "Error: No specific action was select: --lock/--unlock." &&
 	exit 1
 
 [ "$action" == "lock" ] &&
