@@ -157,6 +157,10 @@
   - Developer: Turn on _Disable site-specific quirks_.
 
 ## Development Environment
+- Disable GateKeeper.
+  - Open the Terminal and run `sudo spctl --global-disable`.
+  - Open the Settings app, go to _Privacy and Secutiry_ and enable
+    `Allow applications from Anywhere`.
 - Manually install the latest Command Line Tools from [Apple Developer][macos-notes-01].
   - Note: Using `xcode-select --install` would be easier but it's
     [causing problems][macos-notes-02] with Homebrew when upgrading packages.
