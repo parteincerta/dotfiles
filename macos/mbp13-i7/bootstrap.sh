@@ -97,12 +97,12 @@ brew install --cask "${homebrew_casks[@]}"
 
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
 source "$rootdir/shared_macos/.bash_profile" || true
-source configure.sh
+bash configure.sh
 bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh"
+bash "$rootdir/shared/scripts/install-hosts.sh"
 
 
 log_info "\t >>> Installing pip packages ..."
@@ -115,16 +115,16 @@ MISE_YES=1 mise install
 
 
 log_info "\t >>> Installing vcpkg ..."
-source "$rootdir/shared/scripts/install-vcpkg.sh" --silent
+bash "$rootdir/shared/scripts/install-vcpkg.sh" --silent
 
 
 log_info "\t >>> Installing MongoDB Shell and Tools .."
-source "$rootdir/shared/scripts/install-mongo-utils.sh" shell
-source "$rootdir/shared/scripts/install-mongo-utils.sh" tools
+bash "$rootdir/shared/scripts/install-mongo-utils.sh" shell
+bash "$rootdir/shared/scripts/install-mongo-utils.sh" tools
 
 
 log_info "\t >>> Installing iSCM ..."
-source "$rootdir/shared_macos/scripts/install-ismc.sh"
+bash "$rootdir/shared_macos/scripts/install-ismc.sh"
 
 
 log_info "\t >>> Locking apps that can auto-update unintentionally ..."
