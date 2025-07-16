@@ -145,5 +145,12 @@ if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
 fi
 
 
+if [ -f /etc/paths.d/homebrew ]; then
+	# $PATH and Homebrew's directories are handled in .bash_profile/config.fish
+	log_info "\t >>> Removing /etc/paths.d/homebrew ..."
+	sudo rm /etc/paths.d/homebrew
+fi
+
+
 echo "ok" > "$bootstrap_mark_file"
 log_success "\t >>> Finished!"
