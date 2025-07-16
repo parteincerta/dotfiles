@@ -43,6 +43,13 @@
 		"enabled": false
 	},
 	"lsp": {
+		"bash-language-server": {
+			"binary": {
+				"env": {
+					"INCLUDE_ALL_WORKSPACE_SYMBOLS": "true"
+				}
+			}
+		},
 		"biome": {
 			"settings": {
 				"require_config_file": true
