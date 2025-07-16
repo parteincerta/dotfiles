@@ -43,7 +43,7 @@ if [ "$expected_hostname" != "$nice_hostname" ]; then
 fi
 
 log_info "\t >>> Installing dotfiles"
-source configure.sh
+bash configure.sh
 
 
 log_info "\t >>> Configuring the Desktop and keyboard"
