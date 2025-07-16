@@ -86,7 +86,7 @@ microsoft=(microsoft-excel microsoft-powerpoint microsoft-word windows-app)
 vscode="visual-studio-code"
 homebrew_casks=(
 	alt-tab "$brave" bruno "$compass" "$dbeaver" "$font" fork ghostty iina
-	json-viewer "${microsoft[@]}" mist onyx "$vscode" zed
+	json-viewer "${microsoft[@]}" mist "$vscode" zed
 )
 brew install --cask "${homebrew_casks[@]}"
 

@@ -94,7 +94,7 @@ microsoft=(microsoft-excel microsoft-powerpoint microsoft-word windows-app)
 vscode="visual-studio-code"
 homebrew_casks=(
 	alt-tab betterdisplay "$brave" bruno chatgpt "$compass" "$dbeaver" "$docker"
-	"$font" fork ghostty iina mac-mouse-fix "${microsoft[@]}" mist numi obs onyx
+	"$font" fork ghostty iina mac-mouse-fix "${microsoft[@]}" mist numi obs
 	parallels spaceid transmission "$vscode" zed
 )
 brew install --cask "${homebrew_casks[@]}"

@@ -87,7 +87,7 @@ fonts=(font-jetbrains-mono-nerd-font)
 microsoft=(microsoft-excel microsoft-powerpoint microsoft-word)
 homebrew_casks=(
 	alt-tab betterdisplay "${fonts[@]}" google-chrome iina mac-mouse-fix
-	"${microsoft[@]}" numi onyx spaceid zoom
+	"${microsoft[@]}" numi spaceid zoom
 )
 brew install --cask "${homebrew_casks[@]}"
 
