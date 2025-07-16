@@ -99,8 +99,7 @@ bat cache --build
 
 log_info "\t >>> Setting up the hosts file ..."
 source "$rootdir/shared/scripts/install-hosts.sh" \
-	--force-hostname "$nice_hostname" \
-	--skip-optinal-whitelist
+	--force-hostname "$nice_hostname"
 
 
 log_info "\t >>> Installing pip packages ..."
@@ -123,6 +122,10 @@ source "$rootdir/shared/scripts/install-mongo-utils.sh" tools
 
 log_info "\t >>> Installing iSCM ..."
 source "$rootdir/shared_macos/scripts/install-ismc.sh"
+
+
+log_info "\t >>> Locking apps that can auto-update unintentionally ..."
+bash "$rootdir/shared_macos/scripts/toggle-application-lock.sh" --lock
 
 
 log_info "\t >>> Installing Neovim plugins ..."

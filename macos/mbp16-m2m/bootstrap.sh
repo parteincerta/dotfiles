@@ -99,7 +99,7 @@ bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh" --basic --skip-optional-whitelist
+source "$rootdir/shared/scripts/install-hosts.sh"
 
 
 if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then

@@ -21,7 +21,7 @@
 
 - Update dotfiles, [hosts][macos-maintenance-01] and [vcpkg][macos-maintenance-05]
   - `cd $DEVELOPER/parteincerta/dotfiles && git pull && ./configure.sh`.
-  - `bash shared/scripts/install-hosts.sh [--basic] [--force-hostname <host>] [--skip-optional-whitelist]`.
+  - `bash shared/scripts/install-hosts.sh [--force-hostname <host>]`.
   - `bash shared/scripts/install-vcpkg.sh [--tag <tag>]`.
 
 - Update MongoDB [Shell][macos-maintenance-02] and [Tools][macos-maintenance-03]
@@ -32,9 +32,7 @@
 
 - Update Homebrew applications
   - Quit all apps.
-  - Disable hosts blacklist: `bash shared/scripts/install-hosts.sh --skip-optional-blacklist`.
-    - Attention: If you're inside a VM, run the command above on the host first too.
-    - Optional switches to consider: `--basic` and `--force-hostname <host>`.
+  - Disable app locks: `bash shared_macos/scripts/toggle-application-lock.sh --unlock`.
   - Update Homebrew itself and the list of formulae: `brew update`.
   - Upgrade formulae which require specially instructions:
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
@@ -42,9 +40,7 @@
   - Configure specific formulae if they got updated:.
     * `brew unlink python@3.13 openssl@3`.
   - Purge cache: `brew cleanup [--dry-run]`.
-  - Reinstate the hosts file: `bash shared/scripts/install-hosts.sh`.
-    - Optional switches to consider: `--basic`, `--force-hostname <host>` and
-      `--skip-optional-whitelist`.
+  - Enable app locks: `bash shared_macos/scripts/toggle-application-lock.sh --lock`.
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
