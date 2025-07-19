@@ -155,6 +155,7 @@
     - Enable: Save articles for offline reading automatically.
     - Enable: Show features for web developers.
   - Developer: Turn on _Disable site-specific quirks_.
+  - Restart Safari and clear its favion cache: `rm -rf ~/Library/Safari/Favicon\ Cache`
 
 ## Development Environment
 - Disable GateKeeper.

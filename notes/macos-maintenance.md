@@ -127,4 +127,3 @@
 ## Other
 - Expand leading spaces to tabs in Vim: [`https://stackoverflow.com/a/9105889`](https://stackoverflow.com/a/9105889)
 - Get Apple's Command Line Tools version: `pkgutil --pkg-info=com.apple.pkg.CLTools_Executables`
-- Make favicon's load properly on Safari: `rm -rf ~/Library/Safari/Favicon\ Cache`
