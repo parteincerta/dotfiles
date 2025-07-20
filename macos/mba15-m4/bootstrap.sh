@@ -98,7 +98,7 @@ log_info "\t >>> Setting up the hosts file ..."
 source "$rootdir/shared/scripts/install-hosts.sh"
 
 
-log_info "\t >>> Installing iSCM ..."
+log_info "\t >>> Installing iSMC ..."
 source "$rootdir/shared_macos/scripts/install-ismc.sh"
 
 

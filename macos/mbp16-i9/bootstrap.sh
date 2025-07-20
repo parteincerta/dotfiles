@@ -123,7 +123,7 @@ source "$rootdir/shared/scripts/install-mongo-utils.sh" shell
 source "$rootdir/shared/scripts/install-mongo-utils.sh" tools
 
 
-log_info "\t >>> Installing iSCM ..."
+log_info "\t >>> Installing iSMC ..."
 source "$rootdir/shared_macos/scripts/install-ismc.sh"
 
 

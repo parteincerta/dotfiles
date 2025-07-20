@@ -48,7 +48,7 @@ esac; done
 	tar --directory "$download_dir" -xvf "$download_dir/iSMC.tar.gz" &>/dev/null
 
 	echo "-> Installing in $install_dir ..."
-	rm -rf "$install_dir/iSCM"
+	rm -rf "$install_dir/iSMC"
 	mv "$download_dir/iSMC" "$install_dir"
 
 	echo "-> Finished."
