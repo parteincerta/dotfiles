@@ -185,6 +185,8 @@
 - Setup Brave.
   - Set _Tab Scrolling_ to _tab shrink to pinned tab width_ in `brave://flags`.
   - Enable _Parallel downloading_ in `brave://flags`.
+- Lock specific apps to prevent auto-updates:
+  `bash shared_macos/scripts/toggle-application-lock.sh --lock`.
 - Configure iCloud Sync, Notifications, Login Items and Siri.
 - Press `Cmd+Shift+5`, select `Options` and select the folder where
   screenshots/recordings must be stored.

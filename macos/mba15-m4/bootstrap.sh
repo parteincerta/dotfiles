@@ -102,10 +102,6 @@ log_info "\t >>> Installing iSMC ..."
 source "$rootdir/shared_macos/scripts/install-ismc.sh"
 
 
-log_info "\t >>> Locking apps that can auto-update unintentionally ..."
-bash "$rootdir/shared_macos/scripts/toggle-application-lock.sh" --lock
-
-
 if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
 	log_info "\t >>> Setting Homebrew's bash as the default shell"
 	echo "$HOMEBREW_PREFIX/bin/bash" | sudo tee -a /etc/shells

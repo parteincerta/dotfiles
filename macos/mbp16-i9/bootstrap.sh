@@ -127,10 +127,6 @@ log_info "\t >>> Installing iSMC ..."
 source "$rootdir/shared_macos/scripts/install-ismc.sh"
 
 
-log_info "\t >>> Locking apps that can auto-update unintentionally ..."
-bash "$rootdir/shared_macos/scripts/toggle-application-lock.sh" --lock
-
-
 log_info "\t >>> Installing Neovim plugins ..."
 nvim --headless -c "Lazy! install" -c qall
 

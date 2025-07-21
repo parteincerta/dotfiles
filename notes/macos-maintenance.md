@@ -40,7 +40,6 @@
   - Configure specific formulae if they got updated:.
     * `brew unlink python@3.13 openssl@3`.
   - Purge cache: `brew cleanup [--dry-run]`.
-  - Enable app locks: `bash shared_macos/scripts/toggle-application-lock.sh --lock`.
 
 - Update mise plugins and tools
   - Update installed plugins: `mise plugins upgrade`.
@@ -71,6 +70,7 @@
   - Purge caches from CLI tools: `purge bash clipboard nvim zsh` and `purge fish`.
   - Install App Store updates.
   - Open all updated applications and make sure they're working as intended.
+  - Re-enable app locks: `bash shared_macos/scripts/toggle-application-lock.sh --lock`.
 
 - Check if SiP is enabled and disable it if necessary:
   - `csrutil status`.
