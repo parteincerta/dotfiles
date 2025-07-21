@@ -43,7 +43,7 @@ if [ "$expected_hostname" != "$nice_hostname" ]; then
 fi
 
 log_info "\t >>> Installing dotfiles"
-bash configure.sh
+/bin/bash configure.sh
 
 
 log_info "\t >>> Configuring the Desktop and keyboard"
@@ -97,12 +97,12 @@ brew install --cask "${homebrew_casks[@]}"
 
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
 source "$rootdir/shared_macos/.bash_profile" || true
-bash configure.sh
+/bin/bash configure.sh
 bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-bash "$rootdir/shared/scripts/install-hosts.sh"
+/bin/bash "$rootdir/shared/scripts/install-hosts.sh"
 
 
 log_info "\t >>> Installing pip packages ..."
@@ -115,16 +115,16 @@ MISE_YES=1 mise install
 
 
 log_info "\t >>> Installing vcpkg ..."
-bash "$rootdir/shared/scripts/install-vcpkg.sh" --silent
+/bin/bash "$rootdir/shared/scripts/install-vcpkg.sh" --silent
 
 
 log_info "\t >>> Installing MongoDB Shell and Tools .."
-bash "$rootdir/shared/scripts/install-mongo-utils.sh" shell
-bash "$rootdir/shared/scripts/install-mongo-utils.sh" tools
+/bin/bash "$rootdir/shared/scripts/install-mongo-utils.sh" shell
+/bin/bash "$rootdir/shared/scripts/install-mongo-utils.sh" tools
 
 
 log_info "\t >>> Installing iSMC ..."
-bash "$rootdir/shared_macos/scripts/install-ismc.sh"
+/bin/bash "$rootdir/shared_macos/scripts/install-ismc.sh"
 
 
 log_info "\t >>> Installing Neovim plugins ..."
