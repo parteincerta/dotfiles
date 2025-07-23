@@ -11,6 +11,7 @@ system_services=(
 	com.apple.XProtect.daemon.scan.startup
 	com.apple.XprotectFramework.PluginService
 	com.apple.analyticsd
+	com.apple.audioanalyticsd
 	com.apple.appstored
 	com.apple.backupd
 	com.apple.backupd-helper
@@ -19,6 +20,7 @@ system_services=(
 	com.apple.cloudpaird
 	com.apple.cloudphotod
 	com.apple.coreduetd
+	com.apple.ecosystemanalyticsd
 	com.apple.familycontrols
 	com.apple.findmymacmessenger
 	com.apple.icloud.fmfd
@@ -29,6 +31,7 @@ system_services=(
 	com.apple.ospredictiond
 	com.apple.protectedcloudstorage.protectedcloudkeysyncing
 	com.apple.rapportd
+	com.apple.rtcreportingd
 	com.apple.security.cloudkeychainproxy3
 	# com.apple.security.syspolicy : Disabling `syspolicyd` cause problems with OCLP
 	com.apple.siri.morphunassetsupdaterd
@@ -57,9 +60,12 @@ user_services=(
 	com.apple.CloudPhotosConfiguration
 	com.apple.CloudSettingsSyncAgent
 	com.apple.ContactsAgent
+	com.apple.ContextStoreAgent
+	com.apple.DiagnosticsReporter
 	com.apple.GameController.gamecontrolleragentd
 	com.apple.ManagedClient.cloudconfigurationd
 	com.apple.ManagedClientAgent.enrollagent
+	com.apple.ReportCrash
 	com.apple.Safari.History
 	com.apple.Safari.PasswordBreachAgent
 	com.apple.Safari.SafeBrowsing.Service
@@ -70,6 +76,7 @@ user_services=(
 	com.apple.SafariNotificationAgent
 	com.apple.ScreenTimeAgent
 	com.apple.Siri.agent
+	com.apple.SiriTTSTrainingAgent
 	com.apple.SoftwareUpdateNotificationManager
 	com.apple.TMHelperAgent
 	com.apple.TMHelperAgent.SetupOffer
@@ -88,6 +95,7 @@ user_services=(
 	com.apple.ap.promotedcontentd
 	com.apple.appstoreagent
 	com.apple.appstorecomponentsd
+	com.apple.assistant_cdmd
 	com.apple.assistant_service
 	com.apple.assistantd
 	com.apple.avconferenced
@@ -107,6 +115,10 @@ user_services=(
 	com.apple.familynotificationd
 	com.apple.financed
 	com.apple.gamed
+	com.apple.generativeexperiencesd
+	com.apple.geoanalyticsd
+	com.apple.geodMachServiceBridge
+	com.apple.helpd
 	com.apple.homed
 	com.apple.icloud.fmfd
 	com.apple.icloud.searchpartyuseragent
@@ -115,11 +127,17 @@ user_services=(
 	com.apple.imagent
 	com.apple.imautomatichistorydeletionagent
 	com.apple.imtransferagent
+	com.apple.inputanalyticsd
+	com.apple.intelligencecontextd
+	com.apple.intelligenceflowd
 	com.apple.intelligenceplatformd
 	com.apple.itunescloudd
 	com.apple.knowledge-agent
+	com.apple.knowledgeconstructiond
 	com.apple.macos.studentd
+	com.apple.mediaanalysisd
 	com.apple.mediastream.mstreamd
+	com.apple.naturallanguaged
 	com.apple.newsd
 	com.apple.parsec-fbf
 	com.apple.parsecd
@@ -136,6 +154,7 @@ user_services=(
 	com.apple.sidecar-relay
 	com.apple.siri.context.service
 	com.apple.siriactionsd
+	com.apple.siriinferenced
 	com.apple.siriknowledged
 	com.apple.storedownloadd
 	com.apple.suggestd
@@ -143,6 +162,7 @@ user_services=(
 	com.apple.tipsd
 	com.apple.triald
 	com.apple.videosubscriptionsd
+	com.apple.voicebankingd
 )
 uid=$(id -u)
 for item in "${user_services[@]}"; do

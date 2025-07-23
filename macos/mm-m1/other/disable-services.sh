@@ -33,8 +33,8 @@ user_services=(
 	com.apple.ManagedClientAgent.enrollagent
 	com.apple.ReportCrash
 	com.apple.ScreenTimeAgent
-	com.apple.SiriTTSTrainingAgent
 	com.apple.Siri.agent
+	com.apple.SiriTTSTrainingAgent
 	com.apple.SoftwareUpdateNotificationManager
 	com.apple.TMHelperAgent
 	com.apple.TMHelperAgent.SetupOffer
@@ -50,9 +50,9 @@ user_services=(
 	com.apple.ap.adprivacyd
 	com.apple.ap.adservicesd
 	com.apple.ap.promotedcontentd
+	com.apple.assistant_cdmd
 	com.apple.assistant_service
 	com.apple.assistantd
-	com.apple.assistant_cdmd
 	com.apple.betaenrollmentd
 	com.apple.corespeechd
 	com.apple.familycircled
