@@ -113,6 +113,7 @@ pip3 install --user pynvim
 
 log_info "\t >>> Installing mise packages ..."
 MISE_YES=1 mise install
+fish --command "bun completions"
 
 
 log_info "\t >>> Installing vcpkg ..."
