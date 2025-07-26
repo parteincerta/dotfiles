@@ -44,7 +44,7 @@ if [ "$expected_hostname" != "$nice_hostname" ]; then
 fi
 
 log_info "\t >>> Installing dotfiles"
-source configure.sh
+/bin/bash configure.sh
 
 
 log_info "\t >>> Configuring the Desktop and keyboard"
@@ -90,16 +90,16 @@ brew install --cask "${homebrew_casks[@]}"
 
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
 source "$rootdir/shared_macos/.bash_profile" || true
-source configure.sh
+/bin/bash configure.sh
 bat cache --build
 
 
 log_info "\t >>> Setting up the hosts file ..."
-source "$rootdir/shared/scripts/install-hosts.sh"
+/bin/bash "$rootdir/shared/scripts/install-hosts.sh"
 
 
 log_info "\t >>> Installing iSMC ..."
-source "$rootdir/shared_macos/scripts/install-ismc.sh"
+/bin/bash "$rootdir/shared_macos/scripts/install-ismc.sh"
 
 
 if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
