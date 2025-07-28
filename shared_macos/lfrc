@@ -182,7 +182,7 @@ cmd create ${{
 
 cmd edit ${{
 	[ "$lf_user_anon" = "true" ] &&
-		nvim -n -u NONE -i NONE "$f" ||
+		nvim -n -u NONE -i NONE -c "set ignorecase" "$f" ||
 		nvim -n "$f"
 }}
 
@@ -230,7 +230,7 @@ cmd fzf_search ${{
 		[[ $name = .* ]] && lf -remote "send $id set hidden"
 		lf -remote "send $id select \"$file\""
 		[ "$lf_user_anon" = "true" ] &&
-			nvim -n -u NONE -i NONE "+${line}" "${file}" ||
+			nvim -n -u NONE -i NONE -c "set ignorecase" "+${line}" "${file}" ||
 			nvim "+${line}" "${file}"
 
 	elif [ -n "$file" ]; then
@@ -267,9 +267,9 @@ cmd pager ${{
 			;;
 		*)
 			if [ -f "$f" ]; then
-				$nvim_cmd -c "nmap q :q!<CR>" "$f"
+				$nvim_cmd -c "nmap q :q!<CR>" -c "set ignorecase" "$f"
 			elif [ -d "$f" ]; then
-				ls -la "$f" | $nvim_cmd -c "nmap q :q!<CR>"
+				ls -la "$f" | $nvim_cmd -c "nmap q :q!<CR>" -c "set ignorecase"
 			fi ;;
 	esac
 }}
