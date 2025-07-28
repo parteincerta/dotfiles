@@ -1,6 +1,6 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520093700,
+		"prev_ver": 520159233,
 		"name": "Mic/Aux",
 		"uuid": "a770f936-cab0-45db-924e-06613e1289da",
 		"id": "coreaudio_input_capture",
@@ -31,7 +31,7 @@
 		"private_settings": {},
 		"filters": [
 			{
-				"prev_ver": 520093700,
+				"prev_ver": 520159233,
 				"name": "Noise Suppression",
 				"uuid": "e01e9b08-8f38-40f5-96ef-352cc0656533",
 				"id": "noise_suppress_filter",
@@ -66,7 +66,7 @@
 	"name": "4k27in - Desktop + WebCam",
 	"sources": [
 		{
-			"prev_ver": 520093700,
+			"prev_ver": 520159233,
 			"name": "Scene",
 			"uuid": "02380f76-068f-4b2c-9e97-a2113ababe68",
 			"id": "scene",
@@ -156,7 +156,7 @@
 						},
 						"pos_rel": {
 							"x": 1.7777777910232544,
-							"y": 0.66666662693023682
+							"y": 0.6666666269302368
 						},
 						"scale": {
 							"x": -1.0,
@@ -208,10 +208,11 @@
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
 			"monitoring_type": 0,
+			"canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093700,
+			"prev_ver": 520159233,
 			"name": "Desktop",
 			"uuid": "0122deb4-bcac-4415-8b91-8076782e21c4",
 			"id": "screen_capture",
@@ -240,15 +241,15 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093700,
+			"prev_ver": 520159233,
 			"name": "WebCam",
 			"uuid": "f4475d45-3632-4af4-a76b-98bf732524d1",
 			"id": "macos-avcapture",
 			"versioned_id": "macos-avcapture",
 			"settings": {
-				"device": "0x14314000046d082d",
-				"device_name": "HD Pro Webcam C920",
-				"preset": "AVCaptureSessionPreset640x480"
+				"device": "0x14130000046d082d",
+				"preset": "AVCaptureSessionPreset640x480",
+				"device_name": "HD Pro Webcam C920"
 			},
 			"mixers": 255,
 			"sync": 0,
@@ -273,7 +274,7 @@
 			"private_settings": {},
 			"filters": [
 				{
-					"prev_ver": 520093700,
+					"prev_ver": 520159233,
 					"name": "Image Mask/Blend",
 					"uuid": "b4747c48-828b-48c6-bd15-d7ddcef3ffbd",
 					"id": "mask_filter",
@@ -327,11 +328,12 @@
 	],
 	"transitions": [],
 	"saved_projectors": [],
+	"canvases": [],
 	"current_transition": "Fade",
 	"transition_duration": 300,
 	"preview_locked": false,
 	"scaling_enabled": false,
-	"scaling_level": 0,
+	"scaling_level": -21,
 	"scaling_off_x": 0.0,
 	"scaling_off_y": 0.0,
 	"virtual-camera": {
