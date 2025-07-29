@@ -217,7 +217,9 @@
 			"uuid": "0122deb4-bcac-4415-8b91-8076782e21c4",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
-			"settings": {},
+			"settings": {
+				"hide_obs": true
+			},
 			"mixers": 255,
 			"sync": 0,
 			"flags": 0,
@@ -247,9 +249,9 @@
 			"id": "macos-avcapture",
 			"versioned_id": "macos-avcapture",
 			"settings": {
+				"device_name": "HD Pro Webcam C920",
 				"device": "0x14130000046d082d",
-				"preset": "AVCaptureSessionPreset640x480",
-				"device_name": "HD Pro Webcam C920"
+				"preset": "AVCaptureSessionPreset640x480"
 			},
 			"mixers": 255,
 			"sync": 0,
