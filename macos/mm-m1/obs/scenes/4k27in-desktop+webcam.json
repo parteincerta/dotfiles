@@ -1,6 +1,6 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520159232,
+		"prev_ver": 520159234,
 		"name": "Mic/Aux",
 		"uuid": "b766f050-ce3b-4491-a72c-c225cb10d2dc",
 		"id": "coreaudio_input_capture",
@@ -40,7 +40,7 @@
 	"name": "4k27in - Desktop + WebCam",
 	"sources": [
 		{
-			"prev_ver": 520159232,
+			"prev_ver": 520159234,
 			"name": "Scene",
 			"uuid": "dded59af-d373-4f37-93da-6919a2337707",
 			"id": "scene",
@@ -186,13 +186,13 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520159232,
+			"prev_ver": 520159234,
 			"name": "Desktop",
 			"uuid": "752991c4-f6fe-4a2f-b8e3-2b95bcc03c63",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
 			"settings": {
-				"hide_obs": true
+				"hide_obs": false
 			},
 			"mixers": 255,
 			"sync": 0,
@@ -217,15 +217,16 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520159232,
+			"prev_ver": 520159234,
 			"name": "WebCam",
 			"uuid": "5d3f7416-b9fe-4dd9-8159-6eb047758ec4",
 			"id": "macos-avcapture",
 			"versioned_id": "macos-avcapture",
 			"settings": {
-				"device": "0x2114000046d082d",
 				"device_name": "HD Pro Webcam C920",
-				"preset": "AVCaptureSessionPreset640x480"
+				"device": "0x2130000046d082d",
+				"preset": "AVCaptureSessionPreset640x480",
+				"buffering": false
 			},
 			"mixers": 255,
 			"sync": 0,
@@ -250,7 +251,7 @@
 			"private_settings": {},
 			"filters": [
 				{
-					"prev_ver": 520159232,
+					"prev_ver": 520159234,
 					"name": "Image Mask/Blend",
 					"uuid": "56839c25-8ca1-4bf3-a853-b39808e38557",
 					"id": "mask_filter",
