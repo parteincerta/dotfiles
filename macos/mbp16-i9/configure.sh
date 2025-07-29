@@ -12,7 +12,8 @@ source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
 cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
-sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A1m|" "$HOME/.bash_profile"
+# sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A1m|" "$HOME/.bash_profile"
+sed -i '' "s|#EXTERNAL_VOLUME||" "$HOME/.bash_profile"
 ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
 # shellcheck disable=SC1091
 source "$HOME/.bash_profile" || true
@@ -70,7 +71,8 @@ chmod u=rw,g=,o= "$HOME/.gnupg/"*
 chmod u=rwx,g=,o= "$HOME/.ssh"
 chmod u=rwx,g=,o= "$HOME/.ssh/sockets"
 chmod u+x "$HOME/.local/bin/lfpreview"
-sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A1m|" "$XDG_CONFIG_HOME/fish/config.fish"
+# sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A1m|" "$XDG_CONFIG_HOME/fish/config.fish"
+sed -i '' "s|#EXTERNAL_VOLUME||" "$XDG_CONFIG_HOME/fish/config.fish"
 
 touch "$HOME/.bash_sessions_disable"
 touch "$HOME/.hushlogin"
