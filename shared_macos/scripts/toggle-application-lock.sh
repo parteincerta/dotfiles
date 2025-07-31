@@ -25,6 +25,7 @@ apps_list=(
 	"Brave Browser"
 	"Google Chrome"
 	"Visual Studio Code"
+	"Signal"
 	"WhatsApp"
 	"Zed"
 )
