@@ -1,8 +1,8 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520093700,
+		"prev_ver": 520159234,
 		"name": "Mic/Aux",
-		"uuid": "a770f936-cab0-45db-924e-06613e1289da",
+		"uuid": "2bf26b6f-ea32-43f6-a9d1-571acc08373f",
 		"id": "coreaudio_input_capture",
 		"versioned_id": "coreaudio_input_capture",
 		"settings": {
@@ -31,9 +31,9 @@
 		"private_settings": {},
 		"filters": [
 			{
-				"prev_ver": 520093700,
+				"prev_ver": 520159234,
 				"name": "Noise Suppression",
-				"uuid": "e01e9b08-8f38-40f5-96ef-352cc0656533",
+				"uuid": "37ce7134-75ec-468c-ae17-c1600aabaec8",
 				"id": "noise_suppress_filter",
 				"versioned_id": "noise_suppress_filter_v2",
 				"settings": {},
@@ -63,21 +63,21 @@
 			"name": "Scene"
 		}
 	],
-	"name": "mbp16 - Desktop + WebCam",
+	"name": "mbp16-destop+webcam",
 	"sources": [
 		{
-			"prev_ver": 520093700,
+			"prev_ver": 520159234,
 			"name": "Scene",
-			"uuid": "3870484c-a853-4425-9f44-e8222ed897fd",
+			"uuid": "d9b84e29-f345-49f0-809a-e5f561352163",
 			"id": "scene",
 			"versioned_id": "scene",
 			"settings": {
-				"id_counter": 3,
+				"id_counter": 2,
 				"custom_size": false,
 				"items": [
 					{
-						"name": "Desktop",
-						"source_uuid": "3bf67df0-af84-4006-aa0b-4d1ec61fad7e",
+						"name": "desktop",
+						"source_uuid": "0a1fee00-d314-48eb-ad8c-2ca62790a33f",
 						"visible": true,
 						"locked": false,
 						"rot": 0.0,
@@ -93,14 +93,14 @@
 						"crop_top": 0,
 						"crop_right": 0,
 						"crop_bottom": 0,
-						"id": 2,
+						"id": 1,
 						"group_item_backup": false,
 						"pos": {
 							"x": 0.0,
 							"y": 0.0
 						},
 						"pos_rel": {
-							"x": -1.6000000238418579,
+							"x": -1.600000023841858,
 							"y": -1.0
 						},
 						"scale": {
@@ -131,8 +131,8 @@
 						"private_settings": {}
 					},
 					{
-						"name": "WebCam",
-						"source_uuid": "60c3563a-f9fc-49f0-802a-1653eded12c2",
+						"name": "webcam",
+						"source_uuid": "af7f5676-cf4c-4087-ba0e-198ade44096a",
 						"visible": true,
 						"locked": false,
 						"rot": 0.0,
@@ -148,15 +148,15 @@
 						"crop_top": 0,
 						"crop_right": 0,
 						"crop_bottom": 0,
-						"id": 3,
+						"id": 2,
 						"group_item_backup": false,
 						"pos": {
 							"x": 3584.0,
 							"y": 1760.0
 						},
 						"pos_rel": {
-							"x": 1.6000000238418579,
-							"y": 0.57142853736877441
+							"x": 1.600000023841858,
+							"y": 0.5714285373687744
 						},
 						"scale": {
 							"x": -1.0,
@@ -200,25 +200,24 @@
 			"push-to-talk-delay": 0,
 			"hotkeys": {
 				"OBSBasic.SelectScene": [],
+				"libobs.show_scene_item.1": [],
+				"libobs.hide_scene_item.1": [],
 				"libobs.show_scene_item.2": [],
-				"libobs.hide_scene_item.2": [],
-				"libobs.show_scene_item.3": [],
-				"libobs.hide_scene_item.3": []
+				"libobs.hide_scene_item.2": []
 			},
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
 			"monitoring_type": 0,
+			"canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093700,
-			"name": "Desktop",
-			"uuid": "3bf67df0-af84-4006-aa0b-4d1ec61fad7e",
+			"prev_ver": 520159234,
+			"name": "desktop",
+			"uuid": "0a1fee00-d314-48eb-ad8c-2ca62790a33f",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
-			"settings": {
-				"hide_obs": true
-			},
+			"settings": {},
 			"mixers": 255,
 			"sync": 0,
 			"flags": 0,
@@ -242,9 +241,9 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093700,
-			"name": "WebCam",
-			"uuid": "60c3563a-f9fc-49f0-802a-1653eded12c2",
+			"prev_ver": 520159234,
+			"name": "webcam",
+			"uuid": "af7f5676-cf4c-4087-ba0e-198ade44096a",
 			"id": "macos-avcapture",
 			"versioned_id": "macos-avcapture",
 			"settings": {
@@ -275,9 +274,9 @@
 			"private_settings": {},
 			"filters": [
 				{
-					"prev_ver": 520093700,
+					"prev_ver": 520159234,
 					"name": "Image Mask/Blend",
-					"uuid": "75ca25ef-b7c9-4152-bd1e-cc3169828c8f",
+					"uuid": "d9534cc5-f8c1-40ad-911d-8328353b1cd2",
 					"id": "mask_filter",
 					"versioned_id": "mask_filter_v2",
 					"settings": {
@@ -329,11 +328,12 @@
 	],
 	"transitions": [],
 	"saved_projectors": [],
+	"canvases": [],
 	"current_transition": "Fade",
 	"transition_duration": 300,
 	"preview_locked": false,
 	"scaling_enabled": false,
-	"scaling_level": 0,
+	"scaling_level": -17,
 	"scaling_off_x": 0.0,
 	"scaling_off_y": 0.0,
 	"virtual-camera": {
@@ -359,10 +359,6 @@
 			"active": false,
 			"switches": []
 		}
-	},
-	"resolution": {
-		"x": 3584,
-		"y": 2240
 	},
 	"version": 2
 }

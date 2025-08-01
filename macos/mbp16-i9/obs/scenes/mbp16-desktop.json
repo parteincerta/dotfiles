@@ -1,8 +1,8 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520159233,
+		"prev_ver": 520159234,
 		"name": "Mic/Aux",
-		"uuid": "a770f936-cab0-45db-924e-06613e1289da",
+		"uuid": "2bf26b6f-ea32-43f6-a9d1-571acc08373f",
 		"id": "coreaudio_input_capture",
 		"versioned_id": "coreaudio_input_capture",
 		"settings": {
@@ -31,9 +31,9 @@
 		"private_settings": {},
 		"filters": [
 			{
-				"prev_ver": 520159233,
+				"prev_ver": 520159234,
 				"name": "Noise Suppression",
-				"uuid": "e01e9b08-8f38-40f5-96ef-352cc0656533",
+				"uuid": "37ce7134-75ec-468c-ae17-c1600aabaec8",
 				"id": "noise_suppress_filter",
 				"versioned_id": "noise_suppress_filter_v2",
 				"settings": {},
@@ -63,21 +63,21 @@
 			"name": "Scene"
 		}
 	],
-	"name": "mbp16 - Desktop",
+	"name": "mbp16-desktop",
 	"sources": [
 		{
-			"prev_ver": 520159233,
+			"prev_ver": 520159234,
 			"name": "Scene",
-			"uuid": "24dd3037-f801-41fc-91cb-39e25b490450",
+			"uuid": "d9b84e29-f345-49f0-809a-e5f561352163",
 			"id": "scene",
 			"versioned_id": "scene",
 			"settings": {
-				"id_counter": 2,
+				"id_counter": 1,
 				"custom_size": false,
 				"items": [
 					{
-						"name": "Desktop",
-						"source_uuid": "3d9b3bfb-301f-409d-8ab7-566e96754118",
+						"name": "desktop",
+						"source_uuid": "0a1fee00-d314-48eb-ad8c-2ca62790a33f",
 						"visible": true,
 						"locked": false,
 						"rot": 0.0,
@@ -93,10 +93,10 @@
 						"crop_top": 0,
 						"crop_right": 0,
 						"crop_bottom": 0,
-						"id": 2,
+						"id": 1,
 						"group_item_backup": false,
 						"pos": {
-							"x": 256.0,
+							"x": 0.0,
 							"y": 0.0
 						},
 						"pos_rel": {
@@ -104,8 +104,8 @@
 							"y": -1.0
 						},
 						"scale": {
-							"x": 1.2857142686843872,
-							"y": 1.2857142686843872
+							"x": 1.0,
+							"y": 1.0
 						},
 						"scale_rel": {
 							"x": 1.0,
@@ -145,8 +145,8 @@
 			"push-to-talk-delay": 0,
 			"hotkeys": {
 				"OBSBasic.SelectScene": [],
-				"libobs.show_scene_item.2": [],
-				"libobs.hide_scene_item.2": []
+				"libobs.show_scene_item.1": [],
+				"libobs.hide_scene_item.1": []
 			},
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
@@ -155,14 +155,12 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520159233,
-			"name": "Desktop",
-			"uuid": "3d9b3bfb-301f-409d-8ab7-566e96754118",
+			"prev_ver": 520159234,
+			"name": "desktop",
+			"uuid": "0a1fee00-d314-48eb-ad8c-2ca62790a33f",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
-			"settings": {
-				"hide_obs": true
-			},
+			"settings": {},
 			"mixers": 255,
 			"sync": 0,
 			"flags": 0,
@@ -217,7 +215,7 @@
 	"transition_duration": 300,
 	"preview_locked": false,
 	"scaling_enabled": false,
-	"scaling_level": -21,
+	"scaling_level": -17,
 	"scaling_off_x": 0.0,
 	"scaling_off_y": 0.0,
 	"virtual-camera": {
@@ -243,10 +241,6 @@
 			"active": false,
 			"switches": []
 		}
-	},
-	"resolution": {
-		"x": 3584,
-		"y": 2240
 	},
 	"version": 2
 }

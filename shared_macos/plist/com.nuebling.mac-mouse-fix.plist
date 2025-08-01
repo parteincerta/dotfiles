@@ -5,7 +5,7 @@
 	<key>Constants</key>
 	<dict>
 		<key>configVersion</key>
-		<integer>23</integer>
+		<integer>24</integer>
 		<key>defaultRemaps</key>
 		<dict>
 			<key>fiveButtons</key>
@@ -255,6 +255,12 @@
 				<string>MM</string>
 				<string>NP</string>
 				<string>LB</string>
+				<string>EG</string>
+				<string>BY</string>
+				<string>VE</string>
+				<string>LK</string>
+				<string>SY</string>
+				<string>ZW</string>
 			</array>
 			<key>maxActivations</key>
 			<integer>25</integer>
@@ -267,10 +273,6 @@
 			<key>trialDays</key>
 			<integer>30</integer>
 		</dict>
-		<key>isLicensedCache</key>
-		<false/>
-		<key>licenseReasonCache</key>
-		<integer>1</integer>
 		<key>trial</key>
 		<dict/>
 	</dict>
@@ -519,13 +521,13 @@
 	<key>State</key>
 	<dict>
 		<key>autosave_tabID</key>
-		<string>general</string>
+		<string>about</string>
 		<key>lastLaunchedBundleVersion</key>
-		<integer>22854</integer>
+		<integer>23797</integer>
 		<key>launchesOfCurrentBundleVersion</key>
 		<integer>1</integer>
 		<key>launchesOverall</key>
-		<integer>4</integer>
+		<integer>5</integer>
 		<key>remapsAreInitialized</key>
 		<true/>
 	</dict>
