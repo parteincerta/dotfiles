@@ -63,6 +63,7 @@ cp "$rootdir/shared/tokyonight-moon.tmTheme" "$XDG_CONFIG_HOME/bat/themes"
 cp "$rootdir/shared/zed.keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
 cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
+cp -fR "$rootdir/shared_macos/Brave Incognito.app" "$HOME/Desktop"
 cp -R obs/* "$app_support_folder/obs-studio/basic"
 cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
 
