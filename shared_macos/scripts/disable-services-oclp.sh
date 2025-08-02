@@ -20,12 +20,14 @@ system_services=(
 	com.apple.cloudpaird
 	com.apple.cloudphotod
 	com.apple.coreduetd
+	com.apple.diagnosticd
 	com.apple.ecosystemanalyticsd
 	com.apple.familycontrols
 	com.apple.findmymacmessenger
 	com.apple.icloud.fmfd
 	com.apple.icloud.searchpartyd
 	com.apple.itunescloudd
+	com.apple.logd
 	com.apple.mobile.obliteration
 	com.apple.mobile.softwareupdated
 	com.apple.ospredictiond
@@ -37,6 +39,7 @@ system_services=(
 	com.apple.siri.morphunassetsupdaterd
 	com.apple.siriinferenced
 	com.apple.softwareupdated
+	com.apple.syslogd
 	com.apple.touchbarserver
 	com.apple.triald.system
 	com.apple.wifianalyticsd
@@ -108,6 +111,8 @@ user_services=(
 	com.apple.cmio.ContinuityCaptureAgent
 	com.apple.commerce
 	com.apple.corespeechd
+	com.apple.diagnosticextensionsd
+	com.apple.diagnostics_agent
 	com.apple.dataaccess.dataaccessd
 	com.apple.email.maild
 	com.apple.familycircled

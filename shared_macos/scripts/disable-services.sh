@@ -9,14 +9,17 @@ system_services=(
 	com.apple.audioanalyticsd
 	com.apple.backupd
 	com.apple.backupd-helper
+	com.apple.diagnosticd
 	com.apple.ecosystemanalyticsd
 	com.apple.familycontrols
+	com.apple.logd
 	com.apple.mobile.softwareupdated
 	com.apple.ospredictiond
 	com.apple.rtcreportingd
 	com.apple.security.syspolicy
 	com.apple.siriinferenced
 	com.apple.softwareupdated
+	com.apple.syslogd
 	com.apple.triald.system
 	com.apple.wifianalyticsd
 )
@@ -55,6 +58,8 @@ user_services=(
 	com.apple.assistantd
 	com.apple.betaenrollmentd
 	com.apple.corespeechd
+	com.apple.diagnosticextensionsd
+	com.apple.diagnostics_agent
 	com.apple.familycircled
 	com.apple.familycontrols.useragent
 	com.apple.familynotificationd

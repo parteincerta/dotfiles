@@ -21,6 +21,7 @@ system_services=(
 	com.apple.cloudpaird
 	com.apple.cloudphotod
 	com.apple.coreduetd
+	com.apple.diagnosticd
 	com.apple.ecosystemanalyticsd
 	com.apple.familycontrols
 	com.apple.findmymacmessenger
@@ -31,6 +32,7 @@ system_services=(
 	com.apple.icloud.searchpartyd
 	com.apple.itunescloudd
 	com.apple.locationd
+	com.apple.logd
 	com.apple.mobile.obliteration
 	com.apple.ospredictiond
 	com.apple.protectedcloudstorage.protectedcloudkeysyncing
@@ -40,6 +42,8 @@ system_services=(
 	com.apple.security.syspolicy
 	com.apple.siri.morphunassetsupdaterd
 	com.apple.siriinferenced
+	com.apple.softwareupdated
+	com.apple.syslogd
 	com.apple.touchbarserver
 	com.apple.triald.system
 	com.apple.wifianalyticsd
@@ -113,6 +117,8 @@ user_services=(
 	com.apple.commerce
 	com.apple.corespeechd
 	com.apple.dataaccess.dataaccessd
+	com.apple.diagnosticextensionsd
+	com.apple.diagnostics_agent
 	com.apple.ensemble
 	com.apple.email.maild
 	com.apple.familycircled

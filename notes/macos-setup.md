@@ -196,7 +196,7 @@
 - Clone and configure 3rd party git repositories.
 - Setup 3rd party Remote Desktop connections.
 - [Disable SiP][macos-notes-04].
-- Disable services: `bash macos/<hostname>/other/disable-services.sh`
+- Disable services: `bash macos_shared/scripts/disable-services[-oclp|-vm].sh`
 - Reboot.
 
 [macos-notes-01]: https://developer.apple.com/download/all
