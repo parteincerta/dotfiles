@@ -242,7 +242,9 @@ end
 
 function fish_should_add_to_history
 	set --local cmd (string split --no-empty ' ' $argv)
-	if type -q $cmd[1]
+	if [ (string length $cmd[1]) -eq 1 ]
+		return 1
+	else if type -q $cmd[1]
 		return 0
 	else
 		return 1
