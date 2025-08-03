@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# NOTE: This script is specially targeted at macOS instances installed through
+# OCLP.  It will disable substantially more services than the regular
+# `disable-services.sh` script, like iCloud-related services.
+
 system_services=(
 	com.apple.AppStoreDaemon.StorePrivilegedODRService
 	com.apple.AppStoreDaemon.StorePrivilegedTaskService

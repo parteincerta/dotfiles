@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# NOTE: This script is specially targeted at macOS VM instances installed .
+# It's contains the largest set of macOS services to be disabled when compared
+# to `disable-services.sh` and `disable-services-oclp.sh`.
+
 system_services=(
 	com.apple.AppStoreDaemon.StorePrivilegedODRService
 	com.apple.AppStoreDaemon.StorePrivilegedTaskService
@@ -34,9 +38,11 @@ system_services=(
 	com.apple.locationd
 	com.apple.logd
 	com.apple.mobile.obliteration
+	com.apple.mobile.softwareupdated
 	com.apple.ospredictiond
 	com.apple.protectedcloudstorage.protectedcloudkeysyncing
 	com.apple.rapportd
+	com.apple.rtcreportingd
 	com.apple.screensharing
 	com.apple.security.cloudkeychainproxy3
 	com.apple.security.syspolicy
@@ -70,11 +76,13 @@ user_services=(
 	com.apple.ContactsAgent
 	com.apple.ContextStoreAgent
 	com.apple.CoreLocationAgent
+	com.apple.DiagnosticsReporter
 	com.apple.GameController.gamecontrolleragentd
 	com.apple.ManagedClient.cloudconfigurationd
 	com.apple.ManagedClientAgent.enrollagent
 	com.apple.Maps.mapspushd
 	com.apple.Maps.pushdaemon
+	com.apple.ReportCrash
 	com.apple.Safari.History
 	com.apple.Safari.PasswordBreachAgent
 	com.apple.Safari.SafeBrowsing.Service
@@ -85,6 +93,7 @@ user_services=(
 	com.apple.SafariNotificationAgent
 	com.apple.ScreenTimeAgent
 	com.apple.Siri.agent
+	com.apple.SiriTTSTrainingAgent
 	com.apple.SoftwareUpdateNotificationManager
 	com.apple.TMHelperAgent
 	com.apple.TMHelperAgent.SetupOffer
@@ -103,9 +112,9 @@ user_services=(
 	com.apple.ap.promotedcontentd
 	com.apple.appstoreagent
 	com.apple.appstorecomponentsd
+	com.apple.assistant_cdmd
 	com.apple.assistant_service
 	com.apple.assistantd
-	com.apple.assistant_cdmd
 	com.apple.avconferenced
 	com.apple.betaenrollmentd
 	com.apple.biomesyncd
@@ -132,6 +141,7 @@ user_services=(
 	com.apple.geoanalyticsd
 	com.apple.geod
 	com.apple.geodMachServiceBridge
+	com.apple.helpd
 	com.apple.homed
 	com.apple.icloud.fmfd
 	com.apple.icloud.searchpartyuseragent
@@ -150,8 +160,8 @@ user_services=(
 	com.apple.macos.studentd
 	com.apple.mediaanalysisd
 	com.apple.mediastream.mstreamd
-	com.apple.newsd
 	com.apple.naturallanguaged
+	com.apple.newsd
 	com.apple.parsec-fbf
 	com.apple.parsecd
 	com.apple.passd
