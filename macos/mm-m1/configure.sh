@@ -29,6 +29,7 @@ mkdir -p \
 "$HOME"/.local/{bin,share/lf} \
 "$HOME"/Library/{KeyBindings,LaunchAgents} \
 "$HOME/Library/Application Support/Code/User/" \
+"$HOME/Library/Application Support/RetroArch/config" \
 "$HOME/Library/Application Support/com.nuebling.mac-mouse-fix/" \
 "$HOME/Library/Application Support/obs-studio/basic/" \
 "$XDG_CACHE_HOME/code"/{data/User,extensions} \
@@ -41,7 +42,7 @@ if [ -d "$EXTERNAL_VOLUME" ]; then
 	mkdir -p \
 		"$EXTERNAL_VOLUME"/Developer/{github,parteincerta} \
 		"$EXTERNAL_VOLUME"/Developer/icnew/{git-icone,git-icone-dog,misc} \
-		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,Torrents,VMs}
+		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,RetroArch/roms,Torrents,VMs}
 
 	ln -fs "$EXTERNAL_VOLUME/Developer/github" "$CODE"
 	ln -fs "$EXTERNAL_VOLUME/Developer/icnew" "$CODE"
@@ -76,8 +77,10 @@ cp "$rootdir/shared/pip.conf" "$XDG_CONFIG_HOME/pip/"
 cp "$rootdir/shared/ssh.conf" "$HOME/.ssh/config"
 cp "$rootdir/shared/tokyonight-moon.tmTheme" "$XDG_CONFIG_HOME/bat/themes"
 cp "$rootdir/shared/zed.keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
+cp -fR "$rootdir/shared_macos/Brave Incognito.app" "$HOME/Desktop"
 cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
+cp "$rootdir/shared_macos/retroarch.cfg" "$app_support_folder/RetroArch/config/"
 cp -R obs/* "$app_support_folder/obs-studio/basic"
 cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
 
