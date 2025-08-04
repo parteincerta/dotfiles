@@ -30,6 +30,7 @@ mkdir -p \
 "$HOME"/.local/{bin,share/lf} \
 "$HOME"/Library/{KeyBindings,LaunchAgents} \
 "$HOME/Library/Application Support/Code/User/" \
+"$HOME/Library/Application Support/RetroArch/config" \
 "$HOME/Library/Application Support/com.nuebling.mac-mouse-fix/" \
 "$HOME/Library/Application Support/obs-studio/basic/" \
 "$XDG_CACHE_HOME/code"/{data/User,extensions} \
@@ -38,7 +39,7 @@ mkdir -p \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,gradle,fish/completions,ghostty,git,kitty,lf,mise,nvim,pip,zed} \
 "$CODE"/{github,parteincerta} \
 "$CODE"/icnew/{git-icone,git-icone-dog,misc} \
-"$DOCUMENTS"/{Captures,Misc,Remote,ROMs} \
+"$DOCUMENTS"/{Captures,Misc,Remote,RetroArch/roms} \
 "$DOWNLOADS"/{Brave,Other,Safari,Torrents}
 
 app_support_folder="$HOME/Library/Application Support"
@@ -61,9 +62,10 @@ cp "$rootdir/shared/pip.conf" "$XDG_CONFIG_HOME/pip/"
 cp "$rootdir/shared/ssh.conf" "$HOME/.ssh/config"
 cp "$rootdir/shared/tokyonight-moon.tmTheme" "$XDG_CONFIG_HOME/bat/themes"
 cp "$rootdir/shared/zed.keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
+cp -fR "$rootdir/shared_macos/Brave Incognito.app" "$HOME/Desktop"
 cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
-cp -fR "$rootdir/shared_macos/Brave Incognito.app" "$HOME/Desktop"
+cp "$rootdir/shared_macos/retroarch.cfg" "$app_support_folder/RetroArch/config/"
 cp -R obs/* "$app_support_folder/obs-studio/basic"
 cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
 
