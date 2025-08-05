@@ -36,10 +36,11 @@ mkdir -p \
 "$XDG_CACHE_HOME/code"/{data/User,extensions} \
 "$XDG_CACHE_HOME/bun"/{bin,cache-install,cache-transpiler,lib} \
 "$XDG_CACHE_HOME/deno/cache" \
+"$XDG_CACHE_HOME/retroarch" \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,gradle,fish/completions,ghostty,git,kitty,lf,mise,nvim,pip,zed} \
 "$CODE"/{github,parteincerta} \
 "$CODE"/icnew/{git-icone,git-icone-dog,misc} \
-"$DOCUMENTS"/{Captures,Misc,Remote,RetroArch/roms} \
+"$DOCUMENTS"/{Captures,Misc,Remote,ROMs} \
 "$DOWNLOADS"/{Brave,Other,Safari,Torrents}
 
 app_support_folder="$HOME/Library/Application Support"

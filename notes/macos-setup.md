@@ -185,6 +185,9 @@
 - Setup Brave.
   - Set _Tab Scrolling_ to _tab shrink to pinned tab width_ in `brave://flags`.
   - Enable _Parallel downloading_ in `brave://flags`.
+- Optionally, Install Nintendo/Sega emulators:
+  - RetroArch: `brew install --cask retroarch-metal`.
+  - Install Azahar: `bash shared_macos/scripts/install-azahar.sh`.
 - Lock specific apps to prevent auto-updates:
   `bash shared_macos/scripts/toggle-application-lock.sh --lock`.
 - Configure iCloud Sync, Notifications, Login Items and Siri.

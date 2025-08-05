@@ -95,7 +95,7 @@ vscode="visual-studio-code"
 homebrew_casks=(
 	alt-tab betterdisplay "$brave" bruno chatgpt "$compass" "$dbeaver" "$docker"
 	"$font" foobar2000 fork ghostty iina mac-mouse-fix "${microsoft[@]}" mist
-	numi obs retroarch-metal signal spaceid transmission "$vscode" zed
+	numi obs signal spaceid transmission "$vscode" zed
 )
 brew install --cask "${homebrew_casks[@]}"
 
