@@ -82,11 +82,10 @@ brave="brave-browser"
 compass="mongodb-compass-isolated-edition"
 dbeaver="dbeaver-community"
 font="font-jetbrains-mono-nerd-font"
-microsoft=(microsoft-excel microsoft-powerpoint microsoft-word windows-app)
 vscode="visual-studio-code"
 homebrew_casks=(
 	alt-tab "$brave" bruno "$compass" "$dbeaver" "$font" fork ghostty iina
-	json-viewer "${microsoft[@]}" mist "$vscode" zed
+	json-viewer mist "$vscode" zed
 )
 brew install --cask "${homebrew_casks[@]}"
 

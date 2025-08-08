@@ -86,7 +86,7 @@ compass="mongodb-compass-isolated-edition"
 dbeaver="dbeaver-community"
 docker="docker-desktop"
 font="font-jetbrains-mono-nerd-font"
-microsoft=(microsoft-excel microsoft-powerpoint microsoft-word windows-app)
+microsoft=(windows-app)
 vscode="visual-studio-code"
 homebrew_casks=(
 	alt-tab betterdisplay "$brave" bruno "$compass" "$dbeaver" "$docker" "$font"
