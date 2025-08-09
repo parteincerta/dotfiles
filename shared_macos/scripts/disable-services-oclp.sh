@@ -15,8 +15,9 @@ system_services=(
 	com.apple.XProtect.daemon.scan.startup
 	com.apple.XprotectFramework.PluginService
 	com.apple.analyticsd
-	com.apple.audioanalyticsd
 	com.apple.appstored
+	com.apple.audioanalyticsd
+	com.apple.audiomxd
 	com.apple.backupd
 	com.apple.backupd-helper
 	com.apple.biomed
