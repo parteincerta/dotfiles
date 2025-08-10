@@ -16,14 +16,26 @@ trap trap_exit EXIT
 
 download_dir="${TMPDIR}azahar"
 install_dir="/Applications"
+uninstall="false"
 version=""
 while [[ $# -gt 0 ]]; do case $1 in
+	--uninstall)
+		uninstall="true";
+		shift;;
 	--version)
 		version="$2";
 		shift; shift;;
 	*)
 		shift;;
 esac; done
+
+	if [ "$uninstall" = "true" ]; then
+		echo "-> Uninstalling Azahar ..."
+		rm -rf /Applications/Azahar.app
+		rm -rf "$HOME/Library/Application Support/Azahar"
+		echo "-> Finished."
+		exit 0
+	fi
 
 	if [ -z "$version" ]; then
 		echo "-> Querying Azahar's latest available version ..."
