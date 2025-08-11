@@ -88,9 +88,10 @@ font="font-jetbrains-mono-nerd-font"
 microsoft=(windows-app)
 vscode="visual-studio-code"
 homebrew_casks=(
-	alt-tab betterdisplay "$brave" bruno "$compass" "$dbeaver" "$docker" "$font"
-	fork ghostty iina json-viewer mac-mouse-fix "${microsoft[@]}" mist numi
-	spaceid transmission "$vscode" zed
+	alt-tab ares-emulator betterdisplay "$brave" bruno "$compass" "$dbeaver"
+	"$docker" "$font" fork ghostty iina json-viewer mac-mouse-fix melonds
+	mgba-app "${microsoft[@]}" mist numi sameboy spaceid transmission "$vscode"
+	zed
 )
 brew install --cask "${homebrew_casks[@]}"
 
