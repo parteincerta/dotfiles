@@ -126,6 +126,7 @@
     - System: `/opt`, `/usr/local`, `/Library` and `/System/Library/Frameworks`.
     - User: `~/{Developer,Library,.cache,.config,.local,.m2,.ssh}`.
 - iCloud
+  - Delete the user's local contact card in the Contacts app.
   - Authenticate with the iCloud account.
   - Disable the synchronization of Stocks, Home, Wallet and Siri.
   - Consider disabling _Private Relay_.
