@@ -29,13 +29,11 @@ mkdir -p \
 "$HOME"/.local/{bin,share/lf} \
 "$HOME"/Library/{KeyBindings,LaunchAgents} \
 "$HOME/Library/Application Support/Code/User/" \
-"$HOME/Library/Application Support/RetroArch/config" \
 "$HOME/Library/Application Support/com.nuebling.mac-mouse-fix/" \
 "$HOME/Library/Application Support/obs-studio/basic/" \
 "$XDG_CACHE_HOME/code"/{data/User,extensions} \
 "$XDG_CACHE_HOME/bun"/{bin,cache-install,cache-transpiler,lib} \
 "$XDG_CACHE_HOME/deno/cache" \
-"$XDG_CACHE_HOME/retroarch" \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,gradle,fish/completions,ghostty,git,kitty,lf,mise,nvim,pip,zed} \
 "$DOWNLOADS"/{Brave,Safari}
 
@@ -81,7 +79,6 @@ cp "$rootdir/shared/zed.keymap.json" "$XDG_CONFIG_HOME/zed/keymap.json"
 # cp -fR "$rootdir/shared_macos/Brave Incognito.app" "$DOCUMENTS/Misc/"
 cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
-cp "$rootdir/shared_macos/retroarch.cfg" "$app_support_folder/RetroArch/config/"
 cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
 
 rm -rf "$app_support_folder/obs-studio/basic/*" &&
