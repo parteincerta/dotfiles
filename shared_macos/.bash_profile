@@ -145,7 +145,7 @@ howlong ()  {
 }
 
 # Handling mise for AMD64 under Apple Silicon
-[ "$_arch" = "arm64" ] &&
+[ "$_arch" = "arm64" ] && [ -x ~/.local/bin/mise-amd64 ] &&
 mise64 () {
 	local MISE_CACHE_DIR="$MISE_AMD64_CACHE_DIR"
 	local MISE_CONFIG_DIR="$MISE_AMD64_CONFIG_DIR"

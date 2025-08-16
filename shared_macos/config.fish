@@ -117,13 +117,14 @@ function howlong --description "Display for how long the computer has been turne
 end
 
 # Handling mise for AMD64 under Apple Silicon
-[ "$_arch" = "arm64" ] &&
+if test "$_arch" = "arm64" && test -x ~/.local/bin/mise-amd64
 function mise64
 	set --local --export MISE_CACHE_DIR "$MISE_AMD64_CACHE_DIR"
 	set --local --export MISE_CONFIG_DIR "$MISE_AMD64_CONFIG_DIR"
 	set --local --export MISE_STATE_DIR "$MISE_AMD64_STATE_DIR"
 	set --local --export MISE_DATA_DIR "$MISE_AMD64_DATA_DIR"
 	~/.local/bin/mise-amd64 $argv
+end
 end
 
 function mkcd --description "Create a directory if it doesn't exist and cd into it."
