@@ -50,6 +50,7 @@ if [ -d "$EXTERNAL_VOLUME" ]; then
 	ln -fs "$EXTERNAL_VOLUME/Captures" "$DOCUMENTS"
 	ln -fs "$EXTERNAL_VOLUME/Misc" "$DOCUMENTS"
 	ln -fs "$EXTERNAL_VOLUME/Remote" "$DOCUMENTS"
+	ln -fs "$EXTERNAL_VOLUME/ROMs" "$DOCUMENTS"
 	ln -fs "$EXTERNAL_VOLUME/VMs" "$DOCUMENTS"
 
 	ln -fs "$EXTERNAL_VOLUME/Other" "$DOWNLOADS"
