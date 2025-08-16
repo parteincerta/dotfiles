@@ -147,14 +147,15 @@ if [ "$system" = "Darwin" ]; then
 
 	echo "-> Overwriting /private/etc/hosts ..."
 	sudo mv "$TMPDIR/hosts" /private/etc/hosts
-	# Give mDNSResponder some time to handle the changes in /private/etc/hosts
-	sleep 3
+	echo "-> Giving mDNSResponder 5secs to handle the changes ..."
+	sleep 5
 
 	echo "-> Flushing DNS cache and restarting mDNSResponder ..."
 	sudo dscacheutil -flushcache
 	sudo killall mDNSResponder
-	# Give mDNSResponder some time to start and load /private/etc/hosts
-	sleep 3
+
+	echo "-> Giving mDNSResponder another 5secs to handle the flush and restart ..."
+	sleep 5
 
 	echo "-> Done!"
 
