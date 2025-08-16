@@ -194,8 +194,8 @@
 - Install DBeaver's connections.
 - Setup the [Docker containers][macos-notes-03].
 - Configure VPNs and show the VPN icon in the Menu Bar.
-- Clone and configure 3rd party git repositories.
 - Setup 3rd party Remote Desktop connections.
+- Clone and configure 3rd party git repositories.
 - [Disable SiP][macos-notes-04].
 - Disable services: `bash macos_shared/scripts/disable-services[-oclp|-vm].sh`
 - Reboot.
