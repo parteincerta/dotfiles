@@ -93,9 +93,10 @@ font="font-jetbrains-mono-nerd-font"
 microsoft=(windows-app)
 vscode="visual-studio-code"
 homebrew_casks=(
-	alt-tab betterdisplay "$brave" bruno chatgpt "$compass" "$dbeaver" "$docker"
-	"$font" foobar2000 fork ghostty iina mac-mouse-fix "${microsoft[@]}" mist
-	numi obs signal spaceid transmission "$vscode" zed
+	alt-tab ares-emulator betterdisplay "$brave" bruno chatgpt "$compass"
+	"$dbeaver" "$docker" "$font" foobar2000 fork ghostty iina mac-mouse-fix
+	melonds mgba-app "${microsoft[@]}" mist numi obs sameboy signal spaceid
+	transmission "$vscode" zed
 )
 brew install --cask "${homebrew_casks[@]}"
 
@@ -131,6 +132,10 @@ log_info "\t >>> Installing MongoDB Shell and Tools .."
 
 log_info "\t >>> Installing iSMC ..."
 /bin/bash "$rootdir/shared_macos/scripts/install-ismc.sh"
+
+
+log_info "\t >>> Installing Azahar..."
+/bin/bash "$rootdir/shared_macos/scripts/install-azahar.sh"
 
 
 log_info "\t >>> Installing Neovim plugins ..."
