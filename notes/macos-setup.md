@@ -130,6 +130,7 @@
   - Authenticate with the iCloud account.
   - Disable the synchronization of Stocks, Home, Wallet and Siri.
   - Consider disabling _Private Relay_.
+  - Set AirPods connection strategy to _When last connected to this Mac_.
   - Enable FireVault with iCloud authentication in Privacy & Security.
   - Allow Apple Watch to unlock macOS in TouchID & Password.
   - Sign out of Game Center.
