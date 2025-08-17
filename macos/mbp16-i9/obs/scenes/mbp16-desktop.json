@@ -28,33 +28,7 @@
 		"deinterlace_mode": 0,
 		"deinterlace_field_order": 0,
 		"monitoring_type": 0,
-		"private_settings": {},
-		"filters": [
-			{
-				"prev_ver": 520159234,
-				"name": "Noise Suppression",
-				"uuid": "37ce7134-75ec-468c-ae17-c1600aabaec8",
-				"id": "noise_suppress_filter",
-				"versioned_id": "noise_suppress_filter_v2",
-				"settings": {},
-				"mixers": 255,
-				"sync": 0,
-				"flags": 0,
-				"volume": 1.0,
-				"balance": 0.5,
-				"enabled": true,
-				"muted": false,
-				"push-to-mute": false,
-				"push-to-mute-delay": 0,
-				"push-to-talk": false,
-				"push-to-talk-delay": 0,
-				"hotkeys": {},
-				"deinterlace_mode": 0,
-				"deinterlace_field_order": 0,
-				"monitoring_type": 0,
-				"private_settings": {}
-			}
-		]
+		"private_settings": {}
 	},
 	"current_scene": "Scene",
 	"current_program_scene": "Scene",
