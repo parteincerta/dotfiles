@@ -221,8 +221,8 @@
 			"id": "macos-avcapture",
 			"versioned_id": "macos-avcapture",
 			"settings": {
-				"device": "0x8330000046d082d",
 				"device_name": "HD Pro Webcam C920",
+				"device": "0x8330000046d082d",
 				"preset": "AVCaptureSessionPreset640x480"
 			},
 			"mixers": 255,
