@@ -305,13 +305,13 @@ function pager --description "Pager-like implementation using neovim"
 end
 
 complete --command purge \
-	--argument "bash cache clipboard fish nvim zsh" \
+	--argument "all bash cache clipboard fish nvim safari zsh" \
 	--exclusive
 function purge --description "Purge temporary data from some programs."
 	for item in $argv
 		if [ "$item" = "all" ]
 			echo "Purging all items, except for the cache ..."
-			purge bash clipboard fish nvim zsh
+			purge bash clipboard fish nvim safari zsh
 
 		else if [ "$item" = "bash" ]
 			bash -i -c "purge bash"
@@ -339,6 +339,10 @@ function purge --description "Purge temporary data from some programs."
 			[ -d "$XDG_STATE_HOME"/nvim/undo/ ] &&
 			[ -n "$(lsa "$XDG_STATE_HOME"/nvim/undo/)" ] &&
 				rm -rf "$XDG_STATE_HOME"/nvim/undo/*
+
+		else if [ "$item" = "safari" ]
+			echo "Purging Safari ..."
+			rm -rf ~/Library/Safari/Favicon\ Cache
 
 		else if [ "$item" = "zsh" ]
 			echo "Purging Zsh ..."

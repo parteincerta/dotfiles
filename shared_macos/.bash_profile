@@ -362,7 +362,7 @@ pager () {
 }
 
 # Purge temporary data from some programs.
-complete -W "bash cache clipboard nvim zsh" purge
+complete -W "all bash cache clipboard nvim safari zsh" purge
 purge () {
 	for item in "$@"; do
 		if [ "$item" == "all" ]; then
@@ -393,6 +393,10 @@ purge () {
 			[ -d "$XDG_STATE_HOME/nvim/undo" ] &&
 			[ -n "$(lsa "$XDG_STATE_HOME"/nvim/undo/)" ] &&
 				rm -rf "$XDG_STATE_HOME"/nvim/undo/*
+
+		elif [ "$item" = "safari" ]; then
+			echo "Purging Safari ..."
+			rm -rf ~/Library/Safari/Favicon\ Cache
 
 		elif [ "$item" == "zsh" ]; then
 			echo "Purging Zsh ..."
