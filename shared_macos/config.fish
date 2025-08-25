@@ -309,7 +309,11 @@ complete --command purge \
 	--exclusive
 function purge --description "Purge temporary data from some programs."
 	for item in $argv
-		if [ "$item" = "bash" ]
+		if [ "$item" = "all" ]
+			echo "Purging all items, except for the cache ..."
+			purge bash clipboard fish nvim zsh
+
+		else if [ "$item" = "bash" ]
 			bash -i -c "purge bash"
 
 		else if [ "$item" = "cache" ]
@@ -321,11 +325,11 @@ function purge --description "Purge temporary data from some programs."
 			pbcopy < /dev/null
 
 		else if [ "$item" = "fish" ]
-			echo "Purging fish ..."
+			echo "Purging Fish ..."
 			echo 'yes' | history clear &>/dev/null
 
 		else if [ "$item" = "nvim" ]
-			echo "Purging nvim ..."
+			echo "Purging Neovim ..."
 			for file in "$XDG_DATA_HOME"/nvim/shada/*.shada
 				rm -f "$file"
 			end
@@ -337,7 +341,7 @@ function purge --description "Purge temporary data from some programs."
 				rm -rf "$XDG_STATE_HOME"/nvim/undo/*
 
 		else if [ "$item" = "zsh" ]
-			echo "Purging zsh ..."
+			echo "Purging Zsh ..."
 			rm -rf ~/.zsh_history
 			rm -rf ~/.zsh_sessions
 		end

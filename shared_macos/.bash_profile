@@ -365,8 +365,12 @@ pager () {
 complete -W "bash cache clipboard nvim zsh" purge
 purge () {
 	for item in "$@"; do
-		if [ "$item" == "bash" ]; then
-			echo "Purging bash ..."
+		if [ "$item" == "all" ]; then
+			echo "Purging all items, except for the cache ..."
+			purge bash clipboard nvim zsh
+
+		elif [ "$item" == "bash" ]; then
+			echo "Purging Bash ..."
 			history -c
 			[ -f "$HOME/.bash_history" ] && secrm "$HOME/.bash_history"
 
@@ -379,7 +383,7 @@ purge () {
 			pbcopy < /dev/null
 
 		elif [ "$item" == "nvim" ]; then
-			echo "Purging nvim ..."
+			echo "Purging Neovim ..."
 			for file in "$XDG_DATA_HOME"/nvim/shada/*.shada; do
 				rm -f "$file"
 			done
@@ -391,7 +395,7 @@ purge () {
 				rm -rf "$XDG_STATE_HOME"/nvim/undo/*
 
 		elif [ "$item" == "zsh" ]; then
-			echo "Purging zsh ..."
+			echo "Purging Zsh ..."
 			rm -rf ~/.zsh_history
 			rm -rf ~/.zsh_sessions
 		fi
