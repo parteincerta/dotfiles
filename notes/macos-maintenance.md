@@ -125,5 +125,6 @@
 - Check the size of a RSA key: `ssh-keygen -l -f id_rsa.pub`
 
 ## Other
-- Expand leading spaces to tabs in Vim: [`https://stackoverflow.com/a/9105889`](https://stackoverflow.com/a/9105889)
 - Get Apple's Command Line Tools version: `pkgutil --pkg-info=com.apple.pkg.CLTools_Executables`
+- Revive/restore a Mac's firmware: [https://support.apple.com/en-us/108900](https://support.apple.com/en-us/108900)
+- Expand leading spaces to tabs in Vim: [`https://stackoverflow.com/a/9105889`](https://stackoverflow.com/a/9105889)
