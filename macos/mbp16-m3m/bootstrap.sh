@@ -159,6 +159,10 @@ if ! grep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
 fi
 
 
+log_info "\t >>> Disabling automatic startup on lid open or power connection ..."
+sudo nvram BootPreference=%00
+
+
 if [ -f /etc/paths.d/homebrew ]; then
 	# $PATH and Homebrew's directories are handled in .bash_profile/config.fish
 	log_info "\t >>> Removing /etc/paths.d/homebrew ..."
