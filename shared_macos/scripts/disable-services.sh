@@ -39,7 +39,6 @@ user_services=(
 	com.apple.Siri.agent
 	com.apple.SiriTTSTrainingAgent
 	com.apple.SoftwareUpdateNotificationManager
-	com.apple.StatusKitAgent
 	com.apple.TMHelperAgent
 	com.apple.TMHelperAgent.SetupOffer
 	com.apple.UsageTrackingAgent
