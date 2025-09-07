@@ -53,7 +53,7 @@ esac; done
 	_arch="$(uname -m)"
 	if [ "$_arch" = "arm64" ]; then
 		arch="ARM64"
-	elif [ "$_arch" = "x86_64 " ]; then
+	elif [ "$_arch" = "x86_64" ]; then
 		arch="intel"
 	fi
 	url="https://github.com/nba-emu/${app_name}/releases/download/v${version}/${app_name}-${version}-macOS-${arch}.zip"

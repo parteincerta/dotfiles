@@ -49,7 +49,8 @@ esac; done
 		version=${version#* }
 	fi
 
-	url="https://github.com/azahar-emu/azahar/releases/download/${version}/azahar-${version}-macos-universal.zip"
+	arch="$(uname -m)"
+	url="https://github.com/azahar-emu/azahar/releases/download/${version}/azahar-${version}-macos-${arch}.zip"
 	echo "-> Downloading $url ..."
 	mkdir -p "$download_dir"
 	curl --connect-timeout 13 --fail --location --progress-bar \
@@ -62,6 +63,6 @@ esac; done
 
 	echo "-> Installing in $install_dir ..."
 	rm -rf "$install_dir/Azahar.app"
-	mv "$download_dir/azahar-$version-macos-universal/Azahar.app" "$install_dir"
+	mv "$download_dir/azahar-$version-macos-${arch}/Azahar.app" "$install_dir"
 
 	echo "-> Finished."
