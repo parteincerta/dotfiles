@@ -47,11 +47,6 @@ cp "$rootdir/shared/ssh.conf" "$HOME/.ssh/config"
 cp "$rootdir/shared/tokyonight-moon.tmTheme" "$XDG_CONFIG_HOME/bat/themes"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
 
-[ ! -f "/Library/Managed Preferences/com.google.keystone.plist" ] &&
-	echo "Disabling Google's Auto Updater requires elevated privileges ..." &&
-	sudo mkdir -p "/Library/Managed Preferences" &&
-	sudo cp "$rootdir/shared_macos/plist/com.google.Keystone.plist" "/Library/Managed Preferences/"
-
 chmod u=rwx,g=,o= "$HOME/.gnupg"
 chmod u=rw,g=,o= "$HOME/.gnupg/"*
 chmod u=rwx,g=,o= "$HOME/.ssh"

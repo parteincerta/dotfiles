@@ -38,17 +38,16 @@ mkdir -p \
 "$CODE"/{github,parteincerta} \
 "$CODE"/dremio/{git-dremio,git-flightsql-odbc,git-warpdrive} \
 "$CODE"/icnew/{git-icone,git-icone-dog,misc} \
-"$DOCUMENTS"/{Captures,Misc,Remote,ROMs,VMs} \
+"$DOCUMENTS"/{Captures,Misc,Remote,VMs} \
 "$DOWNLOADS"/{Brave,Safari}
 
 if [ -d "$EXTERNAL_VOLUME" ]; then
 	mkdir -p \
-		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,ROMs,Torrents,VMs}
+		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,Torrents,VMs}
 
 	ln -fs "$EXTERNAL_VOLUME/Captures" "$DOCUMENTS"
 	ln -fs "$EXTERNAL_VOLUME/Misc" "$DOCUMENTS"
 	ln -fs "$EXTERNAL_VOLUME/Remote" "$DOCUMENTS"
-	ln -fs "$EXTERNAL_VOLUME/ROMs" "$DOCUMENTS"
 	ln -fs "$EXTERNAL_VOLUME/VMs" "$DOCUMENTS"
 
 	ln -fs "$EXTERNAL_VOLUME/Other" "$DOWNLOADS"

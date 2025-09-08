@@ -41,7 +41,7 @@ if [ -d "$EXTERNAL_VOLUME" ]; then
 	mkdir -p \
 		"$EXTERNAL_VOLUME"/Developer/{github,parteincerta} \
 		"$EXTERNAL_VOLUME"/Developer/icnew/{git-icone,git-icone-dog,misc} \
-		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,ROMs,Torrents,VMs}
+		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,Torrents,VMs}
 
 	ln -fs "$EXTERNAL_VOLUME/Developer/github" "$CODE"
 	ln -fs "$EXTERNAL_VOLUME/Developer/icnew" "$CODE"

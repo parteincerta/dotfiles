@@ -38,7 +38,7 @@ mkdir -p \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,gradle,fish/completions,ghostty,git,kitty,lf,mise,nvim,pip,zed} \
 "$CODE"/{github,parteincerta} \
 "$CODE"/icnew/{git-icone,git-icone-dog,misc} \
-"$DOCUMENTS"/{Captures,Misc,Remote,ROMs,VMs} \
+"$DOCUMENTS"/{Captures,Misc,Remote,VMs} \
 "$DOWNLOADS"/{Brave,Other,Safari,Torrents}
 
 app_support_folder="$HOME/Library/Application Support"
