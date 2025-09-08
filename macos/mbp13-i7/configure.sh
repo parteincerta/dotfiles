@@ -91,7 +91,7 @@ if [ -n "$HOMEBREW_PREFIX" ]; then
 	export kitty_qat_margin_left="130"
 	export kitty_qat_margin_right="130"
 	export terminal_window_height="30"
-	export terminal_window_width="120"
+	export terminal_window_width="140"
 
 	envsubst <"$rootdir/shared_macos/.bunfig.toml" >"$XDG_CONFIG_HOME/.bunfig.toml"
 	envsubst <"$rootdir/shared_macos/ghostty.conf" >"$XDG_CONFIG_HOME/ghostty/config"
