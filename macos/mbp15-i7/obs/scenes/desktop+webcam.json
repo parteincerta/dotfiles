@@ -1,6 +1,5 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520093700,
 		"name": "Mic/Aux",
 		"uuid": "12647ced-39e8-4660-96fd-0bc836fc14ee",
 		"id": "coreaudio_input_capture",
@@ -28,7 +27,33 @@
 		"deinterlace_mode": 0,
 		"deinterlace_field_order": 0,
 		"monitoring_type": 0,
-		"private_settings": {}
+		"private_settings": {},
+		"filters": [
+			{
+				"prev_ver": 520159234,
+				"name": "Noise Suppression",
+				"uuid": "37d176c8-9e1f-49ff-9d21-abea3b65e43b",
+				"id": "noise_suppress_filter",
+				"versioned_id": "noise_suppress_filter_v2",
+				"settings": {},
+				"mixers": 255,
+				"sync": 0,
+				"flags": 0,
+				"volume": 1.0,
+				"balance": 0.5,
+				"enabled": true,
+				"muted": false,
+				"push-to-mute": false,
+				"push-to-mute-delay": 0,
+				"push-to-talk": false,
+				"push-to-talk-delay": 0,
+				"hotkeys": {},
+				"deinterlace_mode": 0,
+				"deinterlace_field_order": 0,
+				"monitoring_type": 0,
+				"private_settings": {}
+			}
+		]
 	},
 	"current_scene": "Scene",
 	"current_program_scene": "Scene",
@@ -40,7 +65,6 @@
 	"name": "Desktop + WebCam",
 	"sources": [
 		{
-			"prev_ver": 520093700,
 			"name": "Scene",
 			"uuid": "6fb2af69-7879-48f6-bff8-313ad886395b",
 			"id": "scene",
@@ -74,7 +98,7 @@
 							"y": 0.0
 						},
 						"pos_rel": {
-							"x": -1.6000000238418579,
+							"x": -1.600000023841858,
 							"y": -1.0
 						},
 						"scale": {
@@ -129,8 +153,8 @@
 							"y": 1485.0
 						},
 						"pos_rel": {
-							"x": 1.6000000238418579,
-							"y": 0.64999997615814209
+							"x": 1.600000023841858,
+							"y": 0.6499999761581421
 						},
 						"scale": {
 							"x": -0.65625,
@@ -182,10 +206,10 @@
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
 			"monitoring_type": 0,
+			"canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093700,
 			"name": "Desktop",
 			"uuid": "f310527c-0d34-445c-8ed1-462002d6868a",
 			"id": "screen_capture",
@@ -216,7 +240,6 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093700,
 			"name": "WebCam",
 			"uuid": "d92c87ad-b811-4041-aeb0-16b6683e3593",
 			"id": "macos-avcapture",
@@ -249,7 +272,6 @@
 			"private_settings": {},
 			"filters": [
 				{
-					"prev_ver": 520093700,
 					"name": "Image Mask/Blend",
 					"uuid": "46ea8f7a-f703-4195-9b83-2b1c1f33e9d4",
 					"id": "mask_filter",
@@ -303,11 +325,12 @@
 	],
 	"transitions": [],
 	"saved_projectors": [],
+	"canvases": [],
 	"current_transition": "Fade",
 	"transition_duration": 300,
 	"preview_locked": false,
 	"scaling_enabled": false,
-	"scaling_level": 0,
+	"scaling_level": -13,
 	"scaling_off_x": 0.0,
 	"scaling_off_y": 0.0,
 	"virtual-camera": {

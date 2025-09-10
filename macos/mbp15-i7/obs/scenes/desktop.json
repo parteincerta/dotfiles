@@ -1,6 +1,5 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520093700,
 		"name": "Mic/Aux",
 		"uuid": "12647ced-39e8-4660-96fd-0bc836fc14ee",
 		"id": "coreaudio_input_capture",
@@ -28,7 +27,33 @@
 		"deinterlace_mode": 0,
 		"deinterlace_field_order": 0,
 		"monitoring_type": 0,
-		"private_settings": {}
+		"private_settings": {},
+		"filters": [
+			{
+				"prev_ver": 520159234,
+				"name": "Noise Suppression",
+				"uuid": "430845bf-ac26-4185-8ddf-1d231ad17fbf",
+				"id": "noise_suppress_filter",
+				"versioned_id": "noise_suppress_filter_v2",
+				"settings": {},
+				"mixers": 255,
+				"sync": 0,
+				"flags": 0,
+				"volume": 1.0,
+				"balance": 0.5,
+				"enabled": true,
+				"muted": false,
+				"push-to-mute": false,
+				"push-to-mute-delay": 0,
+				"push-to-talk": false,
+				"push-to-talk-delay": 0,
+				"hotkeys": {},
+				"deinterlace_mode": 0,
+				"deinterlace_field_order": 0,
+				"monitoring_type": 0,
+				"private_settings": {}
+			}
+		]
 	},
 	"current_scene": "Scene",
 	"current_program_scene": "Scene",
@@ -40,7 +65,6 @@
 	"name": "Desktop",
 	"sources": [
 		{
-			"prev_ver": 520093700,
 			"name": "Scene",
 			"uuid": "153f76c5-3098-43f8-8793-68986a7dae6c",
 			"id": "scene",
@@ -74,7 +98,7 @@
 							"y": 0.0
 						},
 						"pos_rel": {
-							"x": -1.6000000238418579,
+							"x": -1.600000023841858,
 							"y": -1.0
 						},
 						"scale": {
@@ -125,16 +149,16 @@
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
 			"monitoring_type": 0,
+			"canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520093700,
 			"name": "Desktop",
 			"uuid": "f658f128-7c8c-4948-8371-d8bb49623aad",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
 			"settings": {
-				"hide_obs": true
+				"hide_obs": false
 			},
 			"mixers": 255,
 			"sync": 0,
@@ -185,11 +209,12 @@
 	],
 	"transitions": [],
 	"saved_projectors": [],
+	"canvases": [],
 	"current_transition": "Fade",
 	"transition_duration": 300,
 	"preview_locked": false,
 	"scaling_enabled": false,
-	"scaling_level": 0,
+	"scaling_level": -13,
 	"scaling_off_x": 0.0,
 	"scaling_off_y": 0.0,
 	"virtual-camera": {
