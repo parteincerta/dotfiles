@@ -9,7 +9,7 @@ rootdir="$(cd "$scriptdir/../../" && pwd)"
 source "$rootdir/shared/scripts/helper.sh"
 trap trap_error ERR
 
-action=""
+action="lock"
 while [[ $# -gt 0 ]]; do case $1 in
 	--lock)
 		action="lock";
