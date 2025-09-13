@@ -32,10 +32,13 @@
 - Scene(s):
   - One per each profile and scale the sources accordingly.
   - Name them like `<profile_name>-<scene_name>`. Ex: `mbp16-desktop`
-  - If recording the Desktop, don't hide OBS from the capture.
-  - If recording the Webcam
+  - If recording the Desktop, lock its position and don't hide OBS from the
+    capture.
+  - If recording the Webcam:
+    - Use a lower resolution present than the native one, keeping quality in mind.
     - Set both Show/Hide transitions to a Fade of 300ms.
     - Use a PNG mask to render the source as a solid circle.
+    - Lock its position.
   - Name sources w/ obvious names. Ex: `Desktop`, `Webcam`, ...
   - Noise Suppression:
     - Use macOS's Voice Isolation filter.

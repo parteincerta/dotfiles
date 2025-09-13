@@ -1,6 +1,5 @@
 {
 	"AuxAudioDevice1": {
-		"prev_ver": 520159234,
 		"name": "Mic/Aux",
 		"uuid": "2bf26b6f-ea32-43f6-a9d1-571acc08373f",
 		"id": "coreaudio_input_capture",
@@ -40,7 +39,6 @@
 	"name": "mbp16-desktop",
 	"sources": [
 		{
-			"prev_ver": 520159234,
 			"name": "Scene",
 			"uuid": "d9b84e29-f345-49f0-809a-e5f561352163",
 			"id": "scene",
@@ -50,10 +48,10 @@
 				"custom_size": false,
 				"items": [
 					{
-						"name": "desktop",
+						"name": "Desktop",
 						"source_uuid": "0a1fee00-d314-48eb-ad8c-2ca62790a33f",
 						"visible": true,
-						"locked": false,
+						"locked": true,
 						"rot": 0.0,
 						"scale_ref": {
 							"x": 3584.0,
@@ -78,8 +76,8 @@
 							"y": -1.0
 						},
 						"scale": {
-							"x": 1.0,
-							"y": 1.0
+							"x": 0.8571428656578064,
+							"y": 0.8571428656578064
 						},
 						"scale_rel": {
 							"x": 1.0,
@@ -103,6 +101,69 @@
 							"duration": 0
 						},
 						"private_settings": {}
+					},
+					{
+						"name": "Webcam",
+						"source_uuid": "af7f5676-cf4c-4087-ba0e-198ade44096a",
+						"visible": true,
+						"locked": true,
+						"rot": 0.0,
+						"scale_ref": {
+							"x": 3584.0,
+							"y": 2240.0
+						},
+						"align": 5,
+						"bounds_type": 0,
+						"bounds_align": 0,
+						"bounds_crop": false,
+						"crop_left": 0,
+						"crop_top": 0,
+						"crop_right": 0,
+						"crop_bottom": 0,
+						"id": 2,
+						"group_item_backup": false,
+						"pos": {
+							"x": 3072.0,
+							"y": 1508.5
+						},
+						"pos_rel": {
+							"x": 1.600000023841858,
+							"y": 0.5714285373687744
+						},
+						"scale": {
+							"x": -0.8571428656578064,
+							"y": 0.8571428656578064
+						},
+						"scale_rel": {
+							"x": -1.0,
+							"y": 1.0
+						},
+						"bounds": {
+							"x": 0.0,
+							"y": 0.0
+						},
+						"bounds_rel": {
+							"x": 0.0,
+							"y": 0.0
+						},
+						"scale_filter": "disable",
+						"blend_method": "default",
+						"blend_type": "normal",
+						"show_transition": {
+							"id": "fade_transition",
+							"versioned_id": "fade_transition",
+							"name": "Webcam Show Transition",
+							"transition": {},
+							"duration": 300
+						},
+						"hide_transition": {
+							"id": "fade_transition",
+							"versioned_id": "fade_transition",
+							"name": "Webcam Hide Transition",
+							"transition": {},
+							"duration": 300
+						},
+						"private_settings": {}
 					}
 				]
 			},
@@ -120,7 +181,9 @@
 			"hotkeys": {
 				"OBSBasic.SelectScene": [],
 				"libobs.show_scene_item.1": [],
-				"libobs.hide_scene_item.1": []
+				"libobs.hide_scene_item.1": [],
+				"libobs.show_scene_item.2": [],
+				"libobs.hide_scene_item.2": []
 			},
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
@@ -129,8 +192,7 @@
 			"private_settings": {}
 		},
 		{
-			"prev_ver": 520159234,
-			"name": "desktop",
+			"name": "Desktop",
 			"uuid": "0a1fee00-d314-48eb-ad8c-2ca62790a33f",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
@@ -156,6 +218,65 @@
 			"deinterlace_field_order": 0,
 			"monitoring_type": 0,
 			"private_settings": {}
+		},
+		{
+			"name": "Webcam",
+			"uuid": "af7f5676-cf4c-4087-ba0e-198ade44096a",
+			"id": "macos-avcapture",
+			"versioned_id": "macos-avcapture",
+			"settings": {
+				"device_name": "FaceTime HD Camera (Built-in)",
+				"device": "0x8020000005ac8514",
+				"preset": "AVCaptureSessionPreset640x480"
+			},
+			"mixers": 255,
+			"sync": 0,
+			"flags": 0,
+			"volume": 1.0,
+			"balance": 0.5,
+			"enabled": true,
+			"muted": false,
+			"push-to-mute": false,
+			"push-to-mute-delay": 0,
+			"push-to-talk": false,
+			"push-to-talk-delay": 0,
+			"hotkeys": {
+				"libobs.mute": [],
+				"libobs.unmute": [],
+				"libobs.push-to-mute": [],
+				"libobs.push-to-talk": []
+			},
+			"deinterlace_mode": 0,
+			"deinterlace_field_order": 0,
+			"monitoring_type": 0,
+			"private_settings": {},
+			"filters": [
+				{
+					"name": "Image Mask/Blend",
+					"uuid": "d9534cc5-f8c1-40ad-911d-8328353b1cd2",
+					"id": "mask_filter",
+					"versioned_id": "mask_filter_v2",
+					"settings": {
+						"image_path": "/Users/fm/Documents/Misc/obs-mask.png"
+					},
+					"mixers": 0,
+					"sync": 0,
+					"flags": 0,
+					"volume": 1.0,
+					"balance": 0.5,
+					"enabled": true,
+					"muted": false,
+					"push-to-mute": false,
+					"push-to-mute-delay": 0,
+					"push-to-talk": false,
+					"push-to-talk-delay": 0,
+					"hotkeys": {},
+					"deinterlace_mode": 0,
+					"deinterlace_field_order": 0,
+					"monitoring_type": 0,
+					"private_settings": {}
+				}
+			]
 		}
 	],
 	"groups": [],
@@ -189,7 +310,7 @@
 	"transition_duration": 300,
 	"preview_locked": false,
 	"scaling_enabled": false,
-	"scaling_level": -17,
+	"scaling_level": -14,
 	"scaling_off_x": 0.0,
 	"scaling_off_y": 0.0,
 	"virtual-camera": {
