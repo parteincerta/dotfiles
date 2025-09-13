@@ -3,7 +3,7 @@
 - Generate File Name w/o Spaces: ✅.
 - Recording Format: Hybrid MP4.
 - Video Encoder
-  - Intel Mac: 
+  - Intel Mac: Apple VT H264 Hardware Encoder.
   - Intel Mac w/ T2 chip: Apple VT HEVC T2 Hardware Encoder.
   - Apple Silicon: 
 - Audio Encoder: CoreAudio AAC.
@@ -31,7 +31,7 @@
   - Name them according w/ the source name. Ex: `mbp16`, `4K27inch`, `5K27inch`, ...
 - Scene(s):
   - One per each profile and scale the sources accordingly.
-  - Name them like `<profile_name>-<scene_name>`. Ex: `mbp16-desktop`
+  - Name them like `<profile_name> - <scene_name>`. Ex: `mbp16 - Desktop + Webcam`
   - If recording the Desktop, lock its position and don't hide OBS from the
     capture.
   - If recording the Webcam:

@@ -30,9 +30,8 @@
 		"private_settings": {},
 		"filters": [
 			{
-				"prev_ver": 520159234,
 				"name": "Noise Suppression",
-				"uuid": "430845bf-ac26-4185-8ddf-1d231ad17fbf",
+				"uuid": "37d176c8-9e1f-49ff-9d21-abea3b65e43b",
 				"id": "noise_suppress_filter",
 				"versioned_id": "noise_suppress_filter_v2",
 				"settings": {},
@@ -62,11 +61,11 @@
 			"name": "Scene"
 		}
 	],
-	"name": "Desktop",
+	"name": "mbp15 - Desktop + WebCam",
 	"sources": [
 		{
 			"name": "Scene",
-			"uuid": "153f76c5-3098-43f8-8793-68986a7dae6c",
+			"uuid": "6fb2af69-7879-48f6-bff8-313ad886395b",
 			"id": "scene",
 			"versioned_id": "scene",
 			"settings": {
@@ -75,7 +74,7 @@
 				"items": [
 					{
 						"name": "Desktop",
-						"source_uuid": "f658f128-7c8c-4948-8371-d8bb49623aad",
+						"source_uuid": "f310527c-0d34-445c-8ed1-462002d6868a",
 						"visible": true,
 						"locked": false,
 						"rot": 0.0,
@@ -127,6 +126,69 @@
 							"duration": 0
 						},
 						"private_settings": {}
+					},
+					{
+						"name": "WebCam",
+						"source_uuid": "d92c87ad-b811-4041-aeb0-16b6683e3593",
+						"visible": true,
+						"locked": false,
+						"rot": 0.0,
+						"scale_ref": {
+							"x": 2880.0,
+							"y": 1800.0
+						},
+						"align": 5,
+						"bounds_type": 0,
+						"bounds_align": 0,
+						"bounds_crop": false,
+						"crop_left": 0,
+						"crop_top": 0,
+						"crop_right": 0,
+						"crop_bottom": 0,
+						"id": 2,
+						"group_item_backup": false,
+						"pos": {
+							"x": 2880.0,
+							"y": 1485.0
+						},
+						"pos_rel": {
+							"x": 1.600000023841858,
+							"y": 0.6499999761581421
+						},
+						"scale": {
+							"x": -0.65625,
+							"y": 0.65625
+						},
+						"scale_rel": {
+							"x": -0.65625,
+							"y": 0.65625
+						},
+						"bounds": {
+							"x": 0.0,
+							"y": 0.0
+						},
+						"bounds_rel": {
+							"x": 0.0,
+							"y": 0.0
+						},
+						"scale_filter": "disable",
+						"blend_method": "default",
+						"blend_type": "normal",
+						"show_transition": {
+							"id": "fade_transition",
+							"versioned_id": "fade_transition",
+							"name": "WebCam Show Transition",
+							"transition": {},
+							"duration": 300
+						},
+						"hide_transition": {
+							"id": "fade_transition",
+							"versioned_id": "fade_transition",
+							"name": "WebCam Hide Transition",
+							"transition": {},
+							"duration": 300
+						},
+						"private_settings": {}
 					}
 				]
 			},
@@ -144,7 +206,9 @@
 			"hotkeys": {
 				"OBSBasic.SelectScene": [],
 				"libobs.show_scene_item.1": [],
-				"libobs.hide_scene_item.1": []
+				"libobs.hide_scene_item.1": [],
+				"libobs.show_scene_item.2": [],
+				"libobs.hide_scene_item.2": []
 			},
 			"deinterlace_mode": 0,
 			"deinterlace_field_order": 0,
@@ -154,11 +218,11 @@
 		},
 		{
 			"name": "Desktop",
-			"uuid": "f658f128-7c8c-4948-8371-d8bb49623aad",
+			"uuid": "f310527c-0d34-445c-8ed1-462002d6868a",
 			"id": "screen_capture",
 			"versioned_id": "screen_capture",
 			"settings": {
-				"hide_obs": false
+				"hide_obs": true
 			},
 			"mixers": 255,
 			"sync": 0,
@@ -181,6 +245,65 @@
 			"deinterlace_field_order": 0,
 			"monitoring_type": 0,
 			"private_settings": {}
+		},
+		{
+			"name": "WebCam",
+			"uuid": "d92c87ad-b811-4041-aeb0-16b6683e3593",
+			"id": "macos-avcapture",
+			"versioned_id": "macos-avcapture",
+			"settings": {
+				"device_name": "FaceTime HD Camera",
+				"device": "DJH3361ZS07F6VTDR",
+				"preset": "AVCaptureSessionPreset640x480"
+			},
+			"mixers": 255,
+			"sync": 0,
+			"flags": 0,
+			"volume": 1.0,
+			"balance": 0.5,
+			"enabled": true,
+			"muted": false,
+			"push-to-mute": false,
+			"push-to-mute-delay": 0,
+			"push-to-talk": false,
+			"push-to-talk-delay": 0,
+			"hotkeys": {
+				"libobs.mute": [],
+				"libobs.unmute": [],
+				"libobs.push-to-mute": [],
+				"libobs.push-to-talk": []
+			},
+			"deinterlace_mode": 0,
+			"deinterlace_field_order": 0,
+			"monitoring_type": 0,
+			"private_settings": {},
+			"filters": [
+				{
+					"name": "Image Mask/Blend",
+					"uuid": "46ea8f7a-f703-4195-9b83-2b1c1f33e9d4",
+					"id": "mask_filter",
+					"versioned_id": "mask_filter_v2",
+					"settings": {
+						"image_path": "/Users/fm/Documents/Misc/obs-mask.png"
+					},
+					"mixers": 0,
+					"sync": 0,
+					"flags": 0,
+					"volume": 1.0,
+					"balance": 0.5,
+					"enabled": true,
+					"muted": false,
+					"push-to-mute": false,
+					"push-to-mute-delay": 0,
+					"push-to-talk": false,
+					"push-to-talk-delay": 0,
+					"hotkeys": {},
+					"deinterlace_mode": 0,
+					"deinterlace_field_order": 0,
+					"monitoring_type": 0,
+					"private_settings": {}
+				}
+			]
 		}
 	],
 	"groups": [],
