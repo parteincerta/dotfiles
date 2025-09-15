@@ -27,7 +27,7 @@ vsc_extensions_list_file="${TMPDIR}install-vscode-plugins-list.txt"
 
 if [ ! -f "$vsc_extensions_list_file" ]; then
 	[ -n "$plugins_list" ] &&
-		vsc_extensions_list=$(cat "$2") ||
+		vsc_extensions_list=$(cat "$plugins_list") ||
 		vsc_extensions_list=$(cat "$rootdir/shared/scripts/install-vscode-plugins-list.txt")
 	echo "$vsc_extensions_list" >"$vsc_extensions_list_file"
 else
