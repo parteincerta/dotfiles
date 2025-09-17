@@ -70,7 +70,7 @@
   - Purge caches from CLI tools: `purge bash clipboard nvim zsh` and `purge fish`.
   - Install App Store updates.
   - Open all updated applications and make sure they're working as intended.
-  - Re-enable app locks: `bash shared_macos/scripts/toggle-application-lock.sh --lock`.
+  - Re-enable app locks: `bash shared_macos/scripts/toggle-application-lock.sh`.
 
 - Check if SiP is enabled and disable it if necessary:
   - `csrutil status`.
