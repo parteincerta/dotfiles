@@ -10,6 +10,6 @@ bazel = ["8.3"]
 bun = ["1"]
 java = ["temurin-21"]
 maven = ["3.9"]
-# Specifically (also) installing 22.14.0 because that's the version used at Dremio.
+# Also installing 22.14.0 because that's the version used at Dremio.
 # https://github.com/parteincerta/dremio/blob/master/.nvmrc
 node = ["22", "22.14.0"]

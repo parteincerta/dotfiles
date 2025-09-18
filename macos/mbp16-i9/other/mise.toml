@@ -7,4 +7,5 @@ use_versions_host = false
 
 [tools]
 bun = ["1"]
-node = ["22", "14"]
+java = ["temurin-21"]
+node = ["22"]
