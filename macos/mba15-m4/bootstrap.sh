@@ -93,10 +93,6 @@ source "$rootdir/shared_macos/.bash_profile" || true
 bat cache --build
 
 
-log_info "\t >>> Setting up the hosts file ..."
-/bin/bash "$rootdir/shared/scripts/install-hosts.sh"
-
-
 log_info "\t >>> Installing iSMC ..."
 /bin/bash "$rootdir/shared_macos/scripts/install-ismc.sh"
 
