@@ -28,7 +28,7 @@ if [ -s "$bootstrap_mark_file" ]; then
 	exit 1
 fi
 
-expected_hostname="mba15-m4"
+expected_hostname="bear"
 nice_hostname="${HOSTNAME/%.local/}"
 if [ "$expected_hostname" != "$nice_hostname" ]; then
 	# Apple MacBook Air 15-inch (2025)

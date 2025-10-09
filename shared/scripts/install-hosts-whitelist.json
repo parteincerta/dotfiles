@@ -7,8 +7,8 @@
 	"shared_optional": [
 	],
 	"specific": {
+		"bear": [],
 		"macos13-ventura": [],
-		"mba15-m4": [],
 		"mbp13-i7": [],
 		"mbp15-i7": [],
 		"mbp16-i9": [],
