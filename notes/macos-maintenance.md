@@ -38,7 +38,7 @@
     * `brew install --ignore-dependencies gradle jdtls maven zls`.
   - Upgrade all installed formulae and casks: `brew upgrade --greedy`.
   - Configure specific formulae if they got updated:.
-    * `brew unlink python@3.13 openssl@3`.
+    * `brew unlink python@3.14 openssl@3`.
   - Purge cache: `brew cleanup [--dry-run]`.
 
 - Update mise plugins and tools

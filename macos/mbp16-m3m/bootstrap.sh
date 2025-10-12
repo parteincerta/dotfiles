@@ -84,8 +84,8 @@ brew unlink openssl@3
 # `jdtls` has two dependencies: `openjdk` and `python3.13`.
 # We're skipping `openjdk` because it will be handled by mise.
 # We're unlinking `python@3.13` because we don't want it visible system-wide.
-brew install --ignore-dependencies jdtls python@3.13
-brew unlink openssl@3 python@3.13
+brew install --ignore-dependencies jdtls python@3.14
+brew unlink openssl@3 python@3.14
 
 
 log_info "\t >>> Installing Homebrew apps ..."
