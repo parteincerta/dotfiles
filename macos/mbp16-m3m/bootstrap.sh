@@ -97,9 +97,10 @@ font="font-jetbrains-mono-nerd-font"
 microsoft=(microsoft-excel microsoft-powerpoint microsoft-word windows-app)
 vscode="visual-studio-code"
 homebrew_casks=(
-	alt-tab betterdisplay "$brave" bruno chatgpt "$compass" "$dbeaver" "$docker"
-	"$font" fork ghostty iina mac-mouse-fix "${microsoft[@]}" mist numi obs
-	parallels signal spaceid tailscale-app transmission "$vscode" zed zoom
+	alt-tab ares-emulator betterdisplay "$brave" bruno chatgpt "$compass"
+	"$dbeaver" "$docker" "$font" fork ghostty iina mac-mouse-fix melonds
+	"${microsoft[@]}" mist numi obs parallels signal spaceid tailscale-app
+	transmission "$vscode" zed zoom
 )
 brew install --cask "${homebrew_casks[@]}"
 
@@ -139,6 +140,14 @@ log_info "\t >>> Installing iSMC ..."
 
 log_info "\t >>> Installing Neovim plugins ..."
 nvim --headless -c "Lazy! install" -c qall
+
+
+log_info "\t >>> Installing SkyEmu ..."
+/bin/bash "$rootdir/shared_macos/scripts/install-skyemu.sh"
+
+
+log_info "\t >>> Installing Azahar ..."
+/bin/bash "$rootdir/shared_macos/scripts/install-azahar.sh"
 
 
 log_info "\t >>> Ignoring Focusrite Scarlett Solo automount"

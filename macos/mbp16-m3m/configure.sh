@@ -12,7 +12,8 @@ source "$rootdir/shared/scripts/helper.sh"
 trap "popd >/dev/null; trap_error" ERR
 
 cp "$rootdir/shared_macos/.bash_profile" "$HOME/"
-sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A5m|" "$HOME/.bash_profile"
+# sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A5m|" "$HOME/.bash_profile"
+sed -i '' "s|#EXTERNAL_VOLUME||" "$HOME/.bash_profile"
 ln -sf "$HOME/.bash_profile" "$HOME/.bashrc"
 # shellcheck disable=SC1091
 source "$HOME/.bash_profile" || true
@@ -28,31 +29,18 @@ mkdir -p \
 "$HOME"/{.gnupg,.local/{bin,share/lf},.m2,.ssh/sockets} \
 "$HOME"/.local/{bin,share/lf} \
 "$HOME"/Library/{KeyBindings,LaunchAgents} \
-"$HOME/Library/Application Support/Code/User/" \
-"$HOME/Library/Application Support/com.nuebling.mac-mouse-fix/" \
-"$HOME/Library/Application Support/obs-studio/basic/" \
-"$XDG_CACHE_HOME/code"/{data/User,extensions} \
-"$XDG_CACHE_HOME/bun"/{bin,cache-install,cache-transpiler,lib} \
-"$XDG_CACHE_HOME/deno/cache" \
+"$HOME"/Library/Application Support/Code/User \
+"$HOME"/Library/Application Support/com.nuebling.mac-mouse-fix \
+"$HOME"/Library/Application Support/obs-studio/basic \
+"$XDG_CACHE_HOME"/code/{data/User,extensions} \
+"$XDG_CACHE_HOME"/bun/{bin,cache-install,cache-transpiler,lib} \
+"$XDG_CACHE_HOME"/deno/cache \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,gradle,fish/completions,ghostty,git,kitty,lf,mise,nvim,pip,zed} \
-"$CODE"/{github,parteincerta} \
-"$CODE"/dremio/{git-dremio,git-flightsql-odbc,git-warpdrive} \
+"$CODE"/{alemdofim,fmoreira-dremio,github} \
+"$CODE"/dremio \
 "$CODE"/icnew/{git-icone,git-icone-dog,misc} \
 "$DOCUMENTS"/{Captures,Misc,Remote,VMs} \
-"$DOWNLOADS"/{Brave,Safari}
-
-if [ -d "$EXTERNAL_VOLUME" ]; then
-	mkdir -p \
-		"$EXTERNAL_VOLUME"/{Docker,Captures,Misc,Other,Remote,Torrents,VMs}
-
-	ln -fs "$EXTERNAL_VOLUME/Captures" "$DOCUMENTS"
-	ln -fs "$EXTERNAL_VOLUME/Misc" "$DOCUMENTS"
-	ln -fs "$EXTERNAL_VOLUME/Remote" "$DOCUMENTS"
-	ln -fs "$EXTERNAL_VOLUME/VMs" "$DOCUMENTS"
-
-	ln -fs "$EXTERNAL_VOLUME/Other" "$DOWNLOADS"
-	ln -fs "$EXTERNAL_VOLUME/Torrents" "$DOWNLOADS"
-fi
+"$DOWNLOADS"/{Brave,Other,Safari,Torrents}
 
 app_support_folder="$HOME/Library/Application Support"
 vscode_cache_dir="$XDG_CACHE_HOME/code/data/User"
@@ -86,7 +74,8 @@ chmod u=rw,g=,o= "$HOME/.gnupg/"*
 chmod u=rwx,g=,o= "$HOME/.ssh"
 chmod u=rwx,g=,o= "$HOME/.ssh/sockets"
 chmod u+x "$HOME/.local/bin/lfpreview"
-sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A5m|" "$XDG_CONFIG_HOME/fish/config.fish"
+# sed -i '' "s|#EXTERNAL_VOLUME|/Volumes/A5m|" "$XDG_CONFIG_HOME/fish/config.fish"
+sed -i '' "s|#EXTERNAL_VOLUME||" "$XDG_CONFIG_HOME/fish/config.fish"
 
 touch "$HOME/.bash_sessions_disable"
 touch "$HOME/.hushlogin"
