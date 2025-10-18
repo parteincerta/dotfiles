@@ -463,9 +463,9 @@ bind --mode visual ctrl-k 'clear_screen_and_scrollback_buffer; commandline -f re
 bind --mode default ctrl-l 'clear; commandline -f repaint'
 bind --mode insert ctrl-l 'clear; commandline -f repaint'
 bind --mode visual ctrl-l 'clear; commandline -f repaint'
-bind --mode default --key nul edit_command_buffer
-bind --mode insert --key nul edit_command_buffer
-bind --mode visual --key nul edit_command_buffer
+bind --mode default nul edit_command_buffer
+bind --mode insert nul edit_command_buffer
+bind --mode visual nul edit_command_buffer
 
 if type -q fzf-cd-widget
 	bind --mode default \ce fzf-cd-widget
