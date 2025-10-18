@@ -29,15 +29,15 @@ mkdir -p \
 "$HOME"/{.gnupg,.local/{bin,share/lf},.m2,.ssh/sockets} \
 "$HOME"/.local/{bin,share/lf} \
 "$HOME"/Library/{KeyBindings,LaunchAgents} \
-"$HOME"/Library/Application Support/Code/User \
-"$HOME"/Library/Application Support/com.nuebling.mac-mouse-fix \
-"$HOME"/Library/Application Support/obs-studio/basic \
+"$HOME"/Library/Application\ Support/Code/User \
+"$HOME"/Library/Application\ Support/com.nuebling.mac-mouse-fix \
+"$HOME"/Library/Application\ Support/obs-studio/basic \
 "$XDG_CACHE_HOME"/code/{data/User,extensions} \
 "$XDG_CACHE_HOME"/bun/{bin,cache-install,cache-transpiler,lib} \
 "$XDG_CACHE_HOME"/deno/cache \
 "$XDG_CONFIG_HOME"/{bat/themes,fd,gradle,fish/completions,ghostty,git,kitty,lf,mise,nvim,pip,zed} \
-"$CODE"/{alemdofim,fmoreira-dremio,github} \
-"$CODE"/dremio \
+"$CODE"/{alemdofim,github} \
+"$CODE"/{dremio,dremio-fmoreira} \
 "$CODE"/icnew/{git-icone,git-icone-dog,misc} \
 "$DOCUMENTS"/{Captures,Misc,Remote,VMs} \
 "$DOWNLOADS"/{Brave,Other,Safari,Torrents}
