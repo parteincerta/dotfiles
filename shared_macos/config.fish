@@ -454,18 +454,12 @@ bind --mode visual \cf accept-autosuggestion
 bind --mode default \cy accept-autosuggestion execute
 bind --mode insert \cy accept-autosuggestion execute
 bind --mode visual \cy accept-autosuggestion execute
-# NOTE: \ck and \cl and currently being handled in Kitty because they don't
-# produce the expected result when applied through Fish. Both work fine in Apple
-# Terminal but in Kitty.
 bind --mode default ctrl-k 'clear_screen_and_scrollback_buffer; commandline -f repaint'
 bind --mode insert ctrl-k 'clear_screen_and_scrollback_buffer; commandline -f repaint'
 bind --mode visual ctrl-k 'clear_screen_and_scrollback_buffer; commandline -f repaint'
 bind --mode default ctrl-l 'clear; commandline -f repaint'
 bind --mode insert ctrl-l 'clear; commandline -f repaint'
 bind --mode visual ctrl-l 'clear; commandline -f repaint'
-bind --mode default nul edit_command_buffer
-bind --mode insert nul edit_command_buffer
-bind --mode visual nul edit_command_buffer
 
 if type -q fzf-cd-widget
 	bind --mode default \ce fzf-cd-widget
