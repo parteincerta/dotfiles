@@ -93,6 +93,7 @@ log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
 source "$rootdir/shared_macos/.bash_profile" || true
 /bin/bash configure.sh
 bat cache --build
+defaults write com.DanPristupov.Fork defaultSourceFolder "$HOME/Developer"
 
 
 log_info "\t >>> Setting up the hosts file ..."

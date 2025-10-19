@@ -92,6 +92,7 @@ homebrew_casks=(
 	parallels spaceid transmission "$vscode" zed
 )
 brew install --cask "${homebrew_casks[@]}"
+defaults write com.DanPristupov.Fork defaultSourceFolder "$HOME/Developer"
 
 
 log_info "\t >>> Sourcing environment variables and re-installing dotfiles"
