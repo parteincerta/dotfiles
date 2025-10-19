@@ -66,8 +66,8 @@ cp "$rootdir/shared_macos/config.fish" "$XDG_CONFIG_HOME/fish/"
 cp "$rootdir/shared_macos/lfrc" "$XDG_CONFIG_HOME/lf/"
 cp other/mise.toml "$XDG_CONFIG_HOME/mise/config.toml"
 
-# rm -rf "$app_support_folder/obs-studio/basic/"* &&
-#	cp -R obs/* "$app_support_folder/obs-studio/basic"
+rm -rf "$app_support_folder/obs-studio/basic/"* &&
+	cp -R obs/* "$app_support_folder/obs-studio/basic"
 
 chmod u=rwx,g=,o= "$HOME/.gnupg"
 chmod u=rw,g=,o= "$HOME/.gnupg/"*
@@ -82,9 +82,9 @@ touch "$HOME/.hushlogin"
 touch "$XDG_CONFIG_HOME/lf/bookmarks"
 
 source "$rootdir/shared_macos/scripts/export-defaults.sh" --source-keys-only
-# defaults import "$actmon_key" "$actmon_file"
+defaults import "$actmon_key" "$actmon_file"
 defaults import "$alttab_key" "$alttab_file"
-# defaults import "$betterdisplay_key" "$betterdisplay_file"
+defaults import "$betterdisplay_key" "$betterdisplay_file"
 cp "$macmousefix_file" "$app_support_folder/com.nuebling.mac-mouse-fix/config.plist"
 
 # This section is reserved for files that must be patched upfront.
